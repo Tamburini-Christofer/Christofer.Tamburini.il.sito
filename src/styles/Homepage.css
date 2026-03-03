@@ -1,0 +1,55 @@
+#containerHome{
+    width: 100vw;
+}
+
+.containerNavBar{
+    display: flex;
+    
+}
+
+.containerPages {
+    position: relative;
+    background-color: blueviolet;
+    width: calc(100vw / 4);
+    height: 97vh;
+    margin: 2% 0;
+    background-size: cover;
+    background-position-x: 60%;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.containerPages:hover{
+    cursor: pointer;
+    transform: scale(1.005);
+    filter: blur(0);
+    opacity: 1;
+    
+}
+
+/* .contInfo{
+    position: absolute;
+    top: 40%;
+    right: 32%;
+    background-color: black;
+    width: 600px;
+    height: 200px;
+    z-index: 100;
+} */
+
+.webDeveloper{
+    background-image: url(../../public/sfondi/webdeveloper.png);
+    background-position-x: 0%;
+}
+
+.photography{
+    background-image: url(../../public/sfondi/photography.jpg);
+}
+
+.blender{
+    background-image: url(../../public/sfondi/blender.jpg);
+}
+
+.stampa3D{
+    background-image: url(../../public/sfondi/stampa3D.jpg);
+}
