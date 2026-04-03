@@ -7,6 +7,7 @@
 ###
 
 <p align="left">Fase 1: Creazione della macro-struttura utilizzando il sito internet Draw.Io</p>
+
 ![Immagine fase Draw.Io](/Complete-per-readme/1.Pre-produzione-macrostruttura-DrawIo.png)
 
 ###
@@ -18,12 +19,14 @@
 ###
 
 <p align="left">Fase 2/A: Creazione del progetto in Figma basandosi sulla macro-struttura creata nella fase precedente</p>
-![Immagine fase Figma](/Complete-per-readme/2.a.Figma%20layout%20guide.png)
-![Immagine fase Figma](/Complete-per-readme/2.a.Figma%20Layout%20S%20guide.png)
+
+![Figma Layout](/Complete-per-readme/2.a-figma-layout-guide.png)
+![Figma Layout S](/Complete-per-readme/2.a-figma-Layout-S-guide.png)
 
 ###
 
 <p align="left">Fase 2/B: Realizzazione di un prototipo funzionante (n.b. il prototipo è limitato alla versione gratuita di Figma)</p>
-![Immagine fase Figma Prototipo](/Complete-per-readme/2.b.Figma%20Prototipo.png)
+
+![Figma Prototipo](/Complete-per-readme/2.b-figma-Prototipo.png)
 
 ###
