@@ -18,6 +18,7 @@ import "./styles/stampa3d.css"
 import "./styles/pageNotFound.css"
 import "./styles/navBar.css"
 import "./styles/footer.css"
+import "./styles/hoverStyles.css"
 
 function App() {
   

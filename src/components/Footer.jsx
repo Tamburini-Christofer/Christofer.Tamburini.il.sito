@@ -1,3 +1,17 @@
+let columnServizi = [
+  "SERVIZI",
+  "web Development",
+  "Fotografia",
+  "Video & Droni",
+  "3D & Stampa",
+];
+let columnContatti = [
+  "CONTATTI",
+  "+39 347 340 2835",
+  "Trento - Italia",
+  "christofer.tamburini92@gmail.com",
+];
+
 export default function Footer() {
   return (
     <>
@@ -7,31 +21,51 @@ export default function Footer() {
             Creatività multidisciplinare al servizio di idee ambiziose. Dal
             digitale al fisico, ogni progetto è un'opportunità per innovare.
           </p>
-        <div>
+          <div>
             <ul className="socialIcon">
-                <li><i class="fa-brands fa-github"></i></li>
-                <li><i class="fa-brands fa-linkedin"></i></li>
-                <li><i class="fa-brands fa-instagram"></i></li>
-                <li><i class="fa-brands fa-youtube"></i></li>
+              <li className="GitHubIcon">
+                <i class="fa-brands fa-github"></i>
+              </li >
+              <li className="LinkIcon">
+                <i class="fa-brands fa-linkedin"></i>
+              </li>
+              <li className="InstagramIcon">
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+              <li className="YoutubeIcon">
+                <i class="fa-brands fa-youtube"></i>
+              </li>
             </ul>
-        </div>
+          </div>
         </div>
         <div>
-            <ul>
-                <li>SERVIZI</li>
-                <li>web Development</li>
-                <li>Fotografia</li>
-                <li>Video & Droni</li>
-                <li>3D & Stampa</li>
-            </ul>
+          <ul>
+            {columnServizi.map((s) => (
+              <li
+                key={s}
+                className={
+                  s === "web Development"
+                    ? "hoverWeb"
+                    : s === "Fotografia"
+                      ? "hoverFot"
+                      : s === "Video & Droni"
+                        ? "hoverVid"
+                        : s === "3D & Stampa"
+                          ? "hoverSta"
+                          : ""
+                }
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
-            <ul>
-                <li>CONTATTI</li>
-                <li>+39 347 340 2835</li>
-                <li>Trento, Italia</li>
-                <li>christofer.tamburini92@gmail.com</li>
-            </ul>
+          <ul>
+            {columnContatti.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </>

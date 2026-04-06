@@ -1,11 +1,11 @@
 .contenitoreHomepage {
-
     background-color: var(--sezioneUno);
     border-bottom: 2px 0 2px 0  solid var(--primaryGrey);
     background-image: url("/public/Sfondi/Homepage.jpg");
     background-size: cover;
     background-position-y: 100%;
-    padding: 200px 100px ;
+    padding: 200px 100px;
+     border-bottom: 1px solid var(--primaryGrey);
 }
 
 .titleHome{
@@ -42,6 +42,7 @@ h5{
 .contenitoreSezionePresentazione p{
     color: var(--primaryGrey);
     font-size: 18px;
+    margin-top: 20px;
 }
 
 .contenitoreSezioneCompetenze {
@@ -50,6 +51,8 @@ h5{
     gap: 40px;
     background-color: var(--sezioneUno);
     padding: 100px;
+    border-bottom: 1px solid var(--primaryGrey);
+    
 }
 
 .contenitoreSezioneCompetenze div{
@@ -57,10 +60,13 @@ h5{
     flex-direction: column;
     border-radius: 25px;
     background-color: var(--sezioneDue);
+     cursor: pointer;
+    transition: 300ms;
 }
 
 .contenitoreSezioneCompetenze div img{
     max-width: 100%;
+    border-radius: 30px;
 }
 
 .sezWeb,
@@ -105,6 +111,7 @@ h5{
     background-color: var(--sezioneDue);
     height: 600px;
     padding: 100px;
+    border-bottom: 1px solid var(--primaryGrey);
 }
 
 .contenitoreSezionePresentazione div {
@@ -144,7 +151,8 @@ h5{
 
 .contenitoreServizi{
     background-color: var(--sezioneUno);
-    padding: 100px
+    padding: 100px;
+     border-bottom: 1px solid var(--primaryGrey);
 }
 
 .servizi{
@@ -160,6 +168,7 @@ h5{
     background-color: rgba(23, 23, 28, 1);
     padding: 30px;
     border-radius: 25px;
+    transition: 300ms;
 
 }
 
@@ -194,6 +203,7 @@ h5{
     background-color: var(--sezioneDue);
     padding: 100px;
     text-align: center;
+     border-bottom: 1px solid var(--primaryGrey);
 }
 
 .contenitoreContattami p {
@@ -211,4 +221,5 @@ h5{
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 16px;
+    transition: 300ms;
 }

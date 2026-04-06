@@ -6,6 +6,10 @@
     list-style-type: none;
 }
 
+i:hover{
+    cursor: pointer;
+}
+
 :root {
     --primaryGrey: rgba(135, 135, 146, 1);
     --primaryWhite: rgba(239, 236, 231, 1);
