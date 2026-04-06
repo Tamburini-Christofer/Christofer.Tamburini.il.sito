@@ -13,9 +13,10 @@
     width: 700px;
 }
 
-.titleHome h5{
+.titleHome h5,
+.contenitoreSezionePresentazione h5{
     color: var(--primaryWhite);
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .titleHome h1 {
@@ -27,9 +28,10 @@
     color: var(--primaryGrey);
 }
 
-.titleHome p{
+.titleHome p,
+.contenitoreSezionePresentazione p{
     color: var(--primaryGrey);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .contenitoreSezioneCompetenze {
@@ -37,7 +39,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     background-color: var(--sezioneUno);
-    padding: 100px 100px;
+    padding: 100px;
 }
 
 .contenitoreSezioneCompetenze div{
@@ -96,3 +98,48 @@
     color: var(--primaryGrey);
 }
 
+.contenitoreSezionePresentazione {
+    display: flex;
+    background-color: var(--sezioneDue);
+    height: 600px;
+    padding: 100px;
+}
+
+.contenitoreSezionePresentazione div {
+    width: 50%;
+}
+
+.contenitoreSezionePresentazione h2 {
+    font-size: 48px;
+    color: var(--primaryWhite);
+}
+
+.contenitoreSezionePresentazione strong  {
+    color: var(--webDeveloper);
+}
+
+.labelPresentazione {
+    display: flex;
+    flex-direction: column;
+ align-items: end;
+}
+
+.labelPresentazione div{
+    text-align: center;
+    padding: 40px 20px;
+    width: 450px;
+    margin: 20px;
+    background-color: var(--label);
+    border-radius: 20px;
+}
+
+.labelPresentazione p:first-child {
+    color: var(--primaryWhite);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.labelPresentazione p:last-child {
+    color: var(--primaryWhite);
+    font-size: 16px;
+}

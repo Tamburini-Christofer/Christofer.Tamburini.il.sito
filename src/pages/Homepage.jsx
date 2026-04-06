@@ -25,7 +25,9 @@ export default function Homepage() {
             <div className="sezWeb">
               <h4>CODICE & DESIGN</h4>
               <h3>Web Development</h3>
-              <p>Esplora <i class="fa-solid fa-arrow-right"></i></p>
+              <p>
+                Esplora <i class="fa-solid fa-arrow-right"></i>
+              </p>
             </div>
           </div>
           <div>
@@ -36,7 +38,9 @@ export default function Homepage() {
             <div div className="sezFot">
               <h4>LUCE & COMPOSIZIONE</h4>
               <h3>Fotografia</h3>
-              <p>Esplora <i class="fa-solid fa-arrow-right"></i></p>
+              <p>
+                Esplora <i class="fa-solid fa-arrow-right"></i>
+              </p>
             </div>
           </div>
           <div>
@@ -48,7 +52,9 @@ export default function Homepage() {
               {" "}
               <h4>MOVIMENTO & PROSPETTIVA</h4>
               <h3>Video & Droni</h3>
-              <p>Esplora <i class="fa-solid fa-arrow-right"></i></p>
+              <p>
+                Esplora <i class="fa-solid fa-arrow-right"></i>
+              </p>
             </div>
           </div>
           <div>
@@ -60,7 +66,42 @@ export default function Homepage() {
               {" "}
               <h4>PROGETTAZIONE & PRDOUZIONE</h4>
               <h3>3D & Stampa</h3>
-              <p>Esplora <i class="fa-solid fa-arrow-right"></i></p>
+              <p>
+                Esplora <i class="fa-solid fa-arrow-right"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="contenitoreSezionePresentazione">
+          <div>
+            {" "}
+            <h5>CHI SONO</h5>
+            <h2>
+              Un approccio <br />
+              <strong>multidisciplinare</strong>
+            </h2>
+            <p>
+              La mia passione per la tecnologia e la creatività mi ha portato a
+              sviluppare competenze trasversali che spaziano dal codice alla
+              produzione visiva. Ogni disciplina alimenta le altre, creando un
+              ecosistema creativo unico. <br /><br />
+              Credo che il miglior risultato nasca
+              dall'intersezione tra competenze diverse. Un sito web beneficia
+              della sensibilità fotografica, un video aereo della precisione
+              tecnica del 3D, e la stampa 3D dell'estetica del design digitale.
+            </p>
+          </div>
+          <div className="labelPresentazione">
+            <div>
+                <p>50+</p>
+                <p>PROGETTI COMPLETATI</p>
+            </div>
+            <div>
+                <p>6+</p>
+                <p>PLINGUAGGI DI PROGRAMMAZIONE</p>
             </div>
           </div>
         </div>
