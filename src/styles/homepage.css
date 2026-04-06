@@ -5,7 +5,7 @@
     background-image: url("/public/Sfondi/Homepage.jpg");
     background-size: cover;
     background-position-y: 100%;
-    padding: 200px;
+    padding: 200px 100px ;
 }
 
 .titleHome{
@@ -31,3 +31,68 @@
     color: var(--primaryGrey);
     font-size: 20px;
 }
+
+.contenitoreSezioneCompetenze {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    background-color: var(--sezioneUno);
+    padding: 100px 100px;
+}
+
+.contenitoreSezioneCompetenze div{
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: var(--sezioneDue);
+}
+
+.contenitoreSezioneCompetenze div img{
+    max-width: 100%;
+}
+
+.sezWeb,
+.sezFot,
+.sezVid,
+.sezSta{
+    padding: 25px;
+}
+
+.sezWeb h4,
+.sezFot h4,
+.sezVid h4,
+.sezSta h4 {
+    color: var(--primaryWhite);
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.sezWeb h3,
+.sezFot h3,
+.sezVid h3,
+.sezSta h3{
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.sezWeb h3{
+    color: var(--webDeveloper);
+}
+.sezFot h3{
+    color: var(--fotografia);
+}
+.sezVid h3{
+    color: var(--videoDrone);
+}
+.sezSta h3{
+    color: var(--stampa3D);
+}
+
+.sezWeb p,
+.sezFot p,
+.sezVid p,
+.sezSta p {
+    font-size: 20px;
+    color: var(--primaryGrey);
+}
+
