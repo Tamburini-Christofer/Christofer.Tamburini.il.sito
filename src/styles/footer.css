@@ -1,0 +1,30 @@
+#footerContenitore {
+    display: flex;
+    background-color: var(--sezioneUno);
+    padding: 100px;
+    justify-content: space-between;
+}
+
+#footerContenitore div {
+    color: var(--primaryWhite);
+}
+
+#footerContenitore div:first-child {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footerContenitore li {
+    margin-bottom: 20px;
+}
+
+#footerContenitore i {
+    font-size: 30px;
+    padding: 0px 60px 0 0;
+}
+
+.socialIcon {
+    display: flex;
+}

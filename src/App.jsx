@@ -17,6 +17,7 @@ import "./styles/videoDrone.css"
 import "./styles/stampa3d.css"
 import "./styles/pageNotFound.css"
 import "./styles/navBar.css"
+import "./styles/footer.css"
 
 function App() {
   
