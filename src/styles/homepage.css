@@ -1,0 +1,33 @@
+.contenitoreHomepage {
+
+    background-color: var(--sezioneUno);
+    border-bottom: 2px 0 2px 0  solid var(--primaryGrey);
+    background-image: url("/public/Sfondi/Homepage.jpg");
+    background-size: cover;
+    background-position-y: 100%;
+    padding: 200px;
+}
+
+.titleHome{
+    height: 300px;
+    width: 700px;
+}
+
+.titleHome h5{
+    color: var(--primaryWhite);
+    font-size: 12px;
+}
+
+.titleHome h1 {
+    color: var(--primaryWhite);
+    font-size: 64px;
+}
+
+.titleHome h1 strong {
+    color: var(--primaryGrey);
+}
+
+.titleHome p{
+    color: var(--primaryGrey);
+    font-size: 20px;
+}
