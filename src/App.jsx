@@ -9,12 +9,14 @@ import VideoDrone from "./pages/VideoDrone"
 import Stampa3D from "./pages/Stampa3D"
 import PageNotFound from "./pages/PageNotFound"
 
+import "./index.css"
 import "./styles/homepage.css"
 import "./styles/webDeveloper.css"
 import "./styles/fotografia.css"
 import "./styles/videoDrone.css"
 import "./styles/stampa3d.css"
 import "./styles/pageNotFound.css"
+import "./styles/navBar.css"
 
 function App() {
   

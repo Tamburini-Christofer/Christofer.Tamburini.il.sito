@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Code";
+    list-style-type: none;
+}
+
+:root {
+    --primaryGrey: rgba(135, 135, 146, 1);
+    --primaryWhite: rgba(239, 236, 231, 1);
+
+    --webDeveloper: rgba(42, 148, 255, 1);
+    --fotografia: rgba(245, 159, 40, 1);
+    --videoDrone: rgba(32, 191, 180, 1);
+    --stampa3D:  rgba(240, 89, 48, 1);
+
+    --SoftwebDeveloper: rgba(42, 148, 255, 0.5);
+    --Softfotografia: rgba(245, 159, 40, 0.5);
+    --SoftvideoDrone: rgba(32, 191, 180, 0.5);
+    --Softstampa3D:  rgba(240, 89, 48, 0.5);
+
+}
