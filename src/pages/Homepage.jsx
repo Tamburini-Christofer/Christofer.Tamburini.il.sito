@@ -30,6 +30,7 @@ export default function Homepage() {
               </p>
             </div>
           </div>
+          
           <div>
             <img
               src="../../public/Sfondi/Sfondo Fotografia.jpg"

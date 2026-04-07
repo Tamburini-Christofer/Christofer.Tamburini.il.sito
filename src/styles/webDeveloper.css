@@ -1,0 +1,62 @@
+.contenitoreWeb {
+    background-image: url("../../public/Sfondi/Sfondo\ Web\ Developer.jpg");
+    background-position-y: 50%;
+}
+
+.contenitoreWeb .titleHome{
+    padding: 300px 0 0 0;
+}
+
+.contenitoreWeb .titleHome h1 strong,
+.sectionProcesso h1 strong{
+    color: var(--webDeveloper);
+    font-size: 40px;
+}
+
+.WebPre {
+    height: 100%;
+    padding: 100px 200px;
+}
+
+.WebLabel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 20px 0 80px;
+}
+
+.WebPre div{
+    width: 80%;
+}
+
+.WebPre p span {
+    color: var(--primaryWhite);
+}
+
+.WebLabel div {
+    background-color: var(--SoftwebDeveloper);
+    padding: 5px 0;
+}
+
+.sectionProcesso {
+    height: 100%;
+    padding: 100px;
+    background-color: var(--sezioneUno);
+    border-bottom: 1px solid var(--primaryGrey);
+    padding: 100px 200px;
+}
+
+.comeLavoroLabel{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 0 0;
+    gap: px;
+}
+
+.comeLavoroLabel span{
+    color: var(--SoftwebDeveloper);
+    font-size: 40px;
+}
+
+.comeLavoroLabel h5 {
+    margin: 10px 0 5px 0;
+}

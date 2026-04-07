@@ -1,0 +1,62 @@
+.contenitoreFot {
+    background-image: url("../../public/Sfondi/Sfondo\ Fotografia.jpg");
+    background-position-y: 80%;
+}
+
+.contenitoreFot .titleHome{
+    padding: 300px 0 0 0;
+}
+
+.contenitoreFot .titleHome h1 strong,
+.sectionProcesso h1 strong{
+    color: var(--fotografia);
+    font-size: 40px;
+}
+
+.WebPre {
+    height: 100%;
+    padding: 100px 200px;
+}
+
+.FotLabel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 20px 0 80px;
+}
+
+.WebPre div{
+    width: 80%;
+}
+
+.WebPre p span {
+    color: var(--primaryWhite);
+}
+
+.FotLabel div {
+    background-color: var(--Softfotografia);
+    padding: 5px 0;
+}
+
+.sectionProcesso {
+    height: 100%;
+    padding: 100px;
+    background-color: var(--sezioneUno);
+    border-bottom: 1px solid var(--primaryGrey);
+    padding: 100px 200px;
+}
+
+.comeLavoroLabelFot{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 0 0;
+    gap: px;
+}
+
+.comeLavoroLabelFot span{
+    color: var(--Softfotografia);
+    font-size: 40px;
+}
+
+.comeLavoroLabel h5 {
+    margin: 10px 0 5px 0;
+}
