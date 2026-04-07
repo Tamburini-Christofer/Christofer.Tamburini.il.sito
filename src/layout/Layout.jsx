@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom"
 
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
+import BackToTopArrow from "../components/BackToTopArrow"
 
 export default function Layout () {
     const { pathname } = useLocation()
@@ -24,6 +25,8 @@ export default function Layout () {
         <footer>
             <Footer />
         </footer>
+
+        <BackToTopArrow />
         </>
     )
 }

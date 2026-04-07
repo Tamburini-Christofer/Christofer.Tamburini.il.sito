@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import HeroNextArrow from "../components/HeroNextArrow";
 
 export default function Stampa3D() {
     return (
@@ -11,6 +12,7 @@ export default function Stampa3D() {
                         <strong>Stampa 3D</strong>
                     </h1>
                 </div>
+                <HeroNextArrow />
             </div>
 
             <section>

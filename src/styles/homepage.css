@@ -4,7 +4,7 @@
     background-image: url("/public/Sfondi/Homepage.jpg");
     background-size: cover;
     background-position-y: 100%;
-    padding: 19% 100px 10% 100px;
+    padding: 286px 100px 200px 100px;
     border-bottom: 1px solid var(--primaryGrey);
     position: relative;
     overflow: hidden;
@@ -71,6 +71,39 @@ h5{
     margin-top: 20px;
 }
 
+.heroNextArrow {
+    position: fixed;
+    right: 40px;
+    bottom: 36px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(239, 236, 231, 0.45);
+    background-color: rgba(0, 0, 0, 0.28);
+    color: var(--primaryWhite);
+    font-size: 30px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 1;
+    transition: transform 250ms ease, background-color 250ms ease, border-color 250ms ease, opacity 220ms ease;
+}
+
+.heroNextArrow.isHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.heroNextArrow:hover {
+    transform: scale(1.08);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(239, 236, 231, 0.75);
+}
+
 .contenitoreSezioneCompetenze {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -135,8 +168,7 @@ h5{
 .contenitoreSezionePresentazione {
     display: flex;
     background-color: var(--sezioneDue);
-    height: 600px;
-    padding: 100px;
+    padding: 120px 100px;
     border-bottom: 1px solid var(--primaryGrey);
 }
 
@@ -172,19 +204,19 @@ h5{
 
 .labelPresentazione p:last-child {
     color: var(--primaryWhite);
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .contenitoreServizi{
     background-color: var(--sezioneUno);
-    padding: 100px;
+    padding: 50px 100px;
      border-bottom: 1px solid var(--primaryGrey);
 }
 
 .servizi{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
 }
 
 .servizi .servizioLink {
@@ -201,6 +233,10 @@ h5{
     border-radius: 25px;
     transition: 300ms;
 
+}
+
+.servizi .servizioCard p{
+    font-size: 15.5px;
 }
 
 .contenitoreTitoliServizi {
@@ -232,7 +268,7 @@ h5{
 
 .contenitoreContattami {
     background-color: var(--sezioneDue);
-    padding: 100px;
+    padding: 210px 200px;
     text-align: center;
      border-bottom: 1px solid var(--primaryGrey);
 }

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import HeroNextArrow from "../components/HeroNextArrow";
 
 export default function Homepage() {
   return (
@@ -16,6 +17,7 @@ export default function Homepage() {
             discipline, un'unica visione creativa.
           </p>
         </div>
+        <HeroNextArrow />
       </div>
 
       <section>

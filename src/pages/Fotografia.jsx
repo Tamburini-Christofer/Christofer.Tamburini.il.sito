@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import HeroNextArrow from "../components/HeroNextArrow";
 
 export default function Fotrografia() {
   return (
@@ -11,6 +12,7 @@ export default function Fotrografia() {
             <strong>Fotografia</strong>
           </h1>
         </div>
+        <HeroNextArrow />
       </div>
 
       <section>

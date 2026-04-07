@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import HeroNextArrow from "../components/HeroNextArrow";
 
 export default function VideoDrone() {
   return (
@@ -11,6 +12,7 @@ export default function VideoDrone() {
             <strong>Video & Drone</strong>
           </h1>
         </div>
+        <HeroNextArrow />
       </div>
 
       <section>

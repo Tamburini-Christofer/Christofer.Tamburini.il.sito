@@ -34,11 +34,9 @@
 }
 
 .sectionProcesso {
-    height: 100%;
-    padding: 100px;
     background-color: var(--sezioneUno);
     border-bottom: 1px solid var(--primaryGrey);
-    padding: 100px 200px;
+    padding: 210px 200px;
 }
 
 .comeLavoroLabelFot{
