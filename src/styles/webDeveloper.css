@@ -1,13 +1,22 @@
 .contenitoreWeb {
     background-image: url("../../public/Sfondi/Sfondo\ Web\ Developer.jpg");
-    background-position-y: 50%;
+    background-position-y: 20%;
 }
 
 .contenitoreWeb .titleHome{
     padding: 300px 0 0 0;
 }
 
-.contenitoreWeb .titleHome h1 strong,
+.contenitoreWeb .titleHome h1 {
+    margin-top: 18px;
+    line-height: 1.1;
+}
+
+.contenitoreWeb .titleHome h1 strong{
+    color: var(--webDeveloper);
+    font-size: 72px;
+}
+
 .sectionProcessoWeb h1 strong{
     color: var(--webDeveloper);
     font-size: 40px;

@@ -1,18 +1,35 @@
+import { NavLink, useLocation } from "react-router-dom";
+
 let columnServizi = [
-  "SERVIZI",
-  "web Development",
-  "Fotografia",
-  "Video & Droni",
-  "3D & Stampa",
+  { label: "SERVIZI" },
+  { label: "web Development", route: "/web-developer" },
+  { label: "Fotografia", route: "/fotografia" },
+  { label: "Video & Droni", route: "/video-droni" },
+  { label: "3D & Stampa", route: "/stampa3D" },
 ];
 let columnContatti = [
-  "CONTATTI",
-  "+39 347 340 2835",
-  "Trento - Italia",
-  "christofer.tamburini92@gmail.com",
+  { label: "CONTATTI" },
+  { label: "+39 347 340 2835" },
+  { label: "Trento - Italia" },
+  {
+    label: "christofer.tamburini92@gmail.com",
+    href: "mailto:christofer.tamburini92@gmail.com",
+  },
 ];
 
 export default function Footer() {
+  const { pathname } = useLocation();
+
+  const getActivePageColor = () => {
+    if (pathname.startsWith("/web-developer")) return "var(--webDeveloper)";
+    if (pathname.startsWith("/fotografia")) return "var(--fotografia)";
+    if (pathname.startsWith("/video-droni")) return "var(--videoDrone)";
+    if (pathname.startsWith("/stampa3D")) return "var(--stampa3D)";
+    return "var(--primaryWhite)";
+  };
+
+  const activePageColor = getActivePageColor();
+
   return (
     <>
       <div id="footerContenitore">
@@ -24,16 +41,16 @@ export default function Footer() {
           <div>
             <ul className="socialIcon">
               <li className="GitHubIcon">
-                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/Tamburini-Christofer"><i class="fa-brands fa-github"></i></a>
               </li >
               <li className="LinkIcon">
-                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/christofer-tamburini-6710b5346/"><i class="fa-brands fa-linkedin"></i></a>
               </li>
               <li className="InstagramIcon">
-                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/christofer.tamburini/"><i class="fa-brands fa-instagram"></i></a>
               </li>
               <li className="YoutubeIcon">
-                <i class="fa-brands fa-youtube"></i>
+                <a href="https://www.youtube.com/@christofertamburiniChannel"><i class="fa-brands fa-youtube"></i></a>
               </li>
             </ul>
           </div>
@@ -42,20 +59,20 @@ export default function Footer() {
           <ul>
             {columnServizi.map((s) => (
               <li
-                key={s}
+                key={s.label}
                 className={
-                  s === "web Development"
+                  s.label === "web Development"
                     ? "hoverWeb"
-                    : s === "Fotografia"
+                    : s.label === "Fotografia"
                       ? "hoverFot"
-                      : s === "Video & Droni"
+                      : s.label === "Video & Droni"
                         ? "hoverVid"
-                        : s === "3D & Stampa"
+                        : s.label === "3D & Stampa"
                           ? "hoverSta"
                           : ""
                 }
               >
-                {s}
+                {s.route ? <NavLink to={s.route}>{s.label}</NavLink> : s.label}
               </li>
             ))}
           </ul>
@@ -63,7 +80,19 @@ export default function Footer() {
         <div>
           <ul>
             {columnContatti.map((c) => (
-              <li key={c}>{c}</li>
+              <li key={c.label}>
+                {c.href ? (
+                  <a
+                    href={c.href}
+                    className="footerEmailLink"
+                    style={{ color: activePageColor }}
+                  >
+                    {c.label}
+                  </a>
+                ) : (
+                  c.label
+                )}
+              </li>
             ))}
           </ul>
         </div>

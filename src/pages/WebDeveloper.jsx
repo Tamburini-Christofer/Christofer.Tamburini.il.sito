@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ContactEmailButton from "../components/ContactEmailButton";
 
 export default function WebDeveloper() {
   return (
@@ -103,7 +104,7 @@ export default function WebDeveloper() {
         <div className="contenitoreContattami contattamiWeb">
             <h2>Interessato a collaborare?</h2>
             <p>Ogni progetto inizia con una conversazione. Raccontami la tua idea e troviamo insieme la soluzione migliore.</p>
-            <button>Contattami</button>
+            <ContactEmailButton />
         </div>
       </section>
     </>

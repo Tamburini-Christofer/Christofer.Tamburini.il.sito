@@ -1,16 +1,50 @@
 /*!  */
 
-.hoverWeb:hover {
+.hoverHome:hover,
+.hoverHome a:hover {
+    color: var(--primaryWhite);
+}
+
+.hoverWeb:hover,
+.hoverWeb a:hover {
     color: var(--webDeveloper) ;
 }
-.hoverFot:hover {
+.hoverFot:hover,
+.hoverFot a:hover {
     color: var(--fotografia) ;
 }
-.hoverVid:hover {
+.hoverVid:hover,
+.hoverVid a:hover {
     color: var(--videoDrone) ;
 }
-.hoverSta:hover {
+.hoverSta:hover,
+.hoverSta a:hover {
     color: var(--stampa3D) ;
+}
+
+.activeWeb {
+    color: var(--webDeveloper);
+    font-weight: 600;
+}
+
+.activeFot {
+    color: var(--fotografia);
+    font-weight: 600;
+}
+
+.activeVid {
+    color: var(--videoDrone);
+    font-weight: 600;
+}
+
+.activeSta {
+    color: var(--stampa3D);
+    font-weight: 600;
+}
+
+.activeHome {
+    color: var(--primaryWhite);
+    font-weight: 600;
 }
 
 /*! Competenze */
@@ -39,31 +73,31 @@
 }
 
 /*! Tabs */
-.servizi div:hover {
+.servizi .servizioCard:hover {
     transform: scale(1.05);
     cursor: pointer;
     transition: 300ms;
 }
 
 /*! Button */
-.contenitoreContattami button:hover{
+.contenitoreContattami .contactEmailButton:hover{
     transform: scale(1.05);
-    background-color: rgba(0, 128, 255, 0.767);
+    filter: brightness(1.15);
     cursor: pointer;
     transition: 300ms;
 }
 
 /*! Footer */
 
-.LinkIcon:hover{
+.LinkIcon a:hover{
     color: rgb(0, 255, 242);
 }
-.InstagramIcon:hover{
+.InstagramIcon a:hover{
     color: rgb(255, 140, 0);
 }
-.YoutubeIcon:hover{
+.YoutubeIcon a:hover{
     color: red;
 }
-.GitHubIcon:hover{
-    color: grey;
+.GitHubIcon a:hover{
+    color: rgb(59, 59, 59);
 }

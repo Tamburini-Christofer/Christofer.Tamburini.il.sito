@@ -7,7 +7,16 @@
 	padding: 300px 0 0 0;
 }
 
-.contenitoreVideo .titleHome h1 strong,
+.contenitoreVideo .titleHome h1 {
+	margin-top: 18px;
+	line-height: 1.1;
+}
+
+.contenitoreVideo .titleHome h1 strong {
+	color: var(--videoDrone);
+	font-size: 72px;
+}
+
 .sectionProcessoVideo h1 strong {
 	color: var(--videoDrone);
 	font-size: 40px;

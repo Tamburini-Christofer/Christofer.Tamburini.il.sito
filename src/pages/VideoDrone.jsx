@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ContactEmailButton from "../components/ContactEmailButton";
 
 export default function VideoDrone() {
   return (
@@ -107,7 +108,7 @@ export default function VideoDrone() {
             Ogni progetto inizia con una conversazione. Raccontami la tua idea e
             troviamo insieme la soluzione migliore.
           </p>
-          <button>Contattami</button>
+          <ContactEmailButton />
         </div>
       </section>
     </>

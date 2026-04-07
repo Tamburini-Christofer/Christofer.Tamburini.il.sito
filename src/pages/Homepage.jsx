@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+import ContactEmailButton from "../components/ContactEmailButton";
+
 export default function Homepage() {
   return (
     <>
@@ -117,7 +120,8 @@ export default function Homepage() {
           </div>
 
           <div className="servizi">
-            <div>
+            <NavLink to="/web-developer" className="servizioLink">
+            <div className="servizioCard">
               <i
                 className="fa-solid fa-code"
                 style={{ color: "rgb(42, 148, 255)" }}
@@ -129,8 +133,10 @@ export default function Homepage() {
                 ottimizzato per performance, accessibilità e SEO.
               </p>
             </div>
+            </NavLink>
 
-            <div>
+            <NavLink to="/fotografia" className="servizioLink">
+            <div className="servizioCard">
               <i
                 className="fa-solid fa-camera"
                 style={{ color: "rgb(245, 159, 40)" }}
@@ -139,8 +145,10 @@ export default function Homepage() {
 
               <p>Servizi fotografici professionali per prodotti, architettura e paesaggio. Post-produzione curata nei minimi dettagli per immagini che comunicano.</p>
             </div>
+            </NavLink>
 
-            <div>
+            <NavLink to="/video-droni" className="servizioLink">
+            <div className="servizioCard">
               <i
                 className="fa-solid fa-paper-plane"
                 style={{ color: "rgb(32, 191, 180)" }}
@@ -148,8 +156,10 @@ export default function Homepage() {
               <h4>Video & Drone</h4>
               <p>Produzione video cinematografica e riprese aeree con drone per spot pubblicitari, documentari e contenuti social di alto impatto visivo.</p>
             </div>
+            </NavLink>
 
-            <div>
+            <NavLink to="/stampa3D" className="servizioLink">
+            <div className="servizioCard">
               <i
                 className="fa-solid fa-print"
                 style={{ color: "rgb(240, 89, 48)" }}
@@ -157,6 +167,7 @@ export default function Homepage() {
               <h4>Stampa 3D</h4>
               <p>Modellazione 3D parametrica e organica, prototipazione rapida e stampa 3D FDM/SLA. Dal concept al prodotto finito con precisione millimetrica.</p>
             </div>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -165,7 +176,7 @@ export default function Homepage() {
         <div className="contenitoreContattami">
             <h2>Hai un progetto in mente?</h2>
             <p>Che si tratti di un sito web, un servizio fotografico, un video con drone o un prototipo 3D parliamone insieme.</p>
-            <button>Contattami</button>
+            <ContactEmailButton />
         </div>
       </section>
     </>

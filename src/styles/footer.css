@@ -29,3 +29,15 @@
     display: flex;
 }
 
+.footerEmailLink {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: filter 200ms ease;
+}
+
+.footerEmailLink:hover {
+    filter: brightness(1.2);
+}
+

@@ -1,13 +1,22 @@
 .contenitoreStampa {
 	background-image: url("../../public/Sfondi/Sfondo 3D.jpg");
-	background-position-y: 60%;
+	background-position-y: 10%;
 }
 
 .contenitoreStampa .titleHome {
 	padding: 300px 0 0 0;
 }
 
-.contenitoreStampa .titleHome h1 strong,
+.contenitoreStampa .titleHome h1 {
+	margin-top: 18px;
+	line-height: 1.1;
+}
+
+.contenitoreStampa .titleHome h1 strong {
+	color: var(--stampa3D);
+	font-size: 72px;
+}
+
 .sectionProcessoStampa h1 strong {
 	color: var(--stampa3D);
 	font-size: 40px;

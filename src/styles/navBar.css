@@ -2,25 +2,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    background-color: black;
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 0 100px;
     border-bottom: 2px solid var(--primaryGrey) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 #contenitoreNavBar img {
-    max-height: 60px;
+    max-height:0px;
+}
+
+.navMenuWrapper {
+    width: 100%;
 }
 
 .contenitoreMenu{
     display: flex;
+    align-items: center;
+    width: 100%;
     color: var(--primaryGrey);
-    gap: 100px
+    gap: 56px;
+}
+
+.contenitoreMenu li:first-child {
+    margin-right: auto;
 }
 
 a {
     text-decoration: none;
     font-size: 16px;
-    color: var(--primaryGrey)
+    color: var(--primaryWhite)
 }
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ContactEmailButton from "../components/ContactEmailButton";
 
 export default function Stampa3D() {
     return (
@@ -111,7 +112,7 @@ La progettazione 3D rappresenta il ponte tra immaginazione e realtà. La stampa 
                         Ogni progetto inizia con una conversazione. Raccontami la tua idea
                         e troviamo insieme la soluzione migliore.
                     </p>
-                    <button>Contattami</button>
+                    <ContactEmailButton />
                 </div>
             </section>
         </>

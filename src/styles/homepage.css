@@ -4,8 +4,28 @@
     background-image: url("/public/Sfondi/Homepage.jpg");
     background-size: cover;
     background-position-y: 100%;
-    padding: 200px 100px;
-     border-bottom: 1px solid var(--primaryGrey);
+    padding: 19% 100px 10% 100px;
+    border-bottom: 1px solid var(--primaryGrey);
+    position: relative;
+    overflow: hidden;
+}
+
+.contenitoreHomepage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.14) 0%,
+        rgba(0, 0, 0, 0.42) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contenitoreHomepage > * {
+    position: relative;
+    z-index: 1;
 }
 
 .titleHome{
@@ -29,9 +49,15 @@ h5{
     font-weight: 100;
 }
 
+.titleHome h5 {
+    margin-bottom: 14px;
+}
+
 .titleHome h1 {
     color: var(--primaryWhite);
-    font-size: 64px;
+    font-size: 76px;
+    line-height: 1.12;
+    margin-bottom: 26px;
 }
 
 .titleHome h1 strong {
@@ -161,7 +187,12 @@ h5{
     gap: 40px;
 }
 
-.servizi div {
+.servizi .servizioLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.servizi .servizioCard {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -186,16 +217,16 @@ h5{
    margin: 10px 0;
 }
 
-.servizi div:nth-child(1) h4 {
+.servizi .servizioLink:nth-child(1) h4 {
     color: var(--webDeveloper);
 }
-.servizi div:nth-child(2) h4 {
+.servizi .servizioLink:nth-child(2) h4 {
     color: var(--fotografia);
 }
-.servizi div:nth-child(3) h4 {
+.servizi .servizioLink:nth-child(3) h4 {
     color: var(--videoDrone);
 }
-.servizi div:nth-child(4) h4 {
+.servizi .servizioLink:nth-child(4) h4 {
     color: var(--stampa3D);
 }
 
@@ -212,14 +243,15 @@ h5{
     margin: 40px auto;
 }
 
-.contenitoreContattami button {
+.contenitoreContattami .contactEmailButton {
     padding: 25px 40px;
     border-radius: 40px;
-    background-color: rgba(26, 140, 255, 1); 
     border: 0;
     color: var(--primaryWhite);
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
     transition: 300ms;
 }

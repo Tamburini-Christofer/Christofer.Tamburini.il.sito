@@ -1,10 +1,37 @@
 import { NavLink } from "react-router-dom";
 
 let navBarMenu = [
-  { route: "web-developer", label: "Web Developer" },
-  { route: "fotografia", label: "Fotografia" },
-  { route: "video-droni", label: "Video & Drone" },
-  { route: "Stampa3D", label: "Stampa3D" },
+  {
+    route: "/",
+    label: "Homepage",
+    hoverClass: "hoverHome",
+    activeClass: "activeHome",
+    end: true,
+  },
+  {
+    route: "web-developer",
+    label: "Web Developer",
+    hoverClass: "hoverWeb",
+    activeClass: "activeWeb",
+  },
+  {
+    route: "fotografia",
+    label: "Fotografia",
+    hoverClass: "hoverFot",
+    activeClass: "activeFot",
+  },
+  {
+    route: "video-droni",
+    label: "Video & Drone",
+    hoverClass: "hoverVid",
+    activeClass: "activeVid",
+  },
+  {
+    route: "stampa3D",
+    label: "Stampa3D",
+    hoverClass: "hoverSta",
+    activeClass: "activeSta",
+  },
 ];
 
 export default function NavBar() {
@@ -15,22 +42,15 @@ export default function NavBar() {
           src="/public/Sfondi/chris_watermark_bianco.png"
           alt="Logo di Christofer Tamburini"
         />
-        <div>
+        <div className="navMenuWrapper">
           <ul className="contenitoreMenu">
             {navBarMenu.map((link, index) => (
               <li key={index}>
                 <NavLink
                   to={link.route}
-                  className={
-                    link.label === "Web Developer"
-                      ? "hoverWeb"
-                      : link.label === "Fotografia"
-                        ? "hoverFot"
-                        : link.label === "Video & Drone"
-                          ? "hoverVid"
-                          : link.label === "Stampa3D"
-                            ? "hoverSta"
-                            : ""
+                  end={link.end}
+                  className={({ isActive }) =>
+                    `${link.hoverClass} ${isActive ? link.activeClass : ""}`.trim()
                   }
                 >
                   {link.label}
