@@ -1,0 +1,53 @@
+.contenitoreVideo {
+	background-image: url("../../public/Sfondi/Sfondo Drone.jpg");
+	background-position-y: 70%;
+}
+
+.contenitoreVideo .titleHome {
+	padding: 300px 0 0 0;
+}
+
+.contenitoreVideo .titleHome h1 strong,
+.sectionProcessoVideo h1 strong {
+	color: var(--videoDrone);
+	font-size: 40px;
+}
+
+.VideoLabel {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0 20px 0 80px;
+}
+
+.VideoLabel div {
+	background-color: var(--SoftvideoDrone);
+	padding: 5px 0;
+}
+
+.sectionProcesso {
+	height: 100%;
+	padding: 100px;
+	background-color: var(--sezioneUno);
+	border-bottom: 1px solid var(--primaryGrey);
+	padding: 100px 200px;
+}
+
+.comeLavoroLabelVideo {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0 0 0;
+	gap: px;
+}
+
+.comeLavoroLabelVideo span {
+	color: var(--SoftvideoDrone);
+	font-size: 40px;
+}
+
+.comeLavoroLabelVideo h5 {
+	margin: 10px 0 5px 0;
+}
+
+.contattamiVideo h2 {
+	color: var(--videoDrone);
+}

@@ -1,0 +1,53 @@
+.contenitoreStampa {
+	background-image: url("../../public/Sfondi/Sfondo 3D.jpg");
+	background-position-y: 60%;
+}
+
+.contenitoreStampa .titleHome {
+	padding: 300px 0 0 0;
+}
+
+.contenitoreStampa .titleHome h1 strong,
+.sectionProcessoStampa h1 strong {
+	color: var(--stampa3D);
+	font-size: 40px;
+}
+
+.StampaLabel {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0 20px 0 80px;
+}
+
+.StampaLabel div {
+	background-color: var(--Softstampa3D);
+	padding: 5px 0;
+}
+
+.sectionProcesso {
+	height: 100%;
+	padding: 100px;
+	background-color: var(--sezioneUno);
+	border-bottom: 1px solid var(--primaryGrey);
+	padding: 100px 200px;
+}
+
+.comeLavoroLabelStampa {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0 0 0;
+	gap: px;
+}
+
+.comeLavoroLabelStampa span {
+	color: var(--Softstampa3D);
+	font-size: 40px;
+}
+
+.comeLavoroLabelStampa h5 {
+	margin: 10px 0 5px 0;
+}
+
+.contattamiStampa h2 {
+	color: var(--stampa3D);
+}

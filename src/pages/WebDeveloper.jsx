@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function WebDeveloper() {
   return (
     <>
@@ -29,7 +31,9 @@ export default function WebDeveloper() {
               sviluppo.
             </p>
             <p>
-              <i class="fa-solid fa-arrow-left"></i> Torna alla Homepage
+              <Link to="/" className="backToHome">
+                <i className="fa-solid fa-arrow-left"></i> Torna alla Homepage
+              </Link>
             </p>
           </div>
           <div className="labelPresentazione WebLabel">
@@ -65,7 +69,7 @@ export default function WebDeveloper() {
       </section>
 
       <section>
-        <div className="sectionProcesso">
+        <div className="sectionProcesso sectionProcessoWeb">
           <h5>IL PROCESSO</h5>
           <h1>
             <strong>Come lavoro</strong>
@@ -96,7 +100,7 @@ export default function WebDeveloper() {
       </section>
 
       <section>
-        <div className="contenitoreContattami">
+        <div className="contenitoreContattami contattamiWeb">
             <h2>Interessato a collaborare?</h2>
             <p>Ogni progetto inizia con una conversazione. Raccontami la tua idea e troviamo insieme la soluzione migliore.</p>
             <button>Contattami</button>

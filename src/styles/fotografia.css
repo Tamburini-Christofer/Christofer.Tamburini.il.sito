@@ -8,28 +8,15 @@
 }
 
 .contenitoreFot .titleHome h1 strong,
-.sectionProcesso h1 strong{
+.sectionProcessoFot h1 strong{
     color: var(--fotografia);
     font-size: 40px;
-}
-
-.WebPre {
-    height: 100%;
-    padding: 100px 200px;
 }
 
 .FotLabel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 20px 0 80px;
-}
-
-.WebPre div{
-    width: 80%;
-}
-
-.WebPre p span {
-    color: var(--primaryWhite);
 }
 
 .FotLabel div {
@@ -59,4 +46,8 @@
 
 .comeLavoroLabel h5 {
     margin: 10px 0 5px 0;
+}
+
+.contattamiFot h2 {
+    color: var(--fotografia);
 }

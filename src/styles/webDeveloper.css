@@ -8,7 +8,7 @@
 }
 
 .contenitoreWeb .titleHome h1 strong,
-.sectionProcesso h1 strong{
+.sectionProcessoWeb h1 strong{
     color: var(--webDeveloper);
     font-size: 40px;
 }
@@ -59,4 +59,8 @@
 
 .comeLavoroLabel h5 {
     margin: 10px 0 5px 0;
+}
+
+.contattamiWeb h2 {
+    color: var(--webDeveloper);
 }

@@ -31,3 +31,15 @@ i:hover{
 
 
 }
+
+.backToHome {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--primaryWhite);
+}
+
+.backToHome:hover {
+    color: var(--primaryGrey);
+}

@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function VideoDrone() {
   return (
     <>
       <div className="contenitoreHomepage contenitoreVideo">
         <div className="titleHome">
-          <h5>LUCI & COMPOSIZIONE</h5>
+          <h5>MOVIMENTO & PROSPETTIVA</h5>
           <h1>
-            <strong>Fotografia</strong>
+            <strong>Video & Drone</strong>
           </h1>
         </div>
       </div>
@@ -15,92 +17,83 @@ export default function VideoDrone() {
           <div>
             <p>
               <span>
-                Catturare l'essenza di un momento attraverso luce, colore e
-                composizione. Dalla fotografia di paesaggio ai ritratti, ogni
-                scatto racconta una storia unica con attenzione maniacale ai
-                dettagli.
+                Produzione video professionale e riprese aeree con drone. Dalle riprese cinematiche al montaggio finale, creo contenuti visivi che catturano prospettive uniche e raccontano storie con impatto emotivo.
               </span>{" "}
               <br />
               <br />
-              La fotografia è il mio modo di osservare il mondo con occhi
-              diversi. Lavoro sia in luce naturale che in studio, padroneggiando
-              tecniche di illuminazione avanzate e post-produzione
-              professionale. Ogni progetto fotografico è un racconto visivo
-              costruito con cura.
+              Le riprese aeree aggiungono una dimensione completamente nuova alla narrazione visiva. Utilizzo droni di ultima generazione per catturare paesaggi mozzafiato, seguire soggetti in movimento e creare sequenze cinematiche impossibili da ottenere altrimenti. La post-produzione include color grading cinematografico, sound design e motion graphics.
             </p>
             <p>
-              <i class="fa-solid fa-arrow-left"></i> Torna alla Homepage
+              <Link to="/" className="backToHome">
+                <i className="fa-solid fa-arrow-left"></i> Torna alla Homepage
+              </Link>
             </p>
           </div>
-          <div className="labelPresentazione FotLabel">
+          <div className="labelPresentazione VideoLabel">
             <div>
-              <p>Photoshop</p>
+              <p>Drone FPV</p>
             </div>
             <div>
-              <p>Camera Raw</p>
+              <p>4K Footage</p>
             </div>
             <div>
-              <p>Macro</p>
+              <p>Color Grading</p>
             </div>
             <div>
-              <p>Astratto</p>
+              <p>Premiere Pro</p>
             </div>
             <div>
-              <p>Street Photo</p>
+              <p>DaVinci Resolve</p>
             </div>
             <div>
-              <p>Landscapes</p>
+              <p>Storytelling</p>
             </div>
             <div>
-              <p>Ritratto</p>
+              <p>Aerial Mapping</p>
             </div>
             <div>
-              <p>Studio</p>
+              <p>Motion Graphics</p>
             </div>
             <div>
-              <p>Ligthroom</p>
+              <p>Sound Design</p>
             </div>
           </div>
         </div>
       </section>
 
       <section>
-        <div className="sectionProcesso">
+        <div className="sectionProcesso sectionProcessoVideo">
           <h5>IL PROCESSO</h5>
           <h1>
             <strong>Come lavoro</strong>
           </h1>
-          <div className="comeLavoroLabelFot">
+          <div className="comeLavoroLabelVideo">
             <div>
               <span>01</span>
-              <h5>Briefing Creativo</h5>
+              <h5>Pre-Produzione</h5>
               <p>
-                Discussione del concept, mood board e pianificazione delle
-                location e delle condizioni di luce ideali.
+    Storyboard, scouting delle location, pianificazione del volo e verifica delle autorizzazioni aeree necessarie.
               </p>
             </div>
             <div>
               <span>02</span>
-              <h5>Shooting</h5>
+              <h5>Riprese</h5>
               <p>
-                Sessione fotografica con attenzione alla composizione,
-                illuminazione e direzione artistica del soggetto.
+            Cattura delle sequenze con movimenti fluidi, angolazioni cinematiche e gestione della luce naturale.
               </p>
             </div>
             <div>
               <span>03</span>
-              <h5>Selezione & Editing</h5>
+              <h5>Post-Produzione</h5>
               <p>
-                Cura degli scatti migliori, color grading professionale e
-                ritocco avanzato mantenendo naturalezza.
+    Montaggio narrativo, color grading professionale, sound design e integrazione di grafiche animate.
               </p>
             </div>
             <div>
               <span>04</span>
-              <h5>Consegna</h5>
+              <h5>Export & Distribuzione</h5>
               <p>
-                File in alta risoluzione ottimizzati per stampa e web, con
-                formati adatti a ogni utilizzo finale.
+       Rendering in formati ottimizzati per cinema, social media, broadcast e piattaforme web.
               </p>
             </div>
           </div>
@@ -108,7 +101,7 @@ export default function VideoDrone() {
       </section>
 
       <section>
-        <div className="contenitoreContattami">
+        <div className="contenitoreContattami contattamiVideo">
           <h2>Interessato a collaborare?</h2>
           <p>
             Ogni progetto inizia con una conversazione. Raccontami la tua idea e
