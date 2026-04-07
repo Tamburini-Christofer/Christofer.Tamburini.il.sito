@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
+import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
 
 export default function WebDeveloper() {
   return (
@@ -12,6 +13,7 @@ export default function WebDeveloper() {
             <strong>WebDelopment</strong>
           </h1>
         </div>
+        <HeroPageSwitchArrows nextRoute="/fotografia" />
         <HeroNextArrow />
       </div>
 

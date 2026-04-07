@@ -6,6 +6,10 @@
     list-style-type: none;
 }
 
+body {
+    background-color: var(--sezioneUno);
+}
+
 i:hover{
     cursor: pointer;
 }
@@ -42,6 +46,39 @@ i:hover{
 
 .backToHome:hover {
     color: var(--primaryGrey);
+}
+
+.routeSlideFromRight {
+    animation: routeSlideFromRight 440ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.routeSlideFromLeft {
+    animation: routeSlideFromLeft 440ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes routeSlideFromRight {
+    from {
+        transform: translateX(56px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes routeSlideFromLeft {
+    from {
+        transform: translateX(-56px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .routeSlideFromRight,
+    .routeSlideFromLeft {
+        animation: none;
+    }
 }
 
 .backToTopArrow {

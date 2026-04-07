@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
+import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
 
 export default function VideoDrone() {
   return (
@@ -12,6 +13,7 @@ export default function VideoDrone() {
             <strong>Video & Drone</strong>
           </h1>
         </div>
+        <HeroPageSwitchArrows prevRoute="/fotografia" nextRoute="/stampa3D" />
         <HeroNextArrow />
       </div>
 

@@ -33,12 +33,6 @@
     padding: 5px 0;
 }
 
-.sectionProcesso {
-    background-color: var(--sezioneUno);
-    border-bottom: 1px solid var(--primaryGrey);
-    padding: 210px 200px;
-}
-
 .comeLavoroLabelFot{
     display: flex;
     justify-content: space-between;

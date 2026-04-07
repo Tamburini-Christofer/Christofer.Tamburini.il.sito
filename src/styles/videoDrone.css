@@ -33,14 +33,6 @@
 	padding: 5px 0;
 }
 
-.sectionProcesso {
-	height: 100%;
-	padding: 100px;
-	background-color: var(--sezioneUno);
-	border-bottom: 1px solid var(--primaryGrey);
-	padding: 210px 200px;
-}
-
 .comeLavoroLabelVideo {
 	display: flex;
 	justify-content: space-between;

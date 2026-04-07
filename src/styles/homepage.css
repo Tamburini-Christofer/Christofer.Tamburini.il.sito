@@ -1,13 +1,12 @@
 .contenitoreHomepage {
     background-color: var(--sezioneUno);
-    border-bottom: 2px 0 2px 0  solid var(--primaryGrey);
     background-image: url("/public/Sfondi/Homepage.jpg");
     background-size: cover;
     background-position-y: 100%;
     padding: 286px 100px 200px 100px;
-    border-bottom: 1px solid var(--primaryGrey);
     position: relative;
     overflow: hidden;
+    height: 100vh;
 }
 
 .contenitoreHomepage::before {
@@ -104,13 +103,54 @@ h5{
     border-color: rgba(239, 236, 231, 0.75);
 }
 
+.heroPageSwitchArrows {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.heroSideArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(239, 236, 231, 0.45);
+    background-color: rgba(0, 0, 0, 0.28);
+    color: var(--primaryWhite);
+    font-size: 30px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 250ms ease, background-color 250ms ease, border-color 250ms ease;
+}
+
+.heroSideArrowLeft {
+    left: 40px;
+}
+
+.heroSideArrowRight {
+    right: 40px;
+}
+
+.heroSideArrow:hover {
+    transform: translateY(-50%) scale(1.08);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(239, 236, 231, 0.75);
+}
+
 .contenitoreSezioneCompetenze {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     background-color: var(--sezioneUno);
     padding: 100px;
-    border-bottom: 1px solid var(--primaryGrey);
     
 }
 
@@ -168,12 +208,19 @@ h5{
 .contenitoreSezionePresentazione {
     display: flex;
     background-color: var(--sezioneDue);
-    padding: 120px 100px;
-    border-bottom: 1px solid var(--primaryGrey);
+    padding: 200px 100px;
+    height: 90vh;
 }
 
 .contenitoreSezionePresentazione div {
     width: 50%;
+}
+
+.sectionProcesso {
+    height: 100vh;
+    background-color: var(--sezioneUno);
+    padding: 210px 200px;
+    border: 0;
 }
 
 
@@ -209,8 +256,8 @@ h5{
 
 .contenitoreServizi{
     background-color: var(--sezioneUno);
-    padding: 50px 100px;
-     border-bottom: 1px solid var(--primaryGrey);
+    padding: 100px 100px;
+    height: 100vh;
 }
 
 .servizi{
@@ -268,9 +315,9 @@ h5{
 
 .contenitoreContattami {
     background-color: var(--sezioneDue);
-    padding: 210px 200px;
+    padding: 300px 200px;
     text-align: center;
-     border-bottom: 1px solid var(--primaryGrey);
+    height: 100vh;
 }
 
 .contenitoreContattami p {

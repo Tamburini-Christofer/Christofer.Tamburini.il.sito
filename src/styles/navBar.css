@@ -11,7 +11,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 0 100px;
-    border-bottom: 2px solid var(--primaryGrey) ;
+    border-bottom: 1px solid var(--primaryGrey) ;
     position: fixed;
     top: 0;
     left: 0;

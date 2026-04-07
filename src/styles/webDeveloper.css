@@ -23,8 +23,8 @@
 }
 
 .WebPre {
-    height: 100%;
-    padding: 200px 200px;
+    height: 100vh;
+    padding: 300px 200px 400px 200px;
 }
 
 .WebLabel {
@@ -44,14 +44,6 @@
 .WebLabel div {
     background-color: var(--SoftwebDeveloper);
     padding: 5px 0;
-}
-
-.sectionProcesso {
-    height: 100%;
-    padding: 100px;
-    background-color: var(--sezioneUno);
-    border-bottom: 1px solid var(--primaryGrey);
-    padding: 210px 200px;
 }
 
 .comeLavoroLabel{

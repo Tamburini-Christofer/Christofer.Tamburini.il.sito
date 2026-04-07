@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
+import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
 
 export default function Stampa3D() {
     return (
@@ -12,6 +13,7 @@ export default function Stampa3D() {
                         <strong>Stampa 3D</strong>
                     </h1>
                 </div>
+                <HeroPageSwitchArrows prevRoute="/video-droni" />
                 <HeroNextArrow />
             </div>
 
