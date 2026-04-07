@@ -39,9 +39,10 @@
     margin-right: auto;
 }
 
-a {
+#contenitoreNavBar a {
     text-decoration: none;
     font-size: 16px;
-    color: var(--primaryWhite)
+    color: var(--primaryWhite);
+    transition: color 200ms ease;
 }
 

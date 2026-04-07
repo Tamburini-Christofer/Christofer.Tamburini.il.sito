@@ -29,6 +29,12 @@
     display: flex;
 }
 
+:where(#footerContenitore) a,
+:where(#footerContenitore) a:visited {
+    color: var(--primaryGrey);
+    text-decoration: none;
+}
+
 .footerEmailLink {
     color: inherit;
     font-weight: 600;

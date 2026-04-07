@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     margin: 50px 0 0 0;
-    gap: px;
+    gap: 100px;
 }
 
 .comeLavoroLabelFot span{

@@ -5,24 +5,48 @@
     color: var(--primaryWhite);
 }
 
+#contenitoreNavBar .hoverHome:hover {
+    color: var(--primaryWhite);
+}
+
 .hoverWeb:hover,
 .hoverWeb a:hover {
     color: var(--webDeveloper) ;
 }
+#contenitoreNavBar .hoverWeb:hover {
+    color: var(--webDeveloper);
+}
+
 .hoverFot:hover,
 .hoverFot a:hover {
     color: var(--fotografia) ;
 }
+#contenitoreNavBar .hoverFot:hover {
+    color: var(--fotografia);
+}
+
 .hoverVid:hover,
 .hoverVid a:hover {
     color: var(--videoDrone) ;
 }
+#contenitoreNavBar .hoverVid:hover {
+    color: var(--videoDrone);
+}
+
 .hoverSta:hover,
 .hoverSta a:hover {
     color: var(--stampa3D) ;
 }
+#contenitoreNavBar .hoverSta:hover {
+    color: var(--stampa3D);
+}
 
 .activeWeb {
+    color: var(--webDeveloper);
+    font-weight: 600;
+}
+
+#contenitoreNavBar .activeWeb {
     color: var(--webDeveloper);
     font-weight: 600;
 }
@@ -32,7 +56,17 @@
     font-weight: 600;
 }
 
+#contenitoreNavBar .activeFot {
+    color: var(--fotografia);
+    font-weight: 600;
+}
+
 .activeVid {
+    color: var(--videoDrone);
+    font-weight: 600;
+}
+
+#contenitoreNavBar .activeVid {
     color: var(--videoDrone);
     font-weight: 600;
 }
@@ -42,7 +76,17 @@
     font-weight: 600;
 }
 
+#contenitoreNavBar .activeSta {
+    color: var(--stampa3D);
+    font-weight: 600;
+}
+
 .activeHome {
+    color: var(--primaryWhite);
+    font-weight: 600;
+}
+
+#contenitoreNavBar .activeHome {
     color: var(--primaryWhite);
     font-weight: 600;
 }

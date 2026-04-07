@@ -38,10 +38,6 @@ export default function NavBar() {
   return (
     <>
       <div id="contenitoreNavBar">
-        <img
-          src="/public/Sfondi/chris_watermark_bianco.png"
-          alt="Logo di Christofer Tamburini"
-        />
         <div className="navMenuWrapper">
           <ul className="contenitoreMenu">
             {navBarMenu.map((link, index) => (

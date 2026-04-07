@@ -35,9 +35,13 @@
 
 .comeLavoroLabelStampa {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	margin: 50px 0 0 0;
-	gap: px;
+	gap: 100px;
+}
+
+.comeLavoroLabelStampa > div {
+	flex: 1;
 }
 
 .comeLavoroLabelStampa span {
