@@ -53,6 +53,27 @@ const fotografiaSkills = [
   },
 ];
 
+const fotografiaHighlights = [
+  {
+    title: "Ritratto in Luce Naturale",
+    category: "Portrait",
+    description: "Sessione ritratto con gestione luce morbida e palette cromatica cinematica.",
+    image: "https://picsum.photos/seed/fotografia-highlight-01/900/600",
+  },
+  {
+    title: "Street Frame Urbano",
+    category: "Street",
+    description: "Scatto spontaneo con composizione a livelli e timing narrativo del momento.",
+    image: "https://picsum.photos/seed/fotografia-highlight-02/900/600",
+  },
+  {
+    title: "Macro Texture",
+    category: "Macro",
+    description: "Dettaglio ravvicinato ad alto contrasto per esaltare materia e profondita.",
+    image: "https://picsum.photos/seed/fotografia-highlight-03/900/600",
+  },
+];
+
 export default function Fotrografia() {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
@@ -179,6 +200,28 @@ export default function Fotrografia() {
                 formati adatti a ogni utilizzo finale.
               </p>
             </div>
+          </div>
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
+        <ScrollRevealBlock
+          className="sectionProcesso sectionProgettiFot"
+          variant="right"
+        >
+          <h5>SCATTI IN EVIDENZA</h5>
+          <h1>
+            <strong>Galleria selezionata</strong>
+          </h1>
+          <div className="grigliaProgettiFot">
+            {fotografiaHighlights.map((project) => (
+              <article key={project.title}>
+                <img src={project.image} alt={`Anteprima scatto ${project.title}`} loading="lazy" />
+                <span>{project.category}</span>
+                <h5>{project.title}</h5>
+                <p>{project.description}</p>
+              </article>
+            ))}
           </div>
         </ScrollRevealBlock>
       </section>

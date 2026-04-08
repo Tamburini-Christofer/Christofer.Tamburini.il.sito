@@ -126,6 +126,67 @@
     color: var(--webDeveloper);
 }
 
+.sectionProgettiWeb h1 strong {
+    color: var(--webDeveloper);
+    font-size: 40px;
+}
+
+.sectionProgettiWeb {
+    height: auto;
+    min-height: 100vh;
+}
+
+.grigliaProgettiWeb {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.grigliaProgettiWeb article {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 18px 16px;
+    backdrop-filter: blur(2px);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grigliaProgettiWeb article:hover {
+    transform: translateY(-3px);
+    border-color: var(--webDeveloper);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.grigliaProgettiWeb img {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    height: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.grigliaProgettiWeb span {
+    color: var(--SoftwebDeveloper);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.grigliaProgettiWeb h5 {
+    margin: 10px 0 7px;
+    font-size: 20px;
+    color: var(--primaryWhite);
+}
+
+.grigliaProgettiWeb p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
 .sectionCertificazioniWeb h1 strong {
     color: var(--webDeveloper);
     font-size: 40px;
@@ -136,11 +197,105 @@
     min-height: 100vh;
 }
 
-.comeLavoroLabelCertificazioniWeb {
+.certificazioniLayoutWeb {
     display: grid;
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.certificazioniTitoloWeb h1 {
+    margin: 8px 0 0;
+}
+
+.certificazioniCaroselloWrapWeb {
+    width: 100%;
+}
+
+.comeLavoroLabelCertificazioniWeb {
+    display: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     margin-top: 34px;
+}
+
+.caroselloCertificazioniWeb {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    gap: 14px;
+    align-items: center;
+    margin-top: 34px;
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caroselloNavBtnWeb {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--primaryWhite);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.caroselloNavBtnWeb:hover {
+    transform: translateY(-2px);
+    border-color: var(--webDeveloper);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.caroselloCardCertWeb {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 16px 14px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.caroselloCardCertWeb:hover {
+    border-color: var(--webDeveloper);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.caroselloCardCertWeb img {
+    width: 82%;
+    aspect-ratio: 16 / 11;
+    height: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.caroselloCardCertWeb span {
+    display: block;
+    color: var(--SoftwebDeveloper);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 8px;
+}
+
+.caroselloCardCertWeb h5 {
+    margin: 10px 0 7px;
+    font-size: 20px;
+    color: var(--primaryWhite);
+}
+
+.caroselloCardCertWeb p {
+    margin: 0 auto;
+    max-width: 90%;
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .comeLavoroLabelCertificazioniWeb article {
@@ -193,11 +348,13 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--SoftwebDeveloper);
+    text-align: center;
 }
 
 .certificazioneSkillsChipsWeb {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -216,16 +373,39 @@
 }
 
 @media (max-width: 1024px) {
+    .grigliaProgettiWeb,
     .comeLavoroLabelCertificazioniWeb {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .certificazioniLayoutWeb {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .caroselloCertificazioniWeb {
+        max-width: 790px;
+        margin-top: 16px;
     }
 }
 
 @media (max-width: 700px) {
+    .grigliaProgettiWeb,
     .comeLavoroLabelCertificazioniWeb {
         grid-template-columns: 1fr;
     }
 
+    .caroselloCertificazioniWeb {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 10px;
+    }
+
+    .caroselloNavBtnWeb {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sectionProgettiWeb,
     .sectionCertificazioniWeb {
         min-height: auto;
     }

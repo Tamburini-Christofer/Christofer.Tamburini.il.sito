@@ -77,8 +77,47 @@ const stampaCertifications = [
     },
 ];
 
+const stampaHighlightedProjects = [
+    {
+        title: "Prototipo Custodia Tecnica",
+        category: "Prototipazione",
+        description:
+            "Sviluppo rapido di una custodia funzionale con test iterativi su tolleranze e incastri.",
+        image: "https://picsum.photos/seed/stampa-project-01/900/600",
+    },
+    {
+        title: "Complemento Arredo Parametrico",
+        category: "Design 3D",
+        description:
+            "Oggetto decorativo progettato con workflow parametrico e finitura ottimizzata per stampa.",
+        image: "https://picsum.photos/seed/stampa-project-02/900/600",
+    },
+    {
+        title: "Mockup Prodotto per Presentazione",
+        category: "Rendering",
+        description:
+            "Visualizzazione fotorealistica e modello fisico per validazione estetica prima della produzione.",
+        image: "https://picsum.photos/seed/stampa-project-03/900/600",
+    },
+];
+
 export default function Stampa3D() {
     const [selectedSkill, setSelectedSkill] = useState(null);
+    const [activeCertificationIndex, setActiveCertificationIndex] = useState(0);
+
+    const activeCertification = stampaCertifications[activeCertificationIndex];
+
+    const showPrevCertification = () => {
+        setActiveCertificationIndex((prev) =>
+            prev === 0 ? stampaCertifications.length - 1 : prev - 1,
+        );
+    };
+
+    const showNextCertification = () => {
+        setActiveCertificationIndex((prev) =>
+            prev === stampaCertifications.length - 1 ? 0 : prev + 1,
+        );
+    };
 
     return (
         <>
@@ -208,34 +247,105 @@ export default function Stampa3D() {
 
             <section>
                 <ScrollRevealBlock
+                    className="sectionProcesso sectionProgettiStampa"
+                    variant="right"
+                >
+                    <h5>PROGETTI IN EVIDENZA</h5>
+                    <h1>
+                        <strong>Selezione lavori</strong>
+                    </h1>
+                    <div className="grigliaProgettiStampa">
+                        {stampaHighlightedProjects.map((project) => (
+                            <article key={project.title}>
+                                <img
+                                    src={project.image}
+                                    alt={`Anteprima progetto ${project.title}`}
+                                    loading="lazy"
+                                />
+                                <span>{project.category}</span>
+                                <h5>{project.title}</h5>
+                                <p>{project.description}</p>
+                            </article>
+                        ))}
+                    </div>
+                </ScrollRevealBlock>
+            </section>
+
+            <section>
+                <ScrollRevealBlock
                     className="sectionProcesso sectionCertificazioniStampa"
                     variant="right"
                 >
-                    <h5>CERTIFICAZIONI</h5>
-                    <h1>
-                        <strong>Percorso formativo</strong>
-                    </h1>
-                    <div className="comeLavoroLabelCertificazioniStampa">
-                        {stampaCertifications.map((certification) => (
-                            <article key={certification.title}>
-                                <img
-                                    src={certification.image}
-                                    alt={`Anteprima certificazione ${certification.title}`}
-                                    loading="lazy"
-                                />
-                                <span>{certification.year}</span>
-                                <h5>{certification.title}</h5>
-                                <p>{certification.issuer}</p>
-                                <h6 className="certificazioneSkillsLabel">
-                                    Competenze acquisite
-                                </h6>
-                                <div className="certificazioneSkillsChips">
-                                    {certification.acquiredSkills.map((skill) => (
-                                        <span key={skill}>{skill}</span>
-                                    ))}
-                                </div>
-                            </article>
-                        ))}
+                    <div className="certificazioniLayoutStampa">
+                        <div className="certificazioniTitoloStampa">
+                            <h5>CERTIFICAZIONI</h5>
+                            <h1>
+                                <strong>Percorso formativo</strong>
+                            </h1>
+                        </div>
+
+                        <div className="certificazioniCaroselloWrapStampa">
+                            <div
+                                className="caroselloCertificazioniStampa"
+                                aria-label="Carosello certificazioni stampa"
+                            >
+                                <button
+                                    type="button"
+                                    className="caroselloNavBtnStampa"
+                                    aria-label="Certificazione precedente"
+                                    onClick={showPrevCertification}
+                                >
+                                    <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+
+                                <article
+                                    key={`${activeCertification.title}-${activeCertificationIndex}`}
+                                    className="caroselloCardCertStampa"
+                                >
+                                    <img
+                                        src={activeCertification.image}
+                                        alt={`Anteprima certificazione ${activeCertification.title}`}
+                                        loading="lazy"
+                                    />
+                                    <span>{activeCertification.year}</span>
+                                    <h5>{activeCertification.title}</h5>
+                                    <p>{activeCertification.issuer}</p>
+                                    <h6 className="certificazioneSkillsLabel">
+                                        Competenze acquisite
+                                    </h6>
+                                    <div className="certificazioneSkillsChips">
+                                        {activeCertification.acquiredSkills.map((skill) => (
+                                            <span key={skill}>{skill}</span>
+                                        ))}
+                                    </div>
+                                </article>
+
+                                <button
+                                    type="button"
+                                    className="caroselloNavBtnStampa"
+                                    aria-label="Certificazione successiva"
+                                    onClick={showNextCertification}
+                                >
+                                    <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+                            <div
+                                className="caroselloDotsStampa"
+                                aria-label="Indicatori certificazioni"
+                            >
+                                {stampaCertifications.map((certification, index) => (
+                                    <button
+                                        key={`${certification.title}-${index}`}
+                                        type="button"
+                                        className={index === activeCertificationIndex ? "isActive" : ""}
+                                        onClick={() => setActiveCertificationIndex(index)}
+                                        aria-label={`Vai alla certificazione ${index + 1}`}
+                                        aria-pressed={index === activeCertificationIndex}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </ScrollRevealBlock>
             </section>

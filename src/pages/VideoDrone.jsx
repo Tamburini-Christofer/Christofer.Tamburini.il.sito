@@ -72,6 +72,21 @@ const videoCertifications = [
 
 export default function VideoDrone() {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [activeCertificationIndex, setActiveCertificationIndex] = useState(0);
+
+  const activeCertification = videoCertifications[activeCertificationIndex];
+
+  const showPrevCertification = () => {
+    setActiveCertificationIndex((prev) =>
+      prev === 0 ? videoCertifications.length - 1 : prev - 1,
+    );
+  };
+
+  const showNextCertification = () => {
+    setActiveCertificationIndex((prev) =>
+      prev === videoCertifications.length - 1 ? 0 : prev + 1,
+    );
+  };
 
   return (
     <>
@@ -203,29 +218,71 @@ export default function VideoDrone() {
           className="sectionProcesso sectionCertificazioniVideo"
           variant="right"
         >
-          <h5>CERTIFICAZIONI</h5>
-          <h1>
-            <strong>Percorso formativo</strong>
-          </h1>
-          <div className="comeLavoroLabelCertificazioniVideo">
-            {videoCertifications.map((certification) => (
-              <article key={certification.title}>
-                <img
-                  src={certification.image}
-                  alt={`Anteprima certificazione ${certification.title}`}
-                  loading="lazy"
-                />
-                <span>{certification.year}</span>
-                <h5>{certification.title}</h5>
-                <p>{certification.issuer}</p>
-                <h6 className="certificazioneSkillsLabelVideo">Competenze acquisite</h6>
-                <div className="certificazioneSkillsChipsVideo">
-                  {certification.acquiredSkills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <div className="certificazioniLayoutVideo">
+            <div className="certificazioniTitoloVideo">
+              <h5>CERTIFICAZIONI</h5>
+              <h1>
+                <strong>Percorso formativo</strong>
+              </h1>
+            </div>
+
+            <div className="certificazioniCaroselloWrapVideo">
+              <div
+                className="caroselloCertificazioniVideo"
+                aria-label="Carosello certificazioni video"
+              >
+                <button
+                  type="button"
+                  className="caroselloNavBtnVideo"
+                  aria-label="Certificazione precedente"
+                  onClick={showPrevCertification}
+                >
+                  <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <article
+                  key={`${activeCertification.title}-${activeCertificationIndex}`}
+                  className="caroselloCardCertVideo"
+                >
+                  <img
+                    src={activeCertification.image}
+                    alt={`Anteprima certificazione ${activeCertification.title}`}
+                    loading="lazy"
+                  />
+                  <span>{activeCertification.year}</span>
+                  <h5>{activeCertification.title}</h5>
+                  <p>{activeCertification.issuer}</p>
+                  <h6 className="certificazioneSkillsLabelVideo">Competenze acquisite</h6>
+                  <div className="certificazioneSkillsChipsVideo">
+                    {activeCertification.acquiredSkills.map((skill) => (
+                      <span key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </article>
+
+                <button
+                  type="button"
+                  className="caroselloNavBtnVideo"
+                  aria-label="Certificazione successiva"
+                  onClick={showNextCertification}
+                >
+                  <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div className="caroselloDotsVideo" aria-label="Indicatori certificazioni">
+                {videoCertifications.map((certification, index) => (
+                  <button
+                    key={`${certification.title}-${index}`}
+                    type="button"
+                    className={index === activeCertificationIndex ? "isActive" : ""}
+                    onClick={() => setActiveCertificationIndex(index)}
+                    aria-label={`Vai alla certificazione ${index + 1}`}
+                    aria-pressed={index === activeCertificationIndex}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </ScrollRevealBlock>
       </section>

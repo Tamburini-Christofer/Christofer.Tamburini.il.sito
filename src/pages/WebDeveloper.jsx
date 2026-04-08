@@ -112,8 +112,56 @@ const webCertifications = [
   },
 ];
 
+const webHighlightedProjects = [
+  {
+    title: "Dashboard Gestionale",
+    category: "Web App",
+    description: "Pannello completo per gestione contenuti, utenti e report in tempo reale.",
+    image: "https://picsum.photos/seed/web-project-01/900/600",
+  },
+  {
+    title: "Landing Conversione",
+    category: "UI/UX",
+    description: "Pagina ottimizzata per lead generation con copy strategico e CTA modulari.",
+    image: "https://picsum.photos/seed/web-project-02/900/600",
+  },
+  {
+    title: "E-commerce Component-based",
+    category: "Frontend",
+    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
+    image: "https://picsum.photos/seed/web-project-03/900/600",
+  },
+  {
+    title: "E-commerce Component-based",
+    category: "Frontend",
+    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
+    image: "https://picsum.photos/seed/web-project-03/900/600",
+  },
+  {
+    title: "E-commerce Component-based",
+    category: "Frontend",
+    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
+    image: "https://picsum.photos/seed/web-project-03/900/600",
+  },
+];
+
 export default function WebDeveloper() {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [activeCertificationIndex, setActiveCertificationIndex] = useState(0);
+
+  const activeCertification = webCertifications[activeCertificationIndex];
+
+  const showPrevCertification = () => {
+    setActiveCertificationIndex((prev) =>
+      prev === 0 ? webCertifications.length - 1 : prev - 1,
+    );
+  };
+
+  const showNextCertification = () => {
+    setActiveCertificationIndex((prev) =>
+      prev === webCertifications.length - 1 ? 0 : prev + 1,
+    );
+  };
 
   return (
     <>
@@ -244,32 +292,100 @@ export default function WebDeveloper() {
 
       <section>
         <ScrollRevealBlock
+          className="sectionProcesso sectionProgettiWeb"
+          variant="right"
+        >
+          <h5>PROGETTI IN EVIDENZA</h5>
+          <h1>
+            <strong>Selezione lavori</strong>
+          </h1>
+          <div className="grigliaProgettiWeb">
+            {webHighlightedProjects.map((project, index) => (
+              <article key={`${project.title}-${index}`}>
+                <img
+                  src={project.image}
+                  alt={`Anteprima progetto ${project.title}`}
+                  loading="lazy"
+                />
+                <span>{project.category}</span>
+                <h5>{project.title}</h5>
+                <p>{project.description}</p>
+              </article>
+            ))}
+          </div>
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
+        <ScrollRevealBlock
           className="sectionProcesso sectionCertificazioniWeb"
           variant="right"
         >
-          <h5>CERTIFICAZIONI</h5>
-          <h1>
-            <strong>Percorso formativo</strong>
-          </h1>
-          <div className="comeLavoroLabelCertificazioniWeb">
-            {webCertifications.map((certification) => (
-              <article key={certification.title}>
-                <img
-                  src={certification.image}
-                  alt={`Anteprima certificazione ${certification.title}`}
-                  loading="lazy"
-                />
-                <span>{certification.year}</span>
-                <h5>{certification.title}</h5>
-                <p>{certification.issuer}</p>
-                <h6 className="certificazioneSkillsLabelWeb">Competenze acquisite</h6>
-                <div className="certificazioneSkillsChipsWeb">
-                  {certification.acquiredSkills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <div className="certificazioniLayoutWeb">
+            <div className="certificazioniTitoloWeb">
+              <h5>CERTIFICAZIONI</h5>
+              <h1>
+                <strong>Percorso formativo</strong>
+              </h1>
+            </div>
+
+            <div className="certificazioniCaroselloWrapWeb">
+              <div
+                className="caroselloCertificazioniWeb"
+                aria-label="Carosello certificazioni web"
+              >
+                <button
+                  type="button"
+                  className="caroselloNavBtnWeb"
+                  aria-label="Certificazione precedente"
+                  onClick={showPrevCertification}
+                >
+                  <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <article
+                  key={`${activeCertification.title}-${activeCertificationIndex}`}
+                  className="caroselloCardCertWeb"
+                >
+                  <img
+                    src={activeCertification.image}
+                    alt={`Anteprima certificazione ${activeCertification.title}`}
+                    loading="lazy"
+                  />
+                  <span>{activeCertification.year}</span>
+                  <h5>{activeCertification.title}</h5>
+                  <p>{activeCertification.issuer}</p>
+                  <h6 className="certificazioneSkillsLabelWeb">Competenze acquisite</h6>
+                  <div className="certificazioneSkillsChipsWeb">
+                    {activeCertification.acquiredSkills.map((skill) => (
+                      <span key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </article>
+
+                <button
+                  type="button"
+                  className="caroselloNavBtnWeb"
+                  aria-label="Certificazione successiva"
+                  onClick={showNextCertification}
+                >
+                  <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div className="caroselloDotsWeb" aria-label="Indicatori certificazioni">
+                {webCertifications.map((certification, index) => (
+                  <button
+                    key={`${certification.title}-${index}`}
+                    type="button"
+                    className={index === activeCertificationIndex ? "isActive" : ""}
+                    onClick={() => setActiveCertificationIndex(index)}
+                    aria-label={`Vai alla certificazione ${index + 1}`}
+                    aria-pressed={index === activeCertificationIndex}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </ScrollRevealBlock>
       </section>

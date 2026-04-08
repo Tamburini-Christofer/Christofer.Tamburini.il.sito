@@ -117,11 +117,119 @@
 	min-height: 100vh;
 }
 
-.comeLavoroLabelCertificazioniVideo {
+.certificazioniLayoutVideo {
 	display: grid;
+	grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+	gap: 28px;
+	align-items: start;
+}
+
+.certificazioniTitoloVideo h1 {
+	margin: 8px 0 0;
+}
+
+.certificazioniCaroselloWrapVideo {
+	width: 100%;
+}
+
+.comeLavoroLabelCertificazioniVideo {
+	display: none;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 18px;
 	margin-top: 34px;
+}
+
+.caroselloCertificazioniVideo {
+	display: grid;
+	grid-template-columns: 52px minmax(0, 1fr) 52px;
+	gap: 14px;
+	align-items: center;
+	margin-top: 34px;
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.caroselloNavBtnVideo {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	background: rgba(255, 255, 255, 0.04);
+	color: var(--primaryWhite);
+	cursor: pointer;
+	transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.caroselloNavBtnVideo:hover {
+	transform: translateY(-2px);
+	border-color: var(--videoDrone);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.caroselloCardCertVideo {
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 14px;
+	padding: 18px 16px;
+	backdrop-filter: blur(2px);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.caroselloCardCertVideo:hover {
+	border-color: var(--videoDrone);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.caroselloCardCertVideo img {
+	width: 100%;
+	aspect-ratio: 16 / 11;
+	height: auto;
+	object-fit: contain;
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: 10px;
+	margin-bottom: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.caroselloCardCertVideo span {
+	color: var(--SoftvideoDrone);
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 1.15;
+}
+
+.caroselloCardCertVideo h5 {
+	margin: 10px 0 7px;
+	font-size: 20px;
+	color: var(--primaryWhite);
+}
+
+.caroselloCardCertVideo p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.caroselloDotsVideo {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 16px;
+}
+
+.caroselloDotsVideo button {
+	width: 10px;
+	height: 10px;
+	border-radius: 999px;
+	border: 0;
+	background: rgba(255, 255, 255, 0.28);
+	cursor: pointer;
+	transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.caroselloDotsVideo button.isActive {
+	background: var(--videoDrone);
+	transform: scale(1.1);
 }
 
 .comeLavoroLabelCertificazioniVideo article {
@@ -200,11 +308,31 @@
 	.comeLavoroLabelCertificazioniVideo {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
+	.certificazioniLayoutVideo {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+
+	.caroselloCertificazioniVideo {
+		max-width: 920px;
+		margin-top: 16px;
+	}
 }
 
 @media (max-width: 700px) {
 	.comeLavoroLabelCertificazioniVideo {
 		grid-template-columns: 1fr;
+	}
+
+	.caroselloCertificazioniVideo {
+		grid-template-columns: 40px minmax(0, 1fr) 40px;
+		gap: 10px;
+	}
+
+	.caroselloNavBtnVideo {
+		width: 40px;
+		height: 40px;
 	}
 
 	.sectionCertificazioniVideo {
