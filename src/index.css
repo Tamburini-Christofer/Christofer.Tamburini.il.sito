@@ -143,6 +143,42 @@ i:hover{
     transform: translate3d(0, 0, 0) scale(1);
 }
 
+.scrollRevealBlock.sectionProcesso [class^="comeLavoroLabel"] > div {
+    opacity: 0;
+    transform: translate3d(-48px, 0, 0);
+}
+
+.scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div {
+    animation: processItemFromLeft 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div:nth-child(4) {
+    animation-delay: 3s;
+}
+
+@keyframes processItemFromLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-48px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .presentationAnimated {
     animation: presentationPopIn 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -163,6 +199,13 @@ i:hover{
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .scrollRevealBlock.sectionProcesso [class^="comeLavoroLabel"] > div,
+    .scrollRevealBlock.sectionProcesso.isVisible [class^="comeLavoroLabel"] > div {
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 
     .presentationAnimated {

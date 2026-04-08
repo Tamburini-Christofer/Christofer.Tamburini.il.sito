@@ -2,6 +2,18 @@ import { useEffect, useState } from "react";
 
 const NAVBAR_OFFSET = 88;
 
+function getCenteredScrollTop(targetTop, targetHeight) {
+  const documentHeight = document.documentElement.scrollHeight;
+  const viewportHeight = window.innerHeight;
+  const availableHeight = viewportHeight - NAVBAR_OFFSET;
+  const centerOffset = Math.max((availableHeight - targetHeight) / 2, 0);
+
+  const centeredTop = targetTop - NAVBAR_OFFSET - centerOffset;
+  const maxScrollTop = Math.max(documentHeight - viewportHeight, 0);
+
+  return Math.min(Math.max(centeredTop, 0), maxScrollTop);
+}
+
 export default function HeroNextArrow() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -37,14 +49,14 @@ export default function HeroNextArrow() {
       if (!footer) return;
 
       window.scrollTo({
-        top: footer.offsetTop - NAVBAR_OFFSET,
+        top: getCenteredScrollTop(footer.offsetTop, footer.offsetHeight),
         behavior: "smooth",
       });
       return;
     }
 
     window.scrollTo({
-      top: nextSection.offsetTop - NAVBAR_OFFSET,
+      top: getCenteredScrollTop(nextSection.offsetTop, nextSection.offsetHeight),
       behavior: "smooth",
     });
   };

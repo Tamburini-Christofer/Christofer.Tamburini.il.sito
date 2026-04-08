@@ -6,6 +6,8 @@ export default function HeroPageSwitchArrows({ prevRoute, nextRoute }) {
   const handleSwitch = (route, slideDirection) => {
     if (!route) return;
 
+    window.scrollTo({ top: 0, behavior: "auto" });
+
     navigate(route, {
       state: { slideDirection },
     });
