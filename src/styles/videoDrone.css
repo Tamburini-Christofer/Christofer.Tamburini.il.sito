@@ -26,11 +26,62 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	padding: 0 20px 0 80px;
+	gap: 10px;
 }
 
-.VideoLabel div {
+.videoSkillTitle {
+	color: var(--videoDrone);
+	font-size: 36px;
+	margin: 0 0 20px 0;
+}
+
+.videoActionsRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 24px;
+}
+
+.resetVideoDialogBtn {
+	background-color: transparent;
+	color: var(--primaryWhite);
+	border: 0;
+	border-radius: 999px;
+	padding: 8px 16px;
+	font-family: inherit;
+	font-size: 16px;
+	cursor: pointer;
+	transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.resetVideoDialogBtn:hover {
+	filter: brightness(1.08);
+	transform: translateY(-1px);
+}
+
+.VideoLabel button {
 	background-color: var(--SoftvideoDrone);
+	border: 0;
+	border-radius: 24px;
 	padding: 5px 0;
+	cursor: pointer;
+	height: 100%;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.VideoLabel button span {
+	color: var(--primaryWhite);
+}
+
+.VideoLabel button:hover {
+	background-color: var(--videoDrone);
+	transform: translateY(-2px);
+}
+
+.VideoLabel button.isActive {
+	background-color: var(--videoDrone);
+	transform: translateY(-2px);
 }
 
 .comeLavoroLabelVideo {

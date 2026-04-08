@@ -26,11 +26,62 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	padding: 0 20px 0 80px;
+	gap: 10px;
 }
 
-.StampaLabel div {
+.stampaSkillTitle {
+	color: var(--stampa3D);
+	font-size: 36px;
+	margin: 0 0 20px 0;
+}
+
+.stampaActionsRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 24px;
+}
+
+.resetStampaDialogBtn {
+	background-color: transparent;
+	color: var(--primaryWhite);
+	border: 0;
+	border-radius: 999px;
+	padding: 8px 16px;
+	font-family: inherit;
+	font-size: 16px;
+	cursor: pointer;
+	transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.resetStampaDialogBtn:hover {
+	filter: brightness(1.08);
+	transform: translateY(-1px);
+}
+
+.StampaLabel button {
 	background-color: var(--Softstampa3D);
+	border: 0;
+	border-radius: 24px;
 	padding: 5px 0;
+	cursor: pointer;
+	height: 100%;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.StampaLabel button span {
+	color: var(--primaryWhite);
+}
+
+.StampaLabel button:hover {
+	background-color: var(--stampa3D);
+	transform: translateY(-2px);
+}
+
+.StampaLabel button.isActive {
+	background-color: var(--stampa3D);
+	transform: translateY(-2px);
 }
 
 .comeLavoroLabelStampa {

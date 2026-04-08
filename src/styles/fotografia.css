@@ -26,11 +26,62 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 20px 0 80px;
+    gap: 10px;
 }
 
-.FotLabel div {
+.fotSkillTitle {
+    color: var(--fotografia);
+    font-size: 36px;
+    margin: 0 0 20px 0;
+}
+
+.fotActionsRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.resetFotDialogBtn {
+    background-color: transparent;
+    color: var(--primaryWhite);
+    border: 0;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.resetFotDialogBtn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.FotLabel button {
     background-color: var(--Softfotografia);
+    border: 0;
+    border-radius: 24px;
     padding: 5px 0;
+    cursor: pointer;
+    height: 100%;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.FotLabel button span {
+    color: var(--primaryWhite);
+}
+
+.FotLabel button:hover {
+    background-color: var(--fotografia);
+    transform: translateY(-2px);
+}
+
+.FotLabel button.isActive {
+    background-color: var(--fotografia);
+    transform: translateY(-2px);
 }
 
 .comeLavoroLabelFot{

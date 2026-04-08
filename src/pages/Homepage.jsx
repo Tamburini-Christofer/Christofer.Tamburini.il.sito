@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
+import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 export default function Homepage() {
   return (
@@ -21,7 +22,7 @@ export default function Homepage() {
       </div>
 
       <section>
-        <div className="contenitoreSezioneCompetenze">
+        <ScrollRevealBlock className="contenitoreSezioneCompetenze" variant="up">
           <div>
             <img
               src="../../public/Sfondi/Sfondo Web Developer.jpg"
@@ -77,11 +78,11 @@ export default function Homepage() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollRevealBlock>
       </section>
 
       <section>
-        <div className="contenitoreSezionePresentazione">
+        <ScrollRevealBlock className="contenitoreSezionePresentazione" variant="up">
           <div>
             {" "}
             <h5>CHI SONO</h5>
@@ -111,11 +112,11 @@ export default function Homepage() {
               <p>PLINGUAGGI DI PROGRAMMAZIONE</p>
             </div>
           </div>
-        </div>
+        </ScrollRevealBlock>
       </section>
 
       <section>
-        <div className="contenitoreServizi">
+        <ScrollRevealBlock className="contenitoreServizi" variant="up">
           <div className="contenitoreTitoliServizi">
             <h5>COSA FACCIO</h5>
             <h2>Servizi & Competenze</h2>
@@ -171,15 +172,15 @@ export default function Homepage() {
             </div>
             </NavLink>
           </div>
-        </div>
+        </ScrollRevealBlock>
       </section>
 
       <section>
-        <div className="contenitoreContattami">
+        <ScrollRevealBlock className="contenitoreContattami" variant="up">
             <h2>Hai un progetto in mente?</h2>
             <p>Che si tratti di un sito web, un servizio fotografico, un video con drone o un prototipo 3D parliamone insieme.</p>
             <ContactEmailButton />
-        </div>
+        </ScrollRevealBlock>
       </section>
     </>
   );

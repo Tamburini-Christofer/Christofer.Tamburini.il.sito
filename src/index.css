@@ -115,3 +115,57 @@ i:hover{
     background-color: rgba(0, 0, 0, 0.5);
     border-color: rgba(239, 236, 231, 0.75);
 }
+
+.scrollRevealBlock {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scrollRevealBlock.variant-up {
+    transform: translate3d(0, 44px, 0);
+}
+
+.scrollRevealBlock.variant-left {
+    transform: translate3d(0, 44px, 0);
+}
+
+.scrollRevealBlock.variant-right {
+    transform: translate3d(0, 44px, 0);
+}
+
+.scrollRevealBlock.variant-zoom {
+    transform: translate3d(0, 44px, 0);
+}
+
+.scrollRevealBlock.isVisible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.presentationAnimated {
+    animation: presentationPopIn 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes presentationPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scrollRevealBlock {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .presentationAnimated {
+        animation: none;
+    }
+}

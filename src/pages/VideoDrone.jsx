@@ -1,9 +1,61 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
+import ScrollRevealBlock from "../components/ScrollRevealBlock";
+
+const videoSkills = [
+  {
+    label: "Drone FPV",
+    description:
+      "Riprese FPV immersive con traiettorie dinamiche per contenuti ad alto impatto visivo e forte coinvolgimento.",
+  },
+  {
+    label: "4K Footage",
+    description:
+      "Produzione in 4K per massima definizione, dettaglio e versatilita nei formati di distribuzione.",
+  },
+  {
+    label: "Color Grading",
+    description:
+      "Color grading cinematografico per uniformare le scene e rafforzare il tono emotivo del racconto.",
+  },
+  {
+    label: "Premiere Pro",
+    description:
+      "Montaggio video fluido in Adobe Premiere Pro con timeline ottimizzate per revisioni e consegne rapide.",
+  },
+  {
+    label: "DaVinci Resolve",
+    description:
+      "Workflow in DaVinci Resolve per color correction avanzata e finalizzazione professionale.",
+  },
+  {
+    label: "Storytelling",
+    description:
+      "Costruzione narrativa del video con ritmo, inquadrature e transizioni pensate per comunicare con chiarezza.",
+  },
+  {
+    label: "Aerial Mapping",
+    description:
+      "Acquisizione aerea per mappature e panoramiche ampie, utile per progetti territoriali e tecnici.",
+  },
+  {
+    label: "Motion Graphics",
+    description:
+      "Integrazione di grafiche animate per titolazioni, callout e contenuti informativi visivamente efficaci.",
+  },
+  {
+    label: "Sound Design",
+    description:
+      "Sound design e rifinitura audio per dare profondita, atmosfera e coerenza all'esperienza video.",
+  },
+];
 
 export default function VideoDrone() {
+  const [selectedSkill, setSelectedSkill] = useState(null);
+
   return (
     <>
       <div className="contenitoreHomepage contenitoreVideo">
@@ -18,56 +70,80 @@ export default function VideoDrone() {
       </div>
 
       <section>
-        <div className="contenitoreSezionePresentazione WebPre">
-          <div>
-            <p>
-              <span>
-                Produzione video professionale e riprese aeree con drone. Dalle riprese cinematiche al montaggio finale, creo contenuti visivi che catturano prospettive uniche e raccontano storie con impatto emotivo.
-              </span>{" "}
-              <br />
-              <br />
-              Le riprese aeree aggiungono una dimensione completamente nuova alla narrazione visiva. Utilizzo droni di ultima generazione per catturare paesaggi mozzafiato, seguire soggetti in movimento e creare sequenze cinematiche impossibili da ottenere altrimenti. La post-produzione include color grading cinematografico, sound design e motion graphics.
-            </p>
-            <p>
+        <ScrollRevealBlock
+          className="contenitoreSezionePresentazione WebPre"
+          variant="up"
+        >
+          <div className="descrPre">
+            <div
+              key={selectedSkill?.label ?? "default"}
+              className="presentationAnimated"
+            >
+              {selectedSkill && (
+                <h3 className="videoSkillTitle">{selectedSkill.label}</h3>
+              )}
+              <p>
+                {selectedSkill ? (
+                  <span>{selectedSkill.description}</span>
+                ) : (
+                  <>
+                    <span>
+                      Produzione video professionale e riprese aeree con drone.
+                      Dalle riprese cinematiche al montaggio finale, creo
+                      contenuti visivi che catturano prospettive uniche e
+                      raccontano storie con impatto emotivo.
+                    </span>{" "}
+                    <br />
+                    <br />
+                    Le riprese aeree aggiungono una dimensione completamente
+                    nuova alla narrazione visiva. Utilizzo droni di ultima
+                    generazione per catturare paesaggi mozzafiato, seguire
+                    soggetti in movimento e creare sequenze cinematiche
+                    impossibili da ottenere altrimenti. La post-produzione
+                    include color grading cinematografico, sound design e motion
+                    graphics.
+                  </>
+                )}
+              </p>
+            </div>
+            <div className="videoActionsRow">
               <Link to="/" className="backToHome">
                 <i className="fa-solid fa-arrow-left"></i> Torna alla Homepage
               </Link>
-            </p>
+              <button
+                type="button"
+                className="resetVideoDialogBtn"
+                onClick={() => setSelectedSkill(null)}
+              >
+                Ripristina testo
+              </button>
+            </div>
           </div>
           <div className="labelPresentazione VideoLabel">
-            <div>
-              <p>Drone FPV</p>
-            </div>
-            <div>
-              <p>4K Footage</p>
-            </div>
-            <div>
-              <p>Color Grading</p>
-            </div>
-            <div>
-              <p>Premiere Pro</p>
-            </div>
-            <div>
-              <p>DaVinci Resolve</p>
-            </div>
-            <div>
-              <p>Storytelling</p>
-            </div>
-            <div>
-              <p>Aerial Mapping</p>
-            </div>
-            <div>
-              <p>Motion Graphics</p>
-            </div>
-            <div>
-              <p>Sound Design</p>
-            </div>
+            {videoSkills.map((skill) => {
+              const isActive = selectedSkill?.label === skill.label;
+
+              return (
+                <button
+                  key={skill.label}
+                  type="button"
+                  className={isActive ? "isActive" : ""}
+                  onClick={() => setSelectedSkill(skill)}
+                  aria-pressed={isActive}
+                >
+                  <span>{skill.label}</span>
+                </button>
+              );
+            })}
           </div>
-        </div>
+        </ScrollRevealBlock>
       </section>
 
       <section>
-        <div className="sectionProcesso sectionProcessoVideo">
+        <ScrollRevealBlock
+          className="sectionProcesso sectionProcessoVideo"
+          variant="left"
+        >
           <h5>IL PROCESSO</h5>
           <h1>
             <strong>Come lavoro</strong>
@@ -102,18 +178,21 @@ export default function VideoDrone() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollRevealBlock>
       </section>
 
       <section>
-        <div className="contenitoreContattami contattamiVideo">
+        <ScrollRevealBlock
+          className="contenitoreContattami contattamiVideo"
+          variant="zoom"
+        >
           <h2>Interessato a collaborare?</h2>
           <p>
             Ogni progetto inizia con una conversazione. Raccontami la tua idea e
             troviamo insieme la soluzione migliore.
           </p>
           <ContactEmailButton />
-        </div>
+        </ScrollRevealBlock>
       </section>
     </>
   );
