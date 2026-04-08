@@ -31,7 +31,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 20px 0 80px;
-    gap: 10px;
+    gap: 8px;
 }
 
 .descrPre{
@@ -82,15 +82,17 @@
 .WebLabel button {
     background-color: var(--SoftwebDeveloper);
     border: 0;
-    border-radius: 24px;
-    padding: 5px 0;
+    border-radius: 20px;
+    padding: 4px 0;
     cursor: pointer;
     height: 100%;
+    min-height: 38px;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .WebLabel button span {
     color: var(--primaryWhite);
+    font-size: 14px;
 }
 
 .WebLabel button:hover {
@@ -122,4 +124,109 @@
 
 .contattamiWeb h2 {
     color: var(--webDeveloper);
+}
+
+.sectionCertificazioniWeb h1 strong {
+    color: var(--webDeveloper);
+    font-size: 40px;
+}
+
+.sectionCertificazioniWeb {
+    height: auto;
+    min-height: 100vh;
+}
+
+.comeLavoroLabelCertificazioniWeb {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.comeLavoroLabelCertificazioniWeb article {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 18px 16px;
+    backdrop-filter: blur(2px);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comeLavoroLabelCertificazioniWeb article:hover {
+    transform: translateY(-3px);
+    border-color: var(--webDeveloper);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.comeLavoroLabelCertificazioniWeb img {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    height: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.comeLavoroLabelCertificazioniWeb span {
+    color: var(--SoftwebDeveloper);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.comeLavoroLabelCertificazioniWeb h5 {
+    margin: 10px 0 7px;
+    font-size: 20px;
+    color: var(--primaryWhite);
+}
+
+.comeLavoroLabelCertificazioniWeb p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.certificazioneSkillsLabelWeb {
+    margin: 12px 0 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--SoftwebDeveloper);
+}
+
+.certificazioneSkillsChipsWeb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.certificazioneSkillsChipsWeb span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    color: var(--primaryWhite);
+}
+
+@media (max-width: 1024px) {
+    .comeLavoroLabelCertificazioniWeb {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .comeLavoroLabelCertificazioniWeb {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionCertificazioniWeb {
+        min-height: auto;
+    }
 }

@@ -9,47 +9,64 @@ const videoSkills = [
   {
     label: "Drone FPV",
     description:
-      "Riprese FPV immersive con traiettorie dinamiche per contenuti ad alto impatto visivo e forte coinvolgimento.",
+      "I droni FPV (First Person View) sono velivoli pilotati in prima persona tramite visori che trasmettono in tempo reale le immagini della telecamera di bordo, offrendo un'esperienza immersiva. A differenza dei droni tradizionali, non hanno stabilizzazione automatica, permettendo manovre acrobatiche, alte velocità e riprese dinamiche. ",
   },
   {
     label: "4K Footage",
     description:
-      "Produzione in 4K per massima definizione, dettaglio e versatilita nei formati di distribuzione.",
+      "Il 4K footage si riferisce a riprese video registrate con una risoluzione Ultra HD (solitamente 3840x2160 pixel), offrendo una nitidezza quattro volte superiore al Full HD (1920x1080 pixel). È lo standard attuale per alta qualità su TV e schermi, ideale per dettagli elevati, post-produzione flessibile (crop) e maggiore realismo. pixel), offrendo una nitidezza quattro volte superiore al Full HD È lo standard attuale per alta qualità su TV e schermi, ideale per dettagli elevati, post-produzione flessibile (crop) e maggiore realismo.",
   },
   {
     label: "Color Grading",
     description:
-      "Color grading cinematografico per uniformare le scene e rafforzare il tono emotivo del racconto.",
+      "Il color grading è il processo creativo e tecnico di post-produzione (video o fotografia) che manipola i colori per definire l'estetica, l'atmosfera o il \"mood\" di un'immagine. A differenza della color correction (che corregge e neutralizza i colori), il grading applica uno stile artistico specifico, come i toni caldi per un'atmosfera nostalgica o contrasti netti per scene drammatiche.",
   },
   {
     label: "Premiere Pro",
     description:
-      "Montaggio video fluido in Adobe Premiere Pro con timeline ottimizzate per revisioni e consegne rapide.",
+      "Adobe Premiere Pro è il software leader nel settore per il montaggio video professionale basato su timeline, parte della suite Adobe Creative Cloud. Permette di editare, tagliare, color-correre, manipolare l'audio e aggiungere effetti speciali a video, dai contenuti social ai film. È ampiamente utilizzato da creatori di contenuti e videomaker professionisti. ",
   },
   {
     label: "DaVinci Resolve",
     description:
-      "Workflow in DaVinci Resolve per color correction avanzata e finalizzazione professionale.",
+      "DaVinci Resolve è un software professionale di video editing e post-produzione tutto-in-uno, sviluppato da Blackmagic Design, standard nell'industria cinematografica. Combina in un'unica applicazione montaggio, correzione colore avanzata, effetti visivi (VFX), grafica in movimento (Motion Graphics) e post-produzione audio (Fairlight).",
   },
   {
     label: "Storytelling",
     description:
-      "Costruzione narrativa del video con ritmo, inquadrature e transizioni pensate per comunicare con chiarezza.",
+      "Lo storytelling è l'arte e la tecnica di raccontare storie (affabulazione) per comunicare messaggi in modo coinvolgente, emozionante e memorabile. Utilizza principi di retorica e narrazione per creare connessioni, fidelizzare il pubblico e trasmettere valori, venendo ampiamente utilizzato nel marketing, nella politica, nel branding e nella didattica.",
   },
   {
-    label: "Aerial Mapping",
+    label: "Esportazione social",
     description:
-      "Acquisizione aerea per mappature e panoramiche ampie, utile per progetti territoriali e tecnici.",
+      "L'esportazione per i social media è il processo di salvataggio e ottimizzazione di foto o video (di solito in formato MP4 H.264) con risoluzione, aspect ratio (es. 9:16 verticale) e compressione adatti alle piattaforme come Instagram, TikTok, Facebook e YouTube, garantendo una qualità ottimale e un caricamento rapido. ",
   },
   {
     label: "Motion Graphics",
     description:
-      "Integrazione di grafiche animate per titolazioni, callout e contenuti informativi visivamente efficaci.",
+      "Il \"Graphic video\", più comunemente noto come Motion Graphics (grafica in movimento), è una tecnica che combina grafica, illustrazioni, testi e suoni, mettendoli in movimento per comunicare messaggi in modo accattivante, dinamico e chiaro. È un'evoluzione digitale del design statico, ideale per video esplicativi, pubblicità, social media e sigle. ",
   },
   {
     label: "Sound Design",
     description:
-      "Sound design e rifinitura audio per dare profondita, atmosfera e coerenza all'esperienza video.",
+      "Il sound design (progettazione del suono) è l'arte e la tecnica di creare, manipolare e organizzare elementi sonori per produzioni audiovisive, musicali o interattive. È il processo che modella l'esperienza uditiva per emozionare, narrare o comunicare, definendo l'atmosfera di film, videogiochi, pubblicità e podcast.",
+  },
+];
+
+const videoCertifications = [
+  {
+    year: "2026",
+    title: "DaVinci Resolve per tutti con DaVinciResolve",
+    issuer: "Corso completo di DaVinci Resolve, dalla post-produzione al color grading cinematografico",
+    image: "../../public/Certificati/DaVinci Alberto.jpg",
+    acquiredSkills: ["DaVinci Resolve", "Montaggio Video", "Color Grading Cinematografico"],
+  },
+  {
+    year: "2026",
+    title: "Color Grading for Video",
+    issuer: "Corso avanzato di color grading per video, focalizzato su tecniche di correzione colore, look cinematografico e workflow professionale.",
+    image: "../../public/Certificati/DaVinci Resolve.jpg",
+    acquiredSkills: ["Color Grading", "Correzione Colore", "Look Cinematografico"],
   },
 ];
 
@@ -177,6 +194,38 @@ export default function VideoDrone() {
        Rendering in formati ottimizzati per cinema, social media, broadcast e piattaforme web.
               </p>
             </div>
+          </div>
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
+        <ScrollRevealBlock
+          className="sectionProcesso sectionCertificazioniVideo"
+          variant="right"
+        >
+          <h5>CERTIFICAZIONI</h5>
+          <h1>
+            <strong>Percorso formativo</strong>
+          </h1>
+          <div className="comeLavoroLabelCertificazioniVideo">
+            {videoCertifications.map((certification) => (
+              <article key={certification.title}>
+                <img
+                  src={certification.image}
+                  alt={`Anteprima certificazione ${certification.title}`}
+                  loading="lazy"
+                />
+                <span>{certification.year}</span>
+                <h5>{certification.title}</h5>
+                <p>{certification.issuer}</p>
+                <h6 className="certificazioneSkillsLabelVideo">Competenze acquisite</h6>
+                <div className="certificazioneSkillsChipsVideo">
+                  {certification.acquiredSkills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </ScrollRevealBlock>
       </section>

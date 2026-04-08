@@ -9,47 +9,47 @@ const fotografiaSkills = [
   {
     label: "Photoshop",
     description:
-      "Post-produzione avanzata con Photoshop: ritocco, gestione colore e compositing per immagini pulite e coerenti con il concept del progetto.",
+      "Adobe Photoshop è il software leader mondiale per l'elaborazione, il fotoritocco e la manipolazione di immagini digitali raster (pixel). Utilizzato da professionisti e creativi, permette di modificare foto, creare grafica complessa, disegnare e utilizzare l'intelligenza artificiale (IA) per modificare contenuti.",
   },
   {
     label: "Camera Raw",
     description:
-      "Sviluppo file RAW con controllo preciso di esposizione, contrasto e tonalita per ottenere una base tecnica solida prima del ritocco.",
+      "Adobe Camera Raw (ACR) è un potente plug-in incluso in Photoshop, Bridge e After Effects, fondamentale per i fotografi, che permette di aprire, sviluppare e modificare le immagini in formato RAW (il \"negativo digitale\" non compresso). Consente di regolare esposizione, colore, contrasto e dettagli in modo non distruttivo, sfruttando il massimo delle informazioni catturate dal sensore prima della conversione finale. ",
   },
   {
     label: "Macro",
     description:
-      "Fotografia macro per valorizzare texture, dettagli e micro-composizioni con illuminazione studiata e massima nitidezza.",
+      "La macrofotografia è un genere fotografico che cattura soggetti molto piccoli, rendendoli grandi quanto o più delle loro dimensioni reali (rapporto di ingrandimento 1:1). Questa tecnica rivela dettagli invisibili a occhio nudo, come insetti, fiori o trame, solitamente ottenuti con obiettivi specifici a distanza ravvicinata.",
   },
   {
     label: "Astratto",
     description:
-      "Ricerca visiva astratta basata su forme, luci e colori per creare immagini evocative e riconoscibili.",
+      "La fotografia astratta è una forma d'arte che crea immagini distaccate dalla realtà oggettiva, concentrandosi su forme, colori, luci e texture piuttosto che sulla rappresentazione fedele del soggetto. L'obiettivo è evocare emozioni e suggestioni, trasformando elementi quotidiani in visioni surreali e metafisiche. ",
   },
   {
     label: "Street Photo",
     description:
-      "Scatti spontanei in ambiente urbano, con attenzione al timing e alla narrazione del momento.",
+      "La street photography (fotografia di strada) è un genere che immortala la vita quotidiana in luoghi pubblici in modo spontaneo, sincero e non in posa. Documenta la \"commedia umana\", catturando momenti inaspettati, emozioni e interazioni sociali per raccontare storie urbane. È un'arte basata su osservazione, rapidità e tempismo.",
   },
   {
     label: "Landscapes",
     description:
-      "Fotografia paesaggistica con studio della luce naturale, composizione e profondita per immagini d'impatto.",
+      "La fotografia di paesaggio (landscape) è un genere che ritrae scenari naturali o urbani, con l'obiettivo di catturare la bellezza, la vastità e l'atmosfera di un luogo, spesso creando una connessione emotiva. Questo stile si concentra su panorami come montagne, foreste, laghi o città, enfatizzando la composizione e la luce naturale. ",
   },
   {
     label: "Ritratto",
     description:
-      "Ritratti che mettono al centro espressivita e identita del soggetto, con direzione e luce costruite su misura.",
+      "Il ritratto fotografico è un genere artistico che cattura l'essenza, la personalità e l'identità di un soggetto (persona o gruppo) attraverso l'obiettivo, andando oltre la semplice rappresentazione fisica. Utilizza luce, inquadratura, posa e contesto per trasmettere emozioni e raccontare una storia, spesso creando un intimo legame tra fotografo e soggetto. ",
   },
   {
     label: "Studio",
     description:
-      "Set fotografici in studio con schemi luce controllati per risultati tecnicamente consistenti e replicabili.",
+      "Uno studio fotografico è uno spazio chiuso e controllato, appositamente attrezzato per scattare fotografie, garantendo il pieno controllo di illuminazione, sfondi e attrezzature. Offre un ambiente professionale (sala posa) con luci, modificatori e fondali per creare immagini di alta qualità, diverso da un set in esterna.",
   },
   {
     label: "Ligthroom",
     description:
-      "Workflow Lightroom per catalogazione, color grading e consegna efficiente di set fotografici completi.",
+      "Adobe Lightroom (spesso chiamato solo Lightroom) è un potente software di post-produzione fotografica sviluppato da Adobe, progettato per gestire, organizzare e modificare grandi quantità di immagini, ideale sia per professionisti che per appassionati. A differenza di Photoshop, Lightroom permette un editing non distruttivo e gestisce l'intero flusso di lavoro, dal trasferimento dallo scatto al catalogo fino all'esportazione",
   },
 ];
 

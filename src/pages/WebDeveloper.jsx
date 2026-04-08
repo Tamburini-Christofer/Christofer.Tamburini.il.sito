@@ -53,6 +53,65 @@ const webSkills = [
   },
 ];
 
+const webCertifications = [
+  {
+    year: "2026",
+    title: "Corso Canva dalla A alla Z",
+    issuer: "Corso completo di Canva, dalla progettazione grafica alla creazione di contenuti per social media, con focus su branding e comunicazione visiva.",
+    image: "../../public/Certificati/Canva dalla A alla Z.jpg",
+    acquiredSkills: ["Graphic Design", "Canva", "Branding", "Content Creation"],
+  },
+  {
+    year: "2026",
+    title: "Corso professionale UI-UX con Figma da zero a esperto",
+    issuer: "Corso completo di UI-UX design con Figma, dalla progettazione di interfacce alla prototipazione interattiva.",
+    image: "../../public/Certificati/Corso professionale UI-UX con Figma da zero a esperto.jpg",
+    acquiredSkills: ["UI Design", "UX Design", "Figma", "Prototipazione", "Design System"],
+  },
+  {
+    year: "2026",
+    title: "Prompt Power",
+    issuer: "Corso avanzato su come creare prompt efficaci per modelli di intelligenza artificiale generativa.",
+    image: "../../public/Certificati/Prompt Power.jpg",
+    acquiredSkills: ["AI Prompt", "Generative AI", "Prompt Engineering"],
+  },
+  {
+    year: "2026",
+    title: "Corso completo di Javascript",
+    issuer: "Corso completo di Javascript con implemento di Vue, Node, React, Angular e TypeScript",
+    image: "../../public/Certificati/Javascript - La guida completa.jpg",
+    acquiredSkills: ["JavaScript", "Vue", "Node.js", "React", "Angular", "TypeScript"],
+  },
+  {
+    year: "2026",
+    title: "Web Development con specializzazione in React avanzato",
+    issuer: "Corso completo di Boolean per diventare sviluppatore web full stack, con focus su React avanzato, TypeScript e best practice di sviluppo.",
+    image: "../../public/Certificati/Boolean corso.png",
+    acquiredSkills: ["React Avanzato", "TypeScript", "Best Practice", "Testing", "Performance Optimization"],
+  },
+  {
+    year: "2025",
+    title: "UX/UI Design con Figma",
+    issuer: "Utilizzo base del programma Figma per progettare interfacce utente e prototipi interattivi, con attenzione alla user experience.",
+    image: "../../public/Certificati/Figma.png",
+    acquiredSkills: ["Figma", "Prototipazione", "Design System"],
+  },
+    {
+    year: "2025",
+    title: "Sistemista Informatico Liv.1- Basi di Reti e Networking",
+    issuer: "Nozione base per gestire una rete informatica, configurare dispositivi di rete e risolvere problemi di connettività.",
+    image: "../../public/Certificati/Sistemista Informatico Liv.1- Basi di Reti e Networking.jpg",
+    acquiredSkills: ["IP", "DNS", "HTTP", "modelli di rete", "Sicurezza di base", "mantenimento di sistemi informatici"],
+  },
+  {
+    year: "2025",
+    title: "Boolean Fundamentals Camp",
+    issuer: "Corso base di Boolean per comprendere i linguaggi di markup HTML e CSS",
+    image: "../../public/Certificati/BOOLEAN - Web Development Fundamentals Camp.jpeg",
+    acquiredSkills: ["HTML", "CSS", "Bootstrap", "display flex", "responsive design"],
+  },
+];
+
 export default function WebDeveloper() {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
@@ -179,6 +238,38 @@ export default function WebDeveloper() {
                 metriche e supporto tecnico continuo.
               </p>
             </div>
+          </div>
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
+        <ScrollRevealBlock
+          className="sectionProcesso sectionCertificazioniWeb"
+          variant="right"
+        >
+          <h5>CERTIFICAZIONI</h5>
+          <h1>
+            <strong>Percorso formativo</strong>
+          </h1>
+          <div className="comeLavoroLabelCertificazioniWeb">
+            {webCertifications.map((certification) => (
+              <article key={certification.title}>
+                <img
+                  src={certification.image}
+                  alt={`Anteprima certificazione ${certification.title}`}
+                  loading="lazy"
+                />
+                <span>{certification.year}</span>
+                <h5>{certification.title}</h5>
+                <p>{certification.issuer}</p>
+                <h6 className="certificazioneSkillsLabelWeb">Competenze acquisite</h6>
+                <div className="certificazioneSkillsChipsWeb">
+                  {certification.acquiredSkills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </ScrollRevealBlock>
       </section>

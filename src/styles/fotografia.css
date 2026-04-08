@@ -26,7 +26,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 20px 0 80px;
-    gap: 10px;
+    gap: 8px;
 }
 
 .fotSkillTitle {
@@ -63,15 +63,17 @@
 .FotLabel button {
     background-color: var(--Softfotografia);
     border: 0;
-    border-radius: 24px;
-    padding: 5px 0;
+    border-radius: 20px;
+    padding: 4px 0;
     cursor: pointer;
     height: 100%;
+    min-height: 38px;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .FotLabel button span {
     color: var(--primaryWhite);
+    font-size: 14px;
 }
 
 .FotLabel button:hover {
