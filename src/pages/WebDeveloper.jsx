@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import CircularGallery from "../components/CircularGallery";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
+import ProjectHighlightsCarousel from "../components/ProjectHighlightsCarousel";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 const webSkills = [
@@ -55,113 +57,199 @@ const webSkills = [
 
 const webCertifications = [
   {
-    year: "2026",
-    title: "Corso Canva dalla A alla Z",
-    issuer: "Corso completo di Canva, dalla progettazione grafica alla creazione di contenuti per social media, con focus su branding e comunicazione visiva.",
+    title: "Canva dalla A alla Z",
+    issuer: "Udemy",
+    releasedBy: "Giuseppe Scalzo",
+    topic: "Graphic Design con Canva, Social Media Content",
+    date: "Gennaio 2025",
+    duration: "18 ore",
     image: "../../public/Certificati/Canva dalla A alla Z.jpg",
     acquiredSkills: ["Graphic Design", "Canva", "Branding", "Content Creation"],
   },
   {
-    year: "2026",
-    title: "Corso professionale UI-UX con Figma da zero a esperto",
-    issuer: "Corso completo di UI-UX design con Figma, dalla progettazione di interfacce alla prototipazione interattiva.",
+    title: "UI-UX con Figma da Zero a Esperto",
+    issuer: "Udemy",
+    releasedBy: "Riccardo Conti",
+    topic: "UI/UX Design, Prototipazione, Design System",
+    date: "Giugno 2024",
+    duration: "42 ore",
     image: "../../public/Certificati/Corso professionale UI-UX con Figma da zero a esperto.jpg",
     acquiredSkills: ["UI Design", "UX Design", "Figma", "Prototipazione", "Design System"],
   },
   {
-    year: "2026",
-    title: "Prompt Power",
-    issuer: "Corso avanzato su come creare prompt efficaci per modelli di intelligenza artificiale generativa.",
+    title: "Prompt Power - AI Prompt Engineering",
+    issuer: "Skill Academy",
+    releasedBy: "Andrea Boscolo",
+    topic: "Prompt Engineering, Generative AI, ChatGPT Avanzato",
+    date: "Dicembre 2024",
+    duration: "14 ore",
     image: "../../public/Certificati/Prompt Power.jpg",
     acquiredSkills: ["AI Prompt", "Generative AI", "Prompt Engineering"],
   },
   {
-    year: "2026",
-    title: "Corso completo di Javascript",
-    issuer: "Corso completo di Javascript con implemento di Vue, Node, React, Angular e TypeScript",
+    title: "JavaScript - La Guida Completa",
+    issuer: "Udemy",
+    releasedBy: "Jonas Schmedtmann",
+    topic: "JavaScript Moderno, ES6+, OOP",
+    date: "Maggio 2024",
+    duration: "69 ore",
     image: "../../public/Certificati/Javascript - La guida completa.jpg",
-    acquiredSkills: ["JavaScript", "Vue", "Node.js", "React", "Angular", "TypeScript"],
+    acquiredSkills: ["JavaScript", "ES6", "OOP", "DOM", "Async/Await"],
   },
   {
-    year: "2026",
-    title: "Web Development con specializzazione in React avanzato",
-    issuer: "Corso completo di Boolean per diventare sviluppatore web full stack, con focus su React avanzato, TypeScript e best practice di sviluppo.",
+    title: "Web Development - React Avanzato",
+    issuer: "Boolean Careers",
+    releasedBy: "Boolean Srl",
+    topic: "Full Stack Development, React, TypeScript, Testing",
+    date: "Febbraio 2024",
+    duration: "120 ore",
     image: "../../public/Certificati/Boolean corso.png",
-    acquiredSkills: ["React Avanzato", "TypeScript", "Best Practice", "Testing", "Performance Optimization"],
+    acquiredSkills: ["React", "TypeScript", "Testing", "Performance", "Best Practices"],
   },
   {
-    year: "2025",
-    title: "UX/UI Design con Figma",
-    issuer: "Utilizzo base del programma Figma per progettare interfacce utente e prototipi interattivi, con attenzione alla user experience.",
+    title: "Figma - Design Tools Avanzati",
+    issuer: "Figma Academy",
+    releasedBy: "Figma Inc.",
+    topic: "Advanced Figma, Components, Design Systems",
+    date: "Luglio 2024",
+    duration: "16 ore",
     image: "../../public/Certificati/Figma.png",
-    acquiredSkills: ["Figma", "Prototipazione", "Design System"],
-  },
-    {
-    year: "2025",
-    title: "Sistemista Informatico Liv.1- Basi di Reti e Networking",
-    issuer: "Nozione base per gestire una rete informatica, configurare dispositivi di rete e risolvere problemi di connettività.",
-    image: "../../public/Certificati/Sistemista Informatico Liv.1- Basi di Reti e Networking.jpg",
-    acquiredSkills: ["IP", "DNS", "HTTP", "modelli di rete", "Sicurezza di base", "mantenimento di sistemi informatici"],
+    acquiredSkills: ["Figma", "Design System", "Components", "Collaboration"],
   },
   {
-    year: "2025",
-    title: "Boolean Fundamentals Camp",
-    issuer: "Corso base di Boolean per comprendere i linguaggi di markup HTML e CSS",
+    title: "Sistemista Informatico Liv.1 - Reti e Networking",
+    issuer: "LinkedIn Learning",
+    releasedBy: "Federico Rossi",
+    topic: "Reti Informatiche, IP, DNS, Sicurezza",
+    date: "Aprile 2025",
+    duration: "32 ore",
+    image: "../../public/Certificati/Sistemista Informatico Liv.1- Basi di Reti e Networking.jpg",
+    acquiredSkills: ["IP", "DNS", "HTTP", "Reti", "Sicurezza", "Troubleshooting"],
+  },
+  {
+    title: "Boolean - Web Development Fundamentals",
+    issuer: "Boolean Careers",
+    releasedBy: "Boolean Srl",
+    topic: "HTML, CSS, Bootstrap, Responsive Design",
+    date: "Settembre 2023",
+    duration: "80 ore",
     image: "../../public/Certificati/BOOLEAN - Web Development Fundamentals Camp.jpeg",
-    acquiredSkills: ["HTML", "CSS", "Bootstrap", "display flex", "responsive design"],
+    acquiredSkills: ["HTML", "CSS", "Bootstrap", "Flexbox", "Responsive Design"],
   },
 ];
+
+const webCertificationItems = webCertifications.map((certification) => ({
+  src: certification.image.replace("../../public", ""),
+  alt: `Certificazione ${certification.title}`,
+  title: certification.title,
+}));
 
 const webHighlightedProjects = [
   {
-    title: "Dashboard Gestionale",
+    title: "Dashboard Gestionale Multi-tenant",
     category: "Web App",
-    description: "Pannello completo per gestione contenuti, utenti e report in tempo reale.",
-    image: "https://picsum.photos/seed/web-project-01/900/600",
+    description: "Pannello completo per gestione contenuti, utenti, report e permessi in tempo reale.",
+    image: "https://picsum.photos/seed/web-project-01/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/web-project-01/1200/800",
+        alt: "Dashboard gestionale panoramica desktop",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-011/1200/800",
+        alt: "Dashboard gestionale sezione analytics",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-012/1200/800",
+        alt: "Dashboard gestionale tab utenti e permessi",
+      },
+    ],
+    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Chart.js"],
+    hideLinks: true,
+    liveUrl: null,
+    githubUrl: null,
+    features: [
+      "Autenticazione con ruoli e permessi granulari",
+      "Dashboard KPI con filtri temporali e grafici interattivi",
+      "Gestione contenuti con workflow di pubblicazione",
+      "Ricerca e ordinamento server-side per grandi volumi di dati",
+    ],
+    goal:
+      "Ridurre il tempo operativo del team centrale concentrando controllo utenti, contenuti e report in un'unica interfaccia.",
   },
   {
-    title: "Landing Conversione",
+    title: "Landing Page Conversione",
     category: "UI/UX",
-    description: "Pagina ottimizzata per lead generation con copy strategico e CTA modulari.",
-    image: "https://picsum.photos/seed/web-project-02/900/600",
+    description: "Pagina ottimizzata per lead generation con copy strategico, CTA modulari e test A/B.",
+    image: "https://picsum.photos/seed/web-project-02/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/web-project-02/1200/800",
+        alt: "Landing page hero section",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-021/1200/800",
+        alt: "Landing page sezione testimonianze",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-022/1200/800",
+        alt: "Landing page funnel mobile",
+      },
+    ],
+    technologies: ["React", "Figma", "GSAP", "Vite", "Hotjar"],
+    hideLinks: true,
+    liveUrl: null,
+    githubUrl: null,
+    features: [
+      "Hero dinamica con CTA contestuali",
+      "Blocchi modulari riordinabili in base alla campagna",
+      "Tracciamento eventi per analisi conversioni",
+      "Versione mobile ottimizzata per campagne paid",
+    ],
+    goal:
+      "Aumentare il tasso di conversione di una campagna lead generation con una pagina piu chiara e piu veloce.",
   },
   {
     title: "E-commerce Component-based",
     category: "Frontend",
-    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
-    image: "https://picsum.photos/seed/web-project-03/900/600",
-  },
-  {
-    title: "E-commerce Component-based",
-    category: "Frontend",
-    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
-    image: "https://picsum.photos/seed/web-project-03/900/600",
-  },
-  {
-    title: "E-commerce Component-based",
-    category: "Frontend",
-    description: "Architettura React scalabile con filtri dinamici e checkout ottimizzato.",
-    image: "https://picsum.photos/seed/web-project-03/900/600",
+    description: "Architettura React scalabile con filtri dinamici, wishlist e checkout ottimizzato.",
+    image: "https://picsum.photos/seed/web-project-03/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/web-project-03/1200/800",
+        alt: "Homepage e-commerce con prodotti in evidenza",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-031/1200/800",
+        alt: "Catalogo e-commerce con filtri",
+      },
+      {
+        src: "https://picsum.photos/seed/web-project-032/1200/800",
+        alt: "Checkout e-commerce ottimizzato",
+      },
+    ],
+    technologies: ["React", "Redux Toolkit", "Stripe", "Node.js", "MongoDB"],
+    hideLinks: true,
+    liveUrl: null,
+    githubUrl: null,
+    features: [
+      "Catalogo con filtri combinabili e ricerca live",
+      "Wishlist sincronizzata tra dispositivi",
+      "Checkout multi-step con riepilogo dinamico",
+      "Area admin per gestione prodotti e ordini",
+    ],
+    goal:
+      "Costruire una base e-commerce solida e riutilizzabile per brand con cataloghi medi e storytelling visuale forte.",
   },
 ];
 
+const webProjectTheme = {
+  "--project-accent": "var(--webDeveloper)",
+  "--project-accent-soft": "var(--SoftwebDeveloper)",
+};
+
 export default function WebDeveloper() {
   const [selectedSkill, setSelectedSkill] = useState(null);
-  const [activeCertificationIndex, setActiveCertificationIndex] = useState(0);
-
-  const activeCertification = webCertifications[activeCertificationIndex];
-
-  const showPrevCertification = () => {
-    setActiveCertificationIndex((prev) =>
-      prev === 0 ? webCertifications.length - 1 : prev - 1,
-    );
-  };
-
-  const showNextCertification = () => {
-    setActiveCertificationIndex((prev) =>
-      prev === webCertifications.length - 1 ? 0 : prev + 1,
-    );
-  };
 
   return (
     <>
@@ -292,101 +380,43 @@ export default function WebDeveloper() {
 
       <section>
         <ScrollRevealBlock
-          className="sectionProcesso sectionProgettiWeb"
+          className="sectionProgettiWeb"
           variant="right"
         >
           <h5>PROGETTI IN EVIDENZA</h5>
           <h1>
             <strong>Selezione lavori</strong>
           </h1>
-          <div className="grigliaProgettiWeb">
-            {webHighlightedProjects.map((project, index) => (
-              <article key={`${project.title}-${index}`}>
-                <img
-                  src={project.image}
-                  alt={`Anteprima progetto ${project.title}`}
-                  loading="lazy"
-                />
-                <span>{project.category}</span>
-                <h5>{project.title}</h5>
-                <p>{project.description}</p>
-              </article>
-            ))}
-          </div>
+          <ProjectHighlightsCarousel
+            projects={webHighlightedProjects}
+            accentStyle={webProjectTheme}
+            ariaLabel="Carosello progetti web in evidenza"
+          />
         </ScrollRevealBlock>
       </section>
 
       <section>
         <ScrollRevealBlock
-          className="sectionProcesso sectionCertificazioniWeb"
+          className="contenitoreCertificazioni certificazioniTemaWeb"
           variant="right"
         >
-          <div className="certificazioniLayoutWeb">
-            <div className="certificazioniTitoloWeb">
-              <h5>CERTIFICAZIONI</h5>
-              <h1>
-                <strong>Percorso formativo</strong>
-              </h1>
-            </div>
-
-            <div className="certificazioniCaroselloWrapWeb">
-              <div
-                className="caroselloCertificazioniWeb"
-                aria-label="Carosello certificazioni web"
-              >
-                <button
-                  type="button"
-                  className="caroselloNavBtnWeb"
-                  aria-label="Certificazione precedente"
-                  onClick={showPrevCertification}
-                >
-                  <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-
-                <article
-                  key={`${activeCertification.title}-${activeCertificationIndex}`}
-                  className="caroselloCardCertWeb"
-                >
-                  <img
-                    src={activeCertification.image}
-                    alt={`Anteprima certificazione ${activeCertification.title}`}
-                    loading="lazy"
-                  />
-                  <span>{activeCertification.year}</span>
-                  <h5>{activeCertification.title}</h5>
-                  <p>{activeCertification.issuer}</p>
-                  <h6 className="certificazioneSkillsLabelWeb">Competenze acquisite</h6>
-                  <div className="certificazioneSkillsChipsWeb">
-                    {activeCertification.acquiredSkills.map((skill) => (
-                      <span key={skill}>{skill}</span>
-                    ))}
-                  </div>
-                </article>
-
-                <button
-                  type="button"
-                  className="caroselloNavBtnWeb"
-                  aria-label="Certificazione successiva"
-                  onClick={showNextCertification}
-                >
-                  <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-              </div>
-
-              <div className="caroselloDotsWeb" aria-label="Indicatori certificazioni">
-                {webCertifications.map((certification, index) => (
-                  <button
-                    key={`${certification.title}-${index}`}
-                    type="button"
-                    className={index === activeCertificationIndex ? "isActive" : ""}
-                    onClick={() => setActiveCertificationIndex(index)}
-                    aria-label={`Vai alla certificazione ${index + 1}`}
-                    aria-pressed={index === activeCertificationIndex}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="titoliCertificazioni">
+            <h5>CERTIFICAZIONI</h5>
+            <h2>
+              Percorso <strong>formativo</strong>
+            </h2>
+            <p>
+              Aggiornamento continuo su sviluppo frontend/backend, UI design,
+              prompt engineering e strumenti moderni per il web.
+            </p>
           </div>
+          <CircularGallery
+            items={webCertificationItems}
+            borderRadius={0.04}
+            scrollSpeed={1.5}
+            scrollEase={0.09}
+            bend={0}
+          />
         </ScrollRevealBlock>
       </section>
 

@@ -1,5 +1,5 @@
 .contenitoreStampa {
-	background-image: url("../../public/Sfondi/Sfondo 3D.jpg");
+	background-image: url("/Sfondi/Sfondo 3D.jpg");
 	background-position-y: 10%;
 }
 
@@ -120,6 +120,92 @@
 .sectionProgettiStampa {
 	height: auto;
 	min-height: 100vh;
+	padding: 80px 200px;
+}
+
+.stampaProjectsLayout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+	gap: 24px;
+	margin-top: 34px;
+	align-items: start;
+}
+
+.stampaMaterialColumn {
+	padding: 0 0 0 24px;
+	border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stampaMaterialColumnHeader h4 {
+	color: var(--primaryWhite);
+	font-size: 15px;
+	margin: 4px 0 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.stampaMaterialColumnGrid {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	margin-top: 16px;
+}
+
+.stampaMaterialGroup {
+	min-width: 0;
+}
+
+.stampaMaterialGroupTitle {
+	color: var(--primaryWhite);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	margin: 0 0 10px;
+}
+
+.stampaMaterialSelectorList {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-height: 206px;
+	overflow-y: auto;
+	padding-right: 6px;
+}
+
+.stampaMaterialSelectorItem {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 18px 20px;
+	border-radius: 22px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.03);
+	text-align: left;
+	cursor: pointer;
+	transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.stampaMaterialSelectorItem:hover,
+.stampaMaterialSelectorItem.isActive {
+	transform: translateX(-2px);
+	border-color: var(--project-accent);
+	background: rgba(255, 255, 255, 0.06);
+	box-shadow: inset 3px 0 0 color-mix(in srgb, var(--project-accent) 80%, transparent);
+}
+
+.stampaMaterialCardLabel {
+	color: var(--project-accent-soft);
+	font-size: 11px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.stampaMaterialSelectorItem h5 {
+	margin: 0;
+	font-size: 20px;
+	color: var(--primaryWhite);
+	line-height: 1.3;
 }
 
 .grigliaProgettiStampa {
@@ -191,6 +277,16 @@
 
 .certificazioniCaroselloWrapStampa {
 	width: 100%;
+}
+
+.certificazioniCircularWrapStampa {
+	width: 100%;
+	margin-top: 34px;
+}
+
+.sectionCertificazioniStampa .circularGallery {
+	height: 440px;
+	border-color: rgba(240, 89, 48, 0.35);
 }
 
 .comeLavoroLabelCertificazioniStampa {
@@ -293,6 +389,41 @@
 	transform: scale(1.1);
 }
 
+@media screen and (max-width: 1280px) {
+	.sectionProgettiStampa {
+		padding: 80px 120px;
+	}
+
+	.stampaProjectsLayout {
+		grid-template-columns: 1fr;
+	}
+
+	.stampaMaterialColumnGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: none;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.sectionProgettiStampa {
+		padding: 72px 24px;
+	}
+
+	.stampaMaterialColumn {
+		padding: 0;
+		border-left: 0;
+	}
+
+	.stampaMaterialColumnGrid {
+		gap: 16px;
+	}
+
+	.stampaMaterialSelectorList {
+		max-height: none;
+		overflow: visible;
+	}
+}
+
 .comeLavoroLabelCertificazioniStampa article {
 	background: rgba(255, 255, 255, 0.04);
 	border: 1px solid rgba(255, 255, 255, 0.12);
@@ -369,6 +500,7 @@
 	color: var(--stampa3D);
 }
 
+
 @media (max-width: 1024px) {
 	.grigliaProgettiStampa,
 	.comeLavoroLabelCertificazioniStampa {
@@ -383,6 +515,10 @@
 	.caroselloCertificazioniStampa {
 		max-width: 920px;
 		margin-top: 16px;
+	}
+
+	.sectionCertificazioniStampa .circularGallery {
+		height: 380px;
 	}
 }
 
@@ -406,4 +542,8 @@
 	.sectionCertificazioniStampa {
 		min-height: auto;
 	}
+}
+
+.certificazioniTemaStampa .titoliCertificazioni strong {
+	color: var(--stampa3D);
 }

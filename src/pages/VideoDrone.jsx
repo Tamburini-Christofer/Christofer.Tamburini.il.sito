@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import CircularGallery from "../components/CircularGallery";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
+import ProjectHighlightsCarousel from "../components/ProjectHighlightsCarousel";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 const videoSkills = [
@@ -55,38 +57,118 @@ const videoSkills = [
 
 const videoCertifications = [
   {
-    year: "2026",
-    title: "DaVinci Resolve per tutti con DaVinciResolve",
-    issuer: "Corso completo di DaVinci Resolve, dalla post-produzione al color grading cinematografico",
+    title: "DaVinci Resolve - Montaggio Professionale",
+    issuer: "Blackmagic Academy",
+    releasedBy: "Alberto Rossi",
+    topic: "Post-produzione, Montaggio Video, Color Grading Base",
+    date: "Agosto 2024",
+    duration: "56 ore",
     image: "../../public/Certificati/DaVinci Alberto.jpg",
-    acquiredSkills: ["DaVinci Resolve", "Montaggio Video", "Color Grading Cinematografico"],
+    acquiredSkills: ["DaVinci Resolve", "Montaggio", "Color Grading", "Audio Design"],
   },
   {
-    year: "2026",
-    title: "Color Grading for Video",
-    issuer: "Corso avanzato di color grading per video, focalizzato su tecniche di correzione colore, look cinematografico e workflow professionale.",
+    title: "Color Grading Cinematografico",
+    issuer: "CinematicArts Academy",
+    releasedBy: "Marco Valenti",
+    topic: "Grading Avanzato, Look Narrativo, Workflow Professionale",
+    date: "Settembre 2024",
+    duration: "48 ore",
     image: "../../public/Certificati/DaVinci Resolve.jpg",
-    acquiredSkills: ["Color Grading", "Correzione Colore", "Look Cinematografico"],
+    acquiredSkills: ["Color Grading", "Look LUT", "Cinematography", "Post-production"],
   },
 ];
 
+const videoCertificationItems = videoCertifications.map((certification) => ({
+  src: certification.image.replace("../../public", ""),
+  alt: `Certificazione ${certification.title}`,
+  title: certification.title,
+}));
+
+const videoHighlightedProjects = [
+  {
+    title: "Spot Drone per Resort",
+    category: "Aerial Video",
+    description:
+      "Produzione video con riprese aeree cinematiche, transizioni fluide e montaggio orientato alla promozione turistica.",
+    image: "https://picsum.photos/seed/video-project-01/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/video-project-01/1200/800",
+        alt: "Spot drone panoramica resort",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-011/1200/800",
+        alt: "Spot drone inquadratura piscina e strutture",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-012/1200/800",
+        alt: "Spot drone dettaglio tramonto resort",
+      },
+    ],
+    technologies: ["Drone 4K", "DaVinci Resolve", "Premiere Pro", "Color Grading"],
+    goal:
+      "Valorizzare spazi, servizi e atmosfera della struttura con un video emozionale ad alta percezione qualitativa.",
+    hideLinks: true,
+  },
+  {
+    title: "Reel Evento Outdoor",
+    category: "Social Video",
+    description:
+      "Reel verticale pensato per social media con montaggio rapido, sound design e hook immediato.",
+    image: "https://picsum.photos/seed/video-project-02/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/video-project-02/1200/800",
+        alt: "Reel evento outdoor scena principale",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-021/1200/800",
+        alt: "Reel evento outdoor pubblico e palco",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-022/1200/800",
+        alt: "Reel evento outdoor transizione finale",
+      },
+    ],
+    technologies: ["Premiere Pro", "After Effects", "Sound Design", "Vertical Export"],
+    goal:
+      "Creare un contenuto breve ad alto impatto capace di trasmettere energia e atmosfera dell'evento.",
+    hideLinks: true,
+  },
+  {
+    title: "Video Immobiliare Cinematico",
+    category: "Commercial",
+    description:
+      "Video per presentazione immobili con mix di inquadrature interne, drone esterno e post-produzione pulita.",
+    image: "https://picsum.photos/seed/video-project-03/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/video-project-03/1200/800",
+        alt: "Video immobiliare ingresso principale",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-031/1200/800",
+        alt: "Video immobiliare ambienti interni",
+      },
+      {
+        src: "https://picsum.photos/seed/video-project-032/1200/800",
+        alt: "Video immobiliare overview esterna drone",
+      },
+    ],
+    technologies: ["Drone", "Gimbal", "DaVinci Resolve", "LUT Workflow"],
+    goal:
+      "Presentare l'immobile in modo piu emozionale rispetto al classico tour descrittivo.",
+    hideLinks: true,
+  },
+];
+
+const videoProjectTheme = {
+  "--project-accent": "var(--videoDrone)",
+  "--project-accent-soft": "var(--SoftvideoDrone)",
+};
+
 export default function VideoDrone() {
   const [selectedSkill, setSelectedSkill] = useState(null);
-  const [activeCertificationIndex, setActiveCertificationIndex] = useState(0);
-
-  const activeCertification = videoCertifications[activeCertificationIndex];
-
-  const showPrevCertification = () => {
-    setActiveCertificationIndex((prev) =>
-      prev === 0 ? videoCertifications.length - 1 : prev - 1,
-    );
-  };
-
-  const showNextCertification = () => {
-    setActiveCertificationIndex((prev) =>
-      prev === videoCertifications.length - 1 ? 0 : prev + 1,
-    );
-  };
 
   return (
     <>
@@ -214,76 +296,42 @@ export default function VideoDrone() {
       </section>
 
       <section>
+        <ScrollRevealBlock className="sectionProgettiVideo" variant="right">
+          <h5>PROGETTI IN EVIDENZA</h5>
+          <h1>
+            <strong>Selezione lavori</strong>
+          </h1>
+          <ProjectHighlightsCarousel
+            projects={videoHighlightedProjects}
+            accentStyle={videoProjectTheme}
+            ariaLabel="Carosello progetti video in evidenza"
+          />
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
         <ScrollRevealBlock
-          className="sectionProcesso sectionCertificazioniVideo"
+          className="contenitoreCertificazioni certificazioniTemaVideo"
           variant="right"
         >
-          <div className="certificazioniLayoutVideo">
-            <div className="certificazioniTitoloVideo">
-              <h5>CERTIFICAZIONI</h5>
-              <h1>
-                <strong>Percorso formativo</strong>
-              </h1>
-            </div>
-
-            <div className="certificazioniCaroselloWrapVideo">
-              <div
-                className="caroselloCertificazioniVideo"
-                aria-label="Carosello certificazioni video"
-              >
-                <button
-                  type="button"
-                  className="caroselloNavBtnVideo"
-                  aria-label="Certificazione precedente"
-                  onClick={showPrevCertification}
-                >
-                  <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-
-                <article
-                  key={`${activeCertification.title}-${activeCertificationIndex}`}
-                  className="caroselloCardCertVideo"
-                >
-                  <img
-                    src={activeCertification.image}
-                    alt={`Anteprima certificazione ${activeCertification.title}`}
-                    loading="lazy"
-                  />
-                  <span>{activeCertification.year}</span>
-                  <h5>{activeCertification.title}</h5>
-                  <p>{activeCertification.issuer}</p>
-                  <h6 className="certificazioneSkillsLabelVideo">Competenze acquisite</h6>
-                  <div className="certificazioneSkillsChipsVideo">
-                    {activeCertification.acquiredSkills.map((skill) => (
-                      <span key={skill}>{skill}</span>
-                    ))}
-                  </div>
-                </article>
-
-                <button
-                  type="button"
-                  className="caroselloNavBtnVideo"
-                  aria-label="Certificazione successiva"
-                  onClick={showNextCertification}
-                >
-                  <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-              </div>
-
-              <div className="caroselloDotsVideo" aria-label="Indicatori certificazioni">
-                {videoCertifications.map((certification, index) => (
-                  <button
-                    key={`${certification.title}-${index}`}
-                    type="button"
-                    className={index === activeCertificationIndex ? "isActive" : ""}
-                    onClick={() => setActiveCertificationIndex(index)}
-                    aria-label={`Vai alla certificazione ${index + 1}`}
-                    aria-pressed={index === activeCertificationIndex}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="titoliCertificazioni">
+            <h5>CERTIFICAZIONI</h5>
+            <h2>
+              Percorso <strong>formativo</strong>
+            </h2>
+            <p>
+              Specializzazione in montaggio, color grading e workflow video per
+              produzioni social, advertising e contenuti cinematici.
+            </p>
           </div>
+
+          <CircularGallery
+            items={videoCertificationItems}
+            borderRadius={0.04}
+            scrollSpeed={1.5}
+            scrollEase={0.09}
+            bend={0}
+          />
         </ScrollRevealBlock>
       </section>
 

@@ -1,7 +1,121 @@
 import { NavLink } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
+import CircularGallery from "../components/CircularGallery";
 import HeroNextArrow from "../components/HeroNextArrow";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
+
+const certificazioni = [
+  {
+    src: "/Certificati/BLENDER%202.8x-2.9x-3.x%20PER%20TUTTI%20-%20MODULO%201.jpg",
+    alt: "Certificazione Blender - Modulo 1",
+    title: "Blender - Modulo 1: Basi di Modellazione 3D",
+    issuer: "Udemy",
+    releasedBy: "Creatività Digitale Academy",
+    topic: "Modellazione 3D, Interfaccia Blender, Primitive 3D",
+    date: "Marzo 2024",
+    duration: "24 ore",
+    acquiredSkills: ["Blender", "Modellazione 3D", "UV Mapping"],
+  },
+  {
+    src: "/Certificati/BLENDER%202.8x-2.9x-3.x%20PER%20TUTTI%20-%20MODULO%202.jpg",
+    alt: "Certificazione Blender - Modulo 2",
+    title: "Blender - Modulo 2: Animazione e Rendering",
+    issuer: "Udemy",
+    releasedBy: "Creatività Digitale Academy",
+    topic: "Animazione, Rendering, Materiali Avanzati",
+    date: "Aprile 2024",
+    duration: "28 ore",
+    acquiredSkills: ["Blender", "Animazione", "Rendering", "Materials"],
+  },
+  {
+    src: "/Certificati/BOOLEAN%20-%20Web%20Development%20Fundamentals%20Camp.jpeg",
+    alt: "Certificazione Boolean Web Development",
+    title: "Boolean - Web Development Fundamentals Camp",
+    issuer: "Boolean Careers",
+    releasedBy: "Boolean Srl",
+    topic: "Fondamenti Web Development, HTML, CSS, JavaScript",
+    date: "Febbraio 2024",
+    duration: "120 ore",
+    acquiredSkills: ["HTML", "CSS", "JavaScript", "Web Design"],
+  },
+  {
+    src: "/Certificati/Canva%20dalla%20A%20alla%20Z.jpg",
+    alt: "Certificazione Canva",
+    title: "Canva dalla A alla Z",
+    issuer: "Udemy",
+    releasedBy: "Giuseppe Scalzo",
+    topic: "Graphic Design con Canva, Social Media Content",
+    date: "Gennaio 2025",
+    duration: "18 ore",
+    acquiredSkills: ["Canva", "Graphic Design", "Content Creation", "Branding"],
+  },
+  {
+    src: "/Certificati/Corso%20professionale%20UI-UX%20con%20Figma%20da%20zero%20a%20esperto.jpg",
+    alt: "Certificazione Figma UI-UX",
+    title: "UI-UX con Figma da Zero a Esperto",
+    issuer: "Udemy",
+    releasedBy: "Riccardo Conti",
+    topic: "Design di Interfacce, Prototipazione, Design System",
+    date: "Giugno 2024",
+    duration: "42 ore",
+    acquiredSkills: ["Figma", "UI Design", "UX Design", "Prototipazione"],
+  },
+  {
+    src: "/Certificati/Figma.png",
+    alt: "Certificazione Figma Avanzato",
+    title: "Figma Advanced - Design Systems & Components",
+    issuer: "Figma Academy",
+    releasedBy: "Figma Inc.",
+    topic: "Design Systems, Componenti Riutilizzabili, Collaborazione",
+    date: "Luglio 2024",
+    duration: "16 ore",
+    acquiredSkills: ["Figma", "Design System", "Components", "Collaboration"],
+  },
+  {
+    src: "/Certificati/Javascript%20-%20La%20guida%20completa.jpg",
+    alt: "Certificazione JavaScript Completa",
+    title: "JavaScript - La Guida Completa",
+    issuer: "Udemy",
+    releasedBy: "Jonas Schmedtmann",
+    topic: "JavaScript Moderno, ES6+, Programmazione Orientata agli Oggetti",
+    date: "Maggio 2024",
+    duration: "69 ore",
+    acquiredSkills: ["JavaScript", "ES6", "OOP", "DOM Manipulation"],
+  },
+  {
+    src: "/Certificati/DaVinci%20Resolve.jpg",
+    alt: "Certificazione DaVinci Resolve",
+    title: "DaVinci Resolve - Montaggio Video Professionale",
+    issuer: "Blackmagic Academy",
+    releasedBy: "Blackmagic Design",
+    topic: "Montaggio Video, Color Grading, Effetti Speciali",
+    date: "Agosto 2024",
+    duration: "56 ore",
+    acquiredSkills: ["DaVinci Resolve", "Video Editing", "Color Grading", "VFX"],
+  },
+  {
+    src: "/Certificati/Docker%20Per%20Comuni%20Mortali.jpg",
+    alt: "Certificazione Docker",
+    title: "Docker Per Comuni Mortali",
+    issuer: "Udemy",
+    releasedBy: "Alessandro Segala",
+    topic: "Containerizzazione, Docker, Microservizi",
+    date: "Luglio 2024",
+    duration: "12 ore",
+    acquiredSkills: ["Docker", "Containerization", "DevOps", "Microservices"],
+  },
+  {
+    src: "/Certificati/Prompt%20Power.jpg",
+    alt: "Certificazione Prompt Engineering",
+    title: "Prompt Power - AI Prompt Engineering",
+    issuer: "Skill Academy",
+    releasedBy: "Andrea Boscolo",
+    topic: "Prompt Engineering, Generative AI, ChatGPT Avanzato",
+    date: "Dicembre 2024",
+    duration: "14 ore",
+    acquiredSkills: ["AI Prompts", "ChatGPT", "Prompt Engineering", "Generative AI"],
+  },
+];
 
 export default function Homepage() {
   return (
@@ -20,66 +134,6 @@ export default function Homepage() {
         </div>
         <HeroNextArrow />
       </div>
-
-      <section>
-        <ScrollRevealBlock className="contenitoreSezioneCompetenze" variant="up">
-          <div>
-            <img
-              src="../../public/Sfondi/Sfondo Web Developer.jpg"
-              alt="Immagine di due pc"
-            />
-            <div className="sezWeb">
-              <h4>CODICE & DESIGN</h4>
-              <h3>Web Development</h3>
-              <p>
-                Esplora <i class="fa-solid fa-arrow-right"></i>
-              </p>
-            </div>
-          </div>
-          
-          <div>
-            <img
-              src="../../public/Sfondi/Sfondo Fotografia.jpg"
-              alt="Immagine di una macchina fotografica"
-            />
-            <div div className="sezFot">
-              <h4>LUCE & COMPOSIZIONE</h4>
-              <h3>Fotografia</h3>
-              <p>
-                Esplora <i class="fa-solid fa-arrow-right"></i>
-              </p>
-            </div>
-          </div>
-          <div>
-            <img
-              src="../../public/Sfondi/Sfondo Drone.jpg"
-              alt="Immagine di un drone"
-            />
-            <div className="sezVid">
-              {" "}
-              <h4>MOVIMENTO & PROSPETTIVA</h4>
-              <h3>Video & Droni</h3>
-              <p>
-                Esplora <i class="fa-solid fa-arrow-right"></i>
-              </p>
-            </div>
-          </div>
-          <div>
-            <img
-              src="../../public/Sfondi/Sfondo 3D.jpg"
-              alt="Immagine di una stampa 3D"
-            />
-            <div className="sezSta">
-              {" "}
-              <h4>PROGETTAZIONE & PRDOUZIONE</h4>
-              <h3>3D & Stampa</h3>
-              <p>
-                Esplora <i class="fa-solid fa-arrow-right"></i>
-              </p>
-            </div>
-          </div>
-        </ScrollRevealBlock>
-      </section>
 
       <section>
         <ScrollRevealBlock className="contenitoreSezionePresentazione" variant="up">
@@ -109,9 +163,34 @@ export default function Homepage() {
             </div>
             <div>
               <p>6+</p>
-              <p>PLINGUAGGI DI PROGRAMMAZIONE</p>
+              <p>LINGUAGGI DI PROGRAMMAZIONE</p>
             </div>
           </div>
+        </ScrollRevealBlock>
+      </section>
+
+      <section>
+        <ScrollRevealBlock className="contenitoreCertificazioni" variant="up">
+          <div className="titoliCertificazioni">
+            <h5>CERTIFICAZIONI</h5>
+            <h2>
+              Formazione continua, <br />
+              <strong>competenze verificate</strong>
+            </h2>
+            <p>
+              Una galleria circolare che raccoglie i percorsi formativi in web
+              development, design, video, strumenti AI e modellazione 3D.
+              
+            </p>
+          </div>
+
+          <CircularGallery
+            items={certificazioni}
+            borderRadius={0.04}
+            scrollSpeed={1.5}
+            scrollEase={0.09}
+            bend={0}
+          />
         </ScrollRevealBlock>
       </section>
 

@@ -8,6 +8,57 @@
 
 body {
     background-color: var(--sezioneUno);
+    --scrollbarTrack: rgba(255, 255, 255, 0.08);
+    --scrollbarThumb: var(--primaryGrey);
+    --scrollbarThumbHover: rgba(190, 190, 200, 1);
+}
+
+body.theme-home {
+    --scrollbarThumb: var(--primaryGrey);
+    --scrollbarThumbHover: rgba(190, 190, 200, 1);
+}
+
+body.theme-web {
+    --scrollbarThumb: var(--webDeveloper);
+    --scrollbarThumbHover: rgba(95, 180, 255, 1);
+}
+
+body.theme-fotografia {
+    --scrollbarThumb: var(--fotografia);
+    --scrollbarThumbHover: rgba(252, 183, 88, 1);
+}
+
+body.theme-video {
+    --scrollbarThumb: var(--videoDrone);
+    --scrollbarThumbHover: rgba(76, 212, 202, 1);
+}
+
+body.theme-stampa {
+    --scrollbarThumb: var(--stampa3D);
+    --scrollbarThumbHover: rgba(248, 120, 85, 1);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbarThumb) var(--scrollbarTrack);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbarTrack);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbarThumb);
+    border-radius: 999px;
+    border: 2px solid rgba(14, 14, 17, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbarThumbHover);
 }
 
 i:hover{

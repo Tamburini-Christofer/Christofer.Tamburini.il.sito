@@ -57,4 +57,4 @@
 
 ###
 
-![Pagina Home](/Complete-per-readme/3.a-homepage.png)
+![Pagina Home](/Complete-per-readme/3.a.HomepageCode.png)

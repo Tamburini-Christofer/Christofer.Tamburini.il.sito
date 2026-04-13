@@ -1,5 +1,5 @@
 .contenitoreVideo {
-	background-image: url("../../public/Sfondi/Sfondo Drone.jpg");
+	background-image: url("/Sfondi/Sfondo Drone.jpg");
 	background-position-y: 70%;
 }
 
@@ -107,6 +107,18 @@
 	color: var(--videoDrone);
 }
 
+.sectionProgettiVideo h1 strong {
+	color: var(--videoDrone);
+	font-size: 40px;
+}
+
+.sectionProgettiVideo {
+	height: auto;
+	min-height: 100vh;
+	padding: 80px 200px;
+}
+
+
 .sectionCertificazioniVideo h1 strong {
 	color: var(--videoDrone);
 	font-size: 40px;
@@ -130,6 +142,16 @@
 
 .certificazioniCaroselloWrapVideo {
 	width: 100%;
+}
+
+.certificazioniCircularWrapVideo {
+	width: 100%;
+	margin-top: 34px;
+}
+
+.sectionCertificazioniVideo .circularGallery {
+	height: 440px;
+	border-color: rgba(32, 191, 180, 0.35);
 }
 
 .comeLavoroLabelCertificazioniVideo {
@@ -305,6 +327,10 @@
 }
 
 @media (max-width: 1024px) {
+	.sectionProgettiVideo {
+		padding: 80px 60px;
+	}
+
 	.comeLavoroLabelCertificazioniVideo {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -318,9 +344,18 @@
 		max-width: 920px;
 		margin-top: 16px;
 	}
+
+	.sectionCertificazioniVideo .circularGallery {
+		height: 380px;
+	}
 }
 
 @media (max-width: 700px) {
+	.sectionProgettiVideo {
+		min-height: auto;
+		padding: 80px 24px;
+	}
+
 	.comeLavoroLabelCertificazioniVideo {
 		grid-template-columns: 1fr;
 	}
@@ -338,4 +373,8 @@
 	.sectionCertificazioniVideo {
 		min-height: auto;
 	}
+}
+
+.certificazioniTemaVideo .titoliCertificazioni strong {
+	color: var(--videoDrone);
 }

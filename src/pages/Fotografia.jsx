@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
+import ProjectHighlightsCarousel from "../components/ProjectHighlightsCarousel";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 const fotografiaSkills = [
@@ -57,22 +58,81 @@ const fotografiaHighlights = [
   {
     title: "Ritratto in Luce Naturale",
     category: "Portrait",
-    description: "Sessione ritratto con gestione luce morbida e palette cromatica cinematica.",
-    image: "https://picsum.photos/seed/fotografia-highlight-01/900/600",
+    description: "Sessione ritratto con luce morbida, palette cinematica e direzione espressiva del soggetto.",
+    image: "https://picsum.photos/seed/fotografia-highlight-01/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-01/1200/800",
+        alt: "Ritratto in luce naturale piano americano",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-011/1200/800",
+        alt: "Ritratto in luce naturale close-up",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-012/1200/800",
+        alt: "Ritratto in luce naturale backstage",
+      },
+    ],
+    technologies: ["Sony A7", "85mm", "Lightroom", "Photoshop", "Camera Raw"],
+    goal:
+      "Costruire una serie portrait dal mood editoriale, pulita e adatta sia a portfolio che a personal branding.",
+    hideLinks: true,
   },
   {
     title: "Street Frame Urbano",
     category: "Street",
-    description: "Scatto spontaneo con composizione a livelli e timing narrativo del momento.",
-    image: "https://picsum.photos/seed/fotografia-highlight-02/900/600",
+    description: "Scatto spontaneo con composizione a livelli, timing narrativo e lettura rapida dello spazio urbano.",
+    image: "https://picsum.photos/seed/fotografia-highlight-02/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-02/1200/800",
+        alt: "Street photography con soggetto in movimento",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-021/1200/800",
+        alt: "Street photography con riflessi urbani",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-022/1200/800",
+        alt: "Street photography con layering prospettico",
+      },
+    ],
+    technologies: ["Sony A7", "35mm", "Lightroom", "Color Grading"],
+    goal:
+      "Raccontare il ritmo della citta con immagini piu narrative che descrittive.",
+    hideLinks: true,
   },
   {
     title: "Macro Texture",
     category: "Macro",
-    description: "Dettaglio ravvicinato ad alto contrasto per esaltare materia e profondita.",
-    image: "https://picsum.photos/seed/fotografia-highlight-03/900/600",
+    description: "Dettaglio ravvicinato ad alto contrasto per esaltare materia, pattern e profondita tattile.",
+    image: "https://picsum.photos/seed/fotografia-highlight-03/1200/800",
+    images: [
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-03/1200/800",
+        alt: "Macro texture soggetto principale",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-031/1200/800",
+        alt: "Macro texture dettaglio laterale",
+      },
+      {
+        src: "https://picsum.photos/seed/fotografia-highlight-032/1200/800",
+        alt: "Macro texture con luce radente",
+      },
+    ],
+    technologies: ["Macro Lens", "Tripod", "Lightroom", "Photoshop Focus Stack"],
+    goal:
+      "Trasformare un dettaglio minimo in un'immagine forte, quasi astratta, ma ancora leggibile.",
+    hideLinks: true,
   },
 ];
+
+const fotografiaProjectTheme = {
+  "--project-accent": "var(--fotografia)",
+  "--project-accent-soft": "var(--Softfotografia)",
+};
 
 export default function Fotrografia() {
   const [selectedSkill, setSelectedSkill] = useState(null);
@@ -206,23 +266,18 @@ export default function Fotrografia() {
 
       <section>
         <ScrollRevealBlock
-          className="sectionProcesso sectionProgettiFot"
+          className="sectionProgettiFot"
           variant="right"
         >
           <h5>SCATTI IN EVIDENZA</h5>
           <h1>
             <strong>Galleria selezionata</strong>
           </h1>
-          <div className="grigliaProgettiFot">
-            {fotografiaHighlights.map((project) => (
-              <article key={project.title}>
-                <img src={project.image} alt={`Anteprima scatto ${project.title}`} loading="lazy" />
-                <span>{project.category}</span>
-                <h5>{project.title}</h5>
-                <p>{project.description}</p>
-              </article>
-            ))}
-          </div>
+          <ProjectHighlightsCarousel
+            projects={fotografiaHighlights}
+            accentStyle={fotografiaProjectTheme}
+            ariaLabel="Carosello scatti in evidenza"
+          />
         </ScrollRevealBlock>
       </section>
 

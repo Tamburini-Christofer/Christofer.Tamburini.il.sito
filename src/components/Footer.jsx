@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 let columnServizi = [
   { label: "SERVIZI" },
-  { label: "web Development", route: "/web-developer" },
+  { label: "Web Development", route: "/web-developer" },
   { label: "Fotografia", route: "/fotografia" },
   { label: "Video & Droni", route: "/video-droni" },
   { label: "3D & Stampa", route: "/stampa3D" },
