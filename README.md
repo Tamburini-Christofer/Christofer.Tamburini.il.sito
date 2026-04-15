@@ -58,3 +58,55 @@
 ###
 
 ![Pagina Home](/Complete-per-readme/3.a.HomepageCode.png)
+
+###
+
+<p align="left">Fase 5/A: Creazione della pagina Web Developer con possibilità di switchare tra le pagine con i tasti freccia o scendere e salire di sezione</p>
+
+###
+
+###
+
+![Pagina Web developer](/Complete-per-readme/5.a.webDeveloper.png)
+
+###
+
+<p align="left">Fase 5/B: Creazione di menu interattivo che descrive la competenza al click in modo dinamico</p>
+
+###
+
+###
+
+![Pagina Web Developer sezione competenze](/Complete-per-readme/5.b.competenze.png)
+
+###
+
+<p align="left">Fase 5/C: Sezione  con animazione a comparsa che descrive il flusso di lavoro (Da ridefinire il testo)</p>
+
+###
+
+###
+
+![Pagina Web Developer sezione Processo](/Complete-per-readme/5.c.Processo.png)
+
+###
+
+<p align="left">Fase 5/D: Creazione sezione progetti. I progetti sono collegati a Github e possono essere raggiunti con un click sul simbolo. <br>Divisione in due colonne con anteprima del progetto e linguaggi usati e seconda colonna a scorrimento verticale con i progetti più rilevanti. <br>Al click sull'immagine si apre una modale che descrive meglio il progetto</p>
+
+###
+
+###
+
+![Pagina Web Developer sezione lavori](/Complete-per-readme/5.d.Lavori.png)
+
+###
+
+<p align="left">Fase 5/E: Certificazioni e competenze acquisite in una modale a rotazione tridimensionale, riadattando un componente di React Bits.<br>Al click sul certificato si aprirà una modale con il certificato esteso e visibile</p>
+
+###
+
+###
+
+![Pagina Web Developer sezione Carosello](/Complete-per-readme/5.e.carosello.png)
+
+###

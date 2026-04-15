@@ -134,6 +134,7 @@
     height: auto;
     min-height: 100vh;
     padding: 70px 200px 140px 200px;
+    background-color: var(--sezioneDue);
 }
 
 .grigliaProgettiWeb {
