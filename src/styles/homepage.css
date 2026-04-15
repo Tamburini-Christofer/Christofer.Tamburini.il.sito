@@ -479,19 +479,17 @@ body.modalOpen .backToTopArrow {
 
 .certificateModalContainer {
     position: fixed;
-    top: 42%;
-    left: 46%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--sezioneUno);
     border: 1px solid rgba(239, 236, 231, 0.2);
     border-radius: 16px;
     padding: 40px;
-    width: 90vw;
-    height: 85vh;
+    width: min(1120px, 92vw);
+    max-height: min(88vh, 980px);
     overflow-y: auto;
     z-index: 9999;
-    display: grid;
-    grid-template-columns: 1fr;
     animation: slideUp 0.4s ease;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -546,24 +544,22 @@ body.modalOpen .backToTopArrow {
 }
 
 .certificateModalContent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
+    display: block;
 }
 
 .certificateModalImage {
-    border: 1px solid rgba(239, 236, 231, 0.25);
     border-radius: 12px;
     overflow: hidden;
     background-color: rgba(23, 23, 28, 0.5);
+    max-height: calc(88vh - 80px);
 }
 
 .certificateModalImage img {
     width: 100%;
     height: auto;
+    max-height: calc(88vh - 82px);
     display: block;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .certificateModalInfo h2 {
@@ -750,6 +746,7 @@ body.modalOpen .backToTopArrow {
     color: var(--primaryWhite);
     cursor: pointer;
     transition: transform 0.2s ease, filter 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
 }
 
 .projectHighlightsOpenButton:hover {
@@ -832,7 +829,7 @@ body.modalOpen .backToTopArrow {
     top: 0;
     right: 0;
     width: 100%;
-    padding: 100px;
+    padding: clamp(28px, 4vw, 52px);
     height: 100vh;
     background-color: var(--sezioneUno);
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
@@ -871,26 +868,31 @@ body.modalOpen .backToTopArrow {
 
 .projectModalContent {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 2fr);
-    gap: 30px;
+    grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.92fr);
+    gap: clamp(24px, 3vw, 42px);
     align-items: start;
-    padding: 50px;
+    padding: clamp(28px, 3vw, 44px);
+    max-width: 1800px;
+    min-height: calc(100vh - clamp(56px, 8vw, 104px));
+    margin: 0 auto;
 }
 
 .projectModalGallery {
     position: sticky;
-    top: 0;
+    top: clamp(10px, 2vw, 24px);
 }
 
 .projectModalHeroImage {
+    overflow: hidden;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
 }
 
 .projectModalHeroImage img {
     width: 100%;
-    aspect-ratio: 16 / 11;
+    aspect-ratio: 16 / 10.2;
     object-fit: cover;
     display: block;
 }
@@ -955,7 +957,7 @@ body.modalOpen .backToTopArrow {
 }
 
 .projectModalHeader {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .projectModalEyebrow {
@@ -969,23 +971,27 @@ body.modalOpen .backToTopArrow {
 
 .projectModalInfo{
     overflow-y: hidden;
+    max-width: 500px;
+    justify-self: end;
 }
 
 .projectModalInfo h2 {
-    margin: 0 0 14px;
+    margin: 0 0 12px;
     color: var(--primaryWhite);
-    font-size: 34px;
-    line-height: 1.1;
+    font-size: clamp(24px, 2vw, 32px);
+    line-height: 1.06;
+    max-width: 10ch;
 }
 
 .projectModalInfo p,
 .projectModalList li {
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.7;
+    line-height: 1.58;
+    font-size: 0.92rem;
 }
 
 .projectModalField {
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .projectModalField.compact {
@@ -994,8 +1000,8 @@ body.modalOpen .backToTopArrow {
 
 .projectModalField h5 {
     margin: 0 0 10px;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -1075,6 +1081,14 @@ body.modalOpen .backToTopArrow {
         grid-template-columns: 1fr;
     }
 
+    .projectModalContainer {
+        padding: 24px;
+    }
+
+    .projectModalContent {
+        min-height: auto;
+    }
+
     .projectModalMetaGrid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1092,6 +1106,11 @@ body.modalOpen .backToTopArrow {
 
     .projectModalGallery {
         position: static;
+    }
+
+    .projectModalInfo {
+        max-width: none;
+        justify-self: stretch;
     }
 }
 
