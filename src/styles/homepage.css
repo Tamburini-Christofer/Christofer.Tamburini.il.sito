@@ -666,8 +666,7 @@ body.modalOpen .backToTopArrow {
 .projectHighlightsCard {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.5fr);
-    gap: 22px;
-    padding: 22px;
+    gap: 20px;
 }
 
 .projectHighlightsPreviewCol {
@@ -694,7 +693,7 @@ body.modalOpen .backToTopArrow {
 .projectHighlightsBody {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 .projectHighlightsCategory {
@@ -726,15 +725,15 @@ body.modalOpen .backToTopArrow {
 .projectHighlightsTechRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
+    margin-top:10px;
+    justify-content: center;
 }
 
 .projectHighlightsTechChip {
     display: inline-flex;
     align-items: center;
     padding: 6px 12px;
-    border-radius: 999px;
+    border-radius: 10px 0 0 10px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: var(--primaryWhite);
@@ -777,7 +776,7 @@ body.modalOpen .backToTopArrow {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 470px;
+    max-height: 320px;
     overflow-y: auto;
     padding-right: 6px;
 }

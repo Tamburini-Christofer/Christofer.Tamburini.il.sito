@@ -133,7 +133,7 @@
 .sectionProgettiWeb {
     height: auto;
     min-height: 100vh;
-    padding: 100px 200px;
+    padding: 70px 200px 140px 200px;
 }
 
 .grigliaProgettiWeb {
@@ -382,10 +382,464 @@
     color: var(--primaryWhite);
 }
 
+/* === GitHub Projects Layout === */
+
+/* Main layout */
+.ghProjectsCarousel {
+    --project-accent: var(--webDeveloper);
+    --project-accent-soft: var(--SoftwebDeveloper);
+    margin-top: 34px;
+}
+
+.ghProjectsLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px;
+    align-items: start;
+}
+
+.ghProjectsMain {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.ghProjectsMediaColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Info column */
+.ghProjectsInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 4px 0;
+    min-height: 360px;
+}
+
+.ghProjectsInfoHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.ghProjectsInfo h3 {
+    color: var(--primaryWhite);
+    font-size: 32px;
+    line-height: 1.1;
+    margin: 0;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.ghProjectsDesc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0;
+    display: -webkit-box;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+}
+
+.ghProjectsBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: auto;
+}
+
+.projectHighlightsTechRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ghProjectsTechOverlayBottomLeft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    max-width: calc(100% - 32px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.projectHighlightsTechChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 14px;
+    border-radius: 0px 0px 0px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--primaryWhite);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.projectHighlightsTechChip.tech-react {
+    background: rgb(0, 0, 0);
+    border-color: rgba(97, 218, 251, 0.45);
+    color: #61dafb;
+}
+
+.projectHighlightsTechChip.tech-javascript {
+    background: rgb(0, 0, 0);
+    border-color: rgba(247, 223, 30, 0.42);
+    color: #f7df1e;
+}
+
+.projectHighlightsTechChip.tech-html {
+    background: rgb(0, 0, 0);
+    border-color: rgba(227, 79, 38, 0.42);
+    color: #e34f26;
+}
+
+.projectHighlightsTechChip.tech-css {
+    background: rgb(0, 0, 0);
+    border-color: rgba(21, 114, 182, 0.42);
+    color: #1572b6;
+}
+
+.projectHighlightsTechChip.tech-node-js {
+    background: rgb(0, 0, 0);
+    border-color: rgba(83, 158, 67, 0.42);
+    color: #539e43;
+}
+
+.projectHighlightsTechChip.tech-mysql {
+    background: rgb(0, 0, 0);
+    border-color: rgba(0, 117, 143, 0.42);
+    color: #00758f;
+}
+
+.projectHighlightsTechChip.tech-api {
+    background: rgb(0, 0, 0);
+    border-color: rgba(168, 85, 247, 0.42);
+    color: #c084fc;
+}
+
+/* Sidebar (project list) */
+.ghProjectsSidebar {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 18px;
+    min-width: 0;
+}
+
+.ghProjectsSelectorList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 370px;
+    overflow-y: auto;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--SoftwebDeveloper) transparent;
+}
+
+.ghProjectsSelectorList::-webkit-scrollbar {
+    width: 4px;
+}
+
+.ghProjectsSelectorList::-webkit-scrollbar-thumb {
+    background: var(--SoftwebDeveloper);
+    border-radius: 999px;
+}
+
+/* Loading & Error */
+.ghReposLoading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 60px 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ghReposSpinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: var(--webDeveloper);
+    border-radius: 50%;
+    animation: ghSpin 0.8s linear infinite;
+}
+
+@keyframes ghSpin {
+    to { transform: rotate(360deg); }
+}
+
+.ghReposError {
+    text-align: center;
+    padding: 40px 0;
+    color: #ff6b6b;
+}
+
+/* Image Gallery (left side) */
+.ghCarouselGallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 300px;
+}
+
+.ghCarouselHeroImage {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    aspect-ratio: 16 / 9;
+    cursor: zoom-in;
+}
+
+.ghCarouselHeroImage::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 112px;
+    background: linear-gradient(0deg, rgba(7, 7, 10, 0.88) 0%, rgba(7, 7, 10, 0.5) 48%, rgba(7, 7, 10, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ghCarouselHeroImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.ghCarouselThumbs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--SoftwebDeveloper) transparent;
+}
+
+.ghCarouselThumbs::-webkit-scrollbar {
+    height: 5px;
+}
+
+.ghCarouselThumbs::-webkit-scrollbar-thumb {
+    background: var(--SoftwebDeveloper);
+    border-radius: 999px;
+}
+
+.ghCarouselThumb {
+    flex: 0 0 90px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.ghCarouselThumb:hover {
+    border-color: var(--SoftwebDeveloper);
+    transform: translateY(-1px);
+}
+
+.ghCarouselThumb.isActive {
+    border-color: var(--webDeveloper);
+    box-shadow: 0 0 8px rgba(42, 148, 255, 0.3);
+}
+
+.ghCarouselThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: rgba(255, 255, 255, 0.03);
+} 
+
+/* Fullscreen lightbox */
+.ghFullscreenOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    cursor: zoom-out;
+    animation: ghFadeIn 0.2s ease;
+}
+
+@keyframes ghFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.ghFullscreenImage {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: default;
+    user-select: none;
+}
+
+.ghFullscreenClose {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--primaryWhite);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    z-index: 1;
+}
+
+.ghFullscreenClose:hover {
+    border-color: var(--webDeveloper);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.ghFullscreenClose svg {
+    width: 20px;
+    height: 20px;
+}
+
+.ghFullscreenNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--primaryWhite);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    z-index: 1;
+}
+
+.ghFullscreenNav:hover {
+    border-color: var(--webDeveloper);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.ghFullscreenPrev {
+    left: 20px;
+}
+
+.ghFullscreenNext {
+    right: 20px;
+}
+
+.ghFullscreenCounter {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 14px;
+    border-radius: 999px;
+}
+
+/* Action buttons */
+.ghCarouselActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.ghCarouselActions .projectHighlightsOpenButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.ghCarouselLiveLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: var(--primaryWhite);
+    font-size: 14px;
+    font-family: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ghCarouselLiveLink:hover {
+    border-color: var(--webDeveloper);
+    background: rgba(255, 255, 255, 0.06);
+}
+
 @media (max-width: 1024px) {
     .grigliaProgettiWeb,
     .comeLavoroLabelCertificazioniWeb {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ghProjectsLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .ghProjectsMain {
+        grid-template-columns: 1fr;
+    }
+
+    .ghProjectsInfo {
+        min-height: auto;
+    }
+
+    .ghProjectsSidebar {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-left: 0;
+        padding-top: 18px;
+    }
+
+    .ghProjectsSelectorList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: none;
+        overflow-y: visible;
     }
 
     .certificazioniLayoutWeb {
@@ -407,6 +861,15 @@
     .grigliaProgettiWeb,
     .comeLavoroLabelCertificazioniWeb {
         grid-template-columns: 1fr;
+    }
+
+    .ghProjectsInfo h3 {
+        font-size: 24px;
+    }
+
+    .ghCarouselActions {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .caroselloCertificazioniWeb {

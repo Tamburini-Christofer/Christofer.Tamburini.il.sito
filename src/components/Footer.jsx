@@ -41,16 +41,16 @@ export default function Footer() {
           <div>
             <ul className="socialIcon">
               <li className="GitHubIcon">
-                <a href="https://github.com/Tamburini-Christofer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/Tamburini-Christofer"><i className="fa-brands fa-github"></i></a>
               </li >
               <li className="LinkIcon">
-                <a href="https://www.linkedin.com/in/christofer-tamburini-6710b5346/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/christofer-tamburini-6710b5346/"><i className="fa-brands fa-linkedin"></i></a>
               </li>
               <li className="InstagramIcon">
-                <a href="https://www.instagram.com/christofer.tamburini/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/christofer.tamburini/"><i className="fa-brands fa-instagram"></i></a>
               </li>
               <li className="YoutubeIcon">
-                <a href="https://www.youtube.com/@christofertamburiniChannel"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.youtube.com/@christofertamburiniChannel"><i className="fa-brands fa-youtube"></i></a>
               </li>
             </ul>
           </div>

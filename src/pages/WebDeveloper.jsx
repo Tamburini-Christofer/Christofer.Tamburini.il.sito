@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import CircularGallery from "../components/CircularGallery";
+import GitHubProjectsGrid from "../components/GitHubProjectsGrid";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
-import ProjectHighlightsCarousel from "../components/ProjectHighlightsCarousel";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 const webSkills = [
@@ -144,109 +144,12 @@ const webCertificationItems = webCertifications.map((certification) => ({
   title: certification.title,
 }));
 
-const webHighlightedProjects = [
-  {
-    title: "Dashboard Gestionale Multi-tenant",
-    category: "Web App",
-    description: "Pannello completo per gestione contenuti, utenti, report e permessi in tempo reale.",
-    image: "https://picsum.photos/seed/web-project-01/1200/800",
-    images: [
-      {
-        src: "https://picsum.photos/seed/web-project-01/1200/800",
-        alt: "Dashboard gestionale panoramica desktop",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-011/1200/800",
-        alt: "Dashboard gestionale sezione analytics",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-012/1200/800",
-        alt: "Dashboard gestionale tab utenti e permessi",
-      },
-    ],
-    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Chart.js"],
-    hideLinks: true,
-    liveUrl: null,
-    githubUrl: null,
-    features: [
-      "Autenticazione con ruoli e permessi granulari",
-      "Dashboard KPI con filtri temporali e grafici interattivi",
-      "Gestione contenuti con workflow di pubblicazione",
-      "Ricerca e ordinamento server-side per grandi volumi di dati",
-    ],
-    goal:
-      "Ridurre il tempo operativo del team centrale concentrando controllo utenti, contenuti e report in un'unica interfaccia.",
-  },
-  {
-    title: "Landing Page Conversione",
-    category: "UI/UX",
-    description: "Pagina ottimizzata per lead generation con copy strategico, CTA modulari e test A/B.",
-    image: "https://picsum.photos/seed/web-project-02/1200/800",
-    images: [
-      {
-        src: "https://picsum.photos/seed/web-project-02/1200/800",
-        alt: "Landing page hero section",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-021/1200/800",
-        alt: "Landing page sezione testimonianze",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-022/1200/800",
-        alt: "Landing page funnel mobile",
-      },
-    ],
-    technologies: ["React", "Figma", "GSAP", "Vite", "Hotjar"],
-    hideLinks: true,
-    liveUrl: null,
-    githubUrl: null,
-    features: [
-      "Hero dinamica con CTA contestuali",
-      "Blocchi modulari riordinabili in base alla campagna",
-      "Tracciamento eventi per analisi conversioni",
-      "Versione mobile ottimizzata per campagne paid",
-    ],
-    goal:
-      "Aumentare il tasso di conversione di una campagna lead generation con una pagina piu chiara e piu veloce.",
-  },
-  {
-    title: "E-commerce Component-based",
-    category: "Frontend",
-    description: "Architettura React scalabile con filtri dinamici, wishlist e checkout ottimizzato.",
-    image: "https://picsum.photos/seed/web-project-03/1200/800",
-    images: [
-      {
-        src: "https://picsum.photos/seed/web-project-03/1200/800",
-        alt: "Homepage e-commerce con prodotti in evidenza",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-031/1200/800",
-        alt: "Catalogo e-commerce con filtri",
-      },
-      {
-        src: "https://picsum.photos/seed/web-project-032/1200/800",
-        alt: "Checkout e-commerce ottimizzato",
-      },
-    ],
-    technologies: ["React", "Redux Toolkit", "Stripe", "Node.js", "MongoDB"],
-    hideLinks: true,
-    liveUrl: null,
-    githubUrl: null,
-    features: [
-      "Catalogo con filtri combinabili e ricerca live",
-      "Wishlist sincronizzata tra dispositivi",
-      "Checkout multi-step con riepilogo dinamico",
-      "Area admin per gestione prodotti e ordini",
-    ],
-    goal:
-      "Costruire una base e-commerce solida e riutilizzabile per brand con cataloghi medi e storytelling visuale forte.",
-  },
-];
-
 const webProjectTheme = {
   "--project-accent": "var(--webDeveloper)",
   "--project-accent-soft": "var(--SoftwebDeveloper)",
 };
+
+
 
 export default function WebDeveloper() {
   const [selectedSkill, setSelectedSkill] = useState(null);
@@ -387,11 +290,7 @@ export default function WebDeveloper() {
           <h1>
             <strong>Selezione lavori</strong>
           </h1>
-          <ProjectHighlightsCarousel
-            projects={webHighlightedProjects}
-            accentStyle={webProjectTheme}
-            ariaLabel="Carosello progetti web in evidenza"
-          />
+          <GitHubProjectsGrid accentStyle={webProjectTheme} />
         </ScrollRevealBlock>
       </section>
 
