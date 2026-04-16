@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ContactEmailButton from "../components/ContactEmailButton";
 import HeroNextArrow from "../components/HeroNextArrow";
 import HeroPageSwitchArrows from "../components/HeroPageSwitchArrows";
-import ProjectHighlightsCarousel from "../components/ProjectHighlightsCarousel";
 import ScrollRevealBlock from "../components/ScrollRevealBlock";
 
 const fotografiaSkills = [
@@ -54,88 +53,202 @@ const fotografiaSkills = [
   },
 ];
 
-const fotografiaHighlights = [
+const fotografiaCollections = [
   {
-    title: "Ritratto in Luce Naturale",
-    category: "Portrait",
-    description: "Sessione ritratto con luce morbida, palette cinematica e direzione espressiva del soggetto.",
-    image: "https://picsum.photos/seed/fotografia-highlight-01/1200/800",
+    id: "animali",
+    label: "Animali",
+    title: "Istinto, attesa e presenza",
+    description:
+      "Una selezione dedicata alla fauna: sguardi fermi, movimento improvviso e dettagli che funzionano solo quando luce e tempismo si incastrano bene.",
     images: [
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-01/1200/800",
-        alt: "Ritratto in luce naturale piano americano",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350232/7F1A7292-1_ddusya.jpg",
+        alt: "Fotografia animali 1",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-011/1200/800",
-        alt: "Ritratto in luce naturale close-up",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350231/Ti_fisso_xscn9k.jpg",
+        alt: "Fotografia animali 2",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-012/1200/800",
-        alt: "Ritratto in luce naturale backstage",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350230/papagallo_rosso_neisyz.jpg",
+        alt: "Fotografia animali 3",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350226/Surri_4_vwhvsj.jpg",
+        alt: "Fotografia animali 4",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350224/apapapapap_mdhr1g.jpg",
+        alt: "Fotografia animali 5",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350224/7F1A6440-1_g8o4x1.jpg",
+        alt: "Fotografia animali 6",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350223/7F1A6708-1_lrooiz.jpg",
+        alt: "Fotografia animali 7",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350212/7F1A6555-1_jwly1v.jpg",
+        alt: "Fotografia animali 8",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350211/7F1A7346-1_wb2vfr.jpg",
+        alt: "Fotografia animali 9",
       },
     ],
-    technologies: ["Sony A7", "85mm", "Lightroom", "Photoshop", "Camera Raw"],
-    goal:
-      "Costruire una serie portrait dal mood editoriale, pulita e adatta sia a portfolio che a personal branding.",
-    hideLinks: true,
   },
   {
-    title: "Street Frame Urbano",
-    category: "Street",
-    description: "Scatto spontaneo con composizione a livelli, timing narrativo e lettura rapida dello spazio urbano.",
-    image: "https://picsum.photos/seed/fotografia-highlight-02/1200/800",
+    id: "astratto",
+    label: "Astratto",
+    title: "Forme, riflessi e distorsioni",
+    description:
+      "Immagini che spostano il soggetto in secondo piano e lasciano lavorare texture, luce e ambiguita visiva.",
     images: [
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-02/1200/800",
-        alt: "Street photography con soggetto in movimento",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350244/7F1A9401-1_jdfbvm.jpg",
+        alt: "Fotografia astratta 1",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-021/1200/800",
-        alt: "Street photography con riflessi urbani",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350249/7F1A8195-1_nmmc7h.jpg",
+        alt: "Fotografia astratta 2",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-022/1200/800",
-        alt: "Street photography con layering prospettico",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350250/IMG_4568-1_c9yys5.jpg",
+        alt: "Fotografia astratta 3",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350255/7F1A0415-1_h8jsct.jpg",
+        alt: "Fotografia astratta 4",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350256/Oltre_lo_specchio_eykdy3.jpg",
+        alt: "Fotografia astratta 5",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350258/Disturbo_delirante_znrr8g.jpg",
+        alt: "Fotografia astratta 6",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350260/telegiornale_uy3l6g.jpg",
+        alt: "Fotografia astratta 7",
       },
     ],
-    technologies: ["Sony A7", "35mm", "Lightroom", "Color Grading"],
-    goal:
-      "Raccontare il ritmo della citta con immagini piu narrative che descrittive.",
-    hideLinks: true,
   },
   {
-    title: "Macro Texture",
-    category: "Macro",
-    description: "Dettaglio ravvicinato ad alto contrasto per esaltare materia, pattern e profondita tattile.",
-    image: "https://picsum.photos/seed/fotografia-highlight-03/1200/800",
+    id: "landscapes",
+    label: "Landscapes",
+    title: "Spazio, atmosfera e profondita",
+    description:
+      "Paesaggi costruiti attorno a volume, meteo e respiro della scena, dal panorama aperto ai tagli piu essenziali.",
     images: [
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-03/1200/800",
-        alt: "Macro texture soggetto principale",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350273/7F1A2404-1_itukon.jpg",
+        alt: "Fotografia paesaggio 1",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-031/1200/800",
-        alt: "Macro texture dettaglio laterale",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350273/7F1A2404-1_itukon.jpg",
+        alt: "Fotografia paesaggio 2",
       },
       {
-        src: "https://picsum.photos/seed/fotografia-highlight-032/1200/800",
-        alt: "Macro texture con luce radente",
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350276/Ragnarock_jppvyv.jpg",
+        alt: "Fotografia paesaggio 3",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350291/7F1A3638-1_oioypj.jpg",
+        alt: "Fotografia paesaggio 4",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350298/7F1A0788-1_ldc3rf.jpg",
+        alt: "Fotografia paesaggio 5",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350298/7F1A3950-1_lv9cck.jpg",
+        alt: "Fotografia paesaggio 6",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350303/Casa_hotel_bmd7qt.jpg",
+        alt: "Fotografia paesaggio 7",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350304/paesaggio_Verona_nssy94.jpg",
+        alt: "Fotografia paesaggio 8",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350304/7F1A3994-1_vbreau.jpg",
+        alt: "Fotografia paesaggio 9",
+      },
+      {
+        src: "https://res.cloudinary.com/dg4tpvtje/image/upload/v1776350306/dolomiti_s3mt9q.jpg",
+        alt: "Fotografia paesaggio 10",
       },
     ],
-    technologies: ["Macro Lens", "Tripod", "Lightroom", "Photoshop Focus Stack"],
-    goal:
-      "Trasformare un dettaglio minimo in un'immagine forte, quasi astratta, ma ancora leggibile.",
-    hideLinks: true,
+  },
+  {
+    id: "macro",
+    label: "Macro",
+    title: "Dettaglio che diventa scena",
+    description:
+      "Una raccolta pensata per i particolari estremi, le texture e i micro-contrasti. In attesa delle immagini definitive.",
+    images: [],
+  },
+  {
+    id: "ritratto",
+    label: "Ritratto",
+    title: "Presenza, espressione e taglio",
+    description:
+      "Una selezione dedicata ai volti e alla relazione con la luce. La struttura e pronta per ricevere gli scatti che mi invierai.",
+    images: [],
+  },
+  {
+    id: "studio",
+    label: "Studio",
+    title: "Controllo totale della luce",
+    description:
+      "Set puliti, volumi precisi e costruzione dell'immagine in ambiente controllato. Categoria pronta per essere completata.",
+    images: [],
   },
 ];
 
-const fotografiaProjectTheme = {
-  "--project-accent": "var(--fotografia)",
-  "--project-accent-soft": "var(--Softfotografia)",
-};
+const initialFotografiaCollectionId =
+  fotografiaCollections.find((collection) => collection.images?.length > 0)?.id ??
+  fotografiaCollections[0]?.id ??
+  null;
 
 export default function Fotrografia() {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [selectedCollectionId, setSelectedCollectionId] = useState(initialFotografiaCollectionId);
+  const [activePreviewIndex, setActivePreviewIndex] = useState(0);
+
+  const activeCollection =
+    fotografiaCollections.find((collection) => collection.id === selectedCollectionId) ??
+    fotografiaCollections[0];
+  const activeImages = activeCollection?.images ?? [];
+  const hasActiveImages = activeImages.length > 0;
+  const normalizedPreviewIndex = hasActiveImages ? activePreviewIndex % activeImages.length : 0;
+  const activePreviewImage = hasActiveImages ? activeImages[normalizedPreviewIndex] : null;
+
+  const handleSelectCollection = (collectionId) => {
+    setSelectedCollectionId(collectionId);
+    setActivePreviewIndex(0);
+  };
+
+  const goToPreviousPreview = () => {
+    if (!hasActiveImages) {
+      return;
+    }
+
+    setActivePreviewIndex((currentIndex) => (currentIndex - 1 + activeImages.length) % activeImages.length);
+  };
+
+  const goToNextPreview = () => {
+    if (!hasActiveImages) {
+      return;
+    }
+
+    setActivePreviewIndex((currentIndex) => (currentIndex + 1) % activeImages.length);
+  };
 
   return (
     <>
@@ -266,18 +379,86 @@ export default function Fotrografia() {
 
       <section>
         <ScrollRevealBlock
-          className="sectionProgettiFot"
+          className="sectionProgettiFot sectionProgettiFotGallery"
           variant="right"
         >
-          <h5>SCATTI IN EVIDENZA</h5>
-          <h1>
-            <strong>Galleria selezionata</strong>
-          </h1>
-          <ProjectHighlightsCarousel
-            projects={fotografiaHighlights}
-            accentStyle={fotografiaProjectTheme}
-            ariaLabel="Carosello scatti in evidenza"
-          />
+          <div className="fotografiaInlineGallery">
+            <div className="fotografiaGenresColumn">
+              <div className="fotografiaGenreList" role="tablist" aria-label="Generi fotografia">
+                {fotografiaCollections.map((collection) => {
+                  const isActive = collection.id === activeCollection?.id;
+
+                  return (
+                    <button
+                      key={collection.id}
+                      type="button"
+                      className={isActive ? "fotografiaGenreButton isActive" : "fotografiaGenreButton"}
+                      onClick={() => handleSelectCollection(collection.id)}
+                      aria-pressed={isActive}
+                    >
+                      <span>{collection.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="fotografiaPreviewColumn">
+              {hasActiveImages ? (
+                <>
+                  <div className="fotografiaPreviewFrame">
+                    {activePreviewImage ? (
+                      <img src={activePreviewImage.src} alt={activePreviewImage.alt} loading="lazy" />
+                    ) : null}
+                  </div>
+
+                  <div className="fotografiaPreviewFooter">
+                    <div className="fotografiaPreviewThumbs" role="listbox" aria-label={`Anteprime ${activeCollection.label}`}>
+                      {activeImages.map((image, index) => {
+                        const isActive = index === normalizedPreviewIndex;
+
+                        return (
+                          <button
+                            key={`${activeCollection.id}-preview-${index}`}
+                            type="button"
+                            className={isActive ? "fotografiaPreviewThumb isActive" : "fotografiaPreviewThumb"}
+                            onClick={() => setActivePreviewIndex(index)}
+                            aria-pressed={isActive}
+                          >
+                            <img src={image.src} alt={image.alt} loading="lazy" />
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    <div className="fotografiaPreviewArrowGroup">
+                      <button
+                        type="button"
+                        className="fotografiaPreviewArrow"
+                        onClick={goToPreviousPreview}
+                        aria-label={`Foto precedente ${activeCollection.label}`}
+                      >
+                        <i className="fa-solid fa-arrow-left"></i>
+                      </button>
+                      <button
+                        type="button"
+                        className="fotografiaPreviewArrow"
+                        onClick={goToNextPreview}
+                        aria-label={`Foto successiva ${activeCollection.label}`}
+                      >
+                        <i className="fa-solid fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="fotografiaPreviewEmpty">
+                  <span>Categoria in aggiornamento</span>
+                  <p>Le fotografie di questa categoria non sono ancora state aggiunte.</p>
+                </div>
+              )}
+            </div>
+          </div>
         </ScrollRevealBlock>
       </section>
 

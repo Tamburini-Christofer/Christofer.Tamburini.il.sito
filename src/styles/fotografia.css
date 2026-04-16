@@ -85,6 +85,7 @@
 .FotLabel button.isActive {
     background-color: var(--fotografia);
     transform: translateY(-2px);
+    color: black;
 }
 
 .comeLavoroLabelFot{
@@ -146,8 +147,410 @@
 
 .sectionProgettiFot {
     height: auto;
-    min-height: 100vh;
-    padding: 80px 200px;
+    min-height: auto;
+    padding: 70px 200px;
+    background-color: var(--sezioneDue);
+}
+
+.fotografiaInlineGallery {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    align-items: start;
+}
+
+.fotografiaGenresColumn,
+.fotografiaPreviewColumn {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.fotografiaGenresColumn {
+    padding: 0;
+    display: flex;
+}
+
+.fotografiaGenreList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 12px;
+    width: 85%;
+    align-items: stretch;
+}
+
+.fotografiaGenreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 132px;
+    aspect-ratio: 1 / 1;
+    padding: 14px;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 24%, transparent);
+    border-radius: 28px;
+    background: color-mix(in srgb, var(--Softfotografia) 78%, #3e2300);
+    color: var(--primaryWhite);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.fotografiaGenreButton span {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+}
+
+.fotografiaGenreButton:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    border-color: color-mix(in srgb, var(--fotografia) 70%, transparent);
+    box-shadow: 0 12px 24px color-mix(in srgb, var(--fotografia) 18%, rgba(0, 0, 0, 0.16));
+}
+
+.fotografiaGenreButton.isActive {
+    border-color: var(--fotografia);
+    background: var(--fotografia);
+    color: black;
+    box-shadow: 0 14px 28px color-mix(in srgb, var(--fotografia) 24%, rgba(0, 0, 0, 0.18));
+}
+
+.fotografiaPreviewColumn {
+    padding: 0;
+}
+
+.fotografiaPreviewFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 410px;
+    padding: 18px;
+    border-radius: 30px;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 28%, transparent);
+    background:
+        radial-gradient(circle at top, color-mix(in srgb, var(--fotografia) 14%, transparent), transparent 38%),
+        linear-gradient(180deg, rgba(18, 18, 18, 0.92), rgba(8, 8, 8, 0.84));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.fotografiaPreviewFrame img {
+    max-width: 100%;
+    max-height: 54vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.fotografiaPreviewFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.fotografiaPreviewThumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+}
+
+.fotografiaPreviewThumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    min-width: 78px;
+    height: 56px;
+    padding: 5px;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 18%, transparent);
+    background: rgba(255, 255, 255, 0.035);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.fotografiaPreviewThumb:hover,
+.fotografiaPreviewThumb.isActive {
+    transform: translateY(-2px);
+    border-color: var(--fotografia);
+    background: color-mix(in srgb, var(--fotografia) 14%, transparent);
+}
+
+.fotografiaPreviewThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fotografiaPreviewArrowGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.fotografiaPreviewArrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 36%, transparent);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--primaryWhite);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.fotografiaPreviewArrow:hover {
+    transform: translateY(-2px);
+    border-color: var(--fotografia);
+    background: color-mix(in srgb, var(--fotografia) 16%, transparent);
+}
+
+.fotografiaPreviewEmpty {
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    min-height: 320px;
+    border-radius: 24px;
+    border: 1px dashed color-mix(in srgb, var(--fotografia) 32%, transparent);
+    background: color-mix(in srgb, var(--fotografia) 8%, transparent);
+    text-align: center;
+}
+
+.fotografiaPreviewEmpty span {
+    font-size: 24px;
+    color: var(--fotografia);
+    font-weight: 700;
+}
+
+.fotografiaPreviewEmpty p {
+    margin: 0;
+    color: rgba(239, 236, 231, 0.72);
+}
+
+.photoCategoryShowcase {
+    display: grid;
+    grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
+    gap: 24px;
+}
+
+.photoCategorySidebar,
+.photoCategoryStage {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 45%, transparent);
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--fotografia) 22%, transparent), transparent 34%),
+        linear-gradient(180deg, color-mix(in srgb, var(--fotografia) 10%, rgba(255, 255, 255, 0.03)), rgba(255, 255, 255, 0.025));
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 44px color-mix(in srgb, var(--fotografia) 12%, rgba(0, 0, 0, 0.24));
+}
+
+.photoCategorySidebar {
+    padding: 24px;
+}
+
+.photoCategorySidebarEyebrow,
+.photoCategoryStageEyebrow {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 6px 12px;
+    background: rgba(245, 159, 40, 0.12);
+    color: var(--fotografia);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.photoCategoryList {
+    display: grid;
+    gap: 14px;
+}
+
+.photoCategoryListItem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 22%, transparent);
+    border-radius: 20px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--fotografia) 14%, transparent), rgba(255, 255, 255, 0.02));
+    padding: 18px 20px;
+    color: var(--primaryWhite);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photoCategoryListItem:hover {
+    transform: translateX(4px);
+    border-color: color-mix(in srgb, var(--fotografia) 70%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--fotografia) 20%, transparent), rgba(255, 255, 255, 0.04));
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--fotografia) 16%, rgba(0, 0, 0, 0.14));
+}
+
+.photoCategoryListItem.isActive {
+    border-color: var(--fotografia);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--fotografia) 24%, transparent), rgba(255, 255, 255, 0.04));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fotografia) 20%, rgba(255, 255, 255, 0.04));
+}
+
+.photoCategoryListLabel {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.photoCategoryStage {
+    padding: 30px;
+}
+
+.photoCategoryMediaLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 500px;
+    gap: 14px;
+    align-items: stretch;
+}
+
+.photoCategoryFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at top, color-mix(in srgb, var(--fotografia) 18%, transparent), transparent 38%),
+        rgba(8, 8, 8, 0.72);
+    border: 1px solid color-mix(in srgb, var(--fotografia) 36%, transparent);
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 360px;
+    padding: 20px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fotografia) 18%, rgba(255, 255, 255, 0.04));
+}
+
+.photoCategoryFrame img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: center;
+}
+
+.photoCategoryControls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.photoCategoryControlButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.photoCategoryArrow {
+    width: 48px;
+    height: 48px;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 40%, transparent);
+    border-radius: 50%;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--fotografia) 16%, transparent), rgba(255, 255, 255, 0.03));
+    color: var(--primaryWhite);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photoCategoryArrow:hover {
+    transform: translateY(-2px);
+    border-color: var(--fotografia);
+    background: color-mix(in srgb, var(--fotografia) 24%, transparent);
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--fotografia) 14%, rgba(0, 0, 0, 0.16));
+}
+
+.photoCategoryThumbs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    max-height: 360px;
+    overflow-y: auto;
+    padding: 10px;
+    align-content: start;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 30%, transparent);
+    border-radius: 24px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--fotografia) 10%, transparent), rgba(255, 255, 255, 0.02));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fotografia) 12%, rgba(255, 255, 255, 0.04));
+}
+
+.photoCategoryThumb {
+    padding: 6px;
+    border: 1px solid color-mix(in srgb, var(--fotografia) 18%, transparent);
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--fotografia) 10%, rgba(8, 8, 8, 0.78)), rgba(8, 8, 8, 0.78));
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photoCategoryThumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.photoCategoryThumb:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--fotografia) 70%, transparent);
+    background: color-mix(in srgb, var(--fotografia) 14%, rgba(8, 8, 8, 0.78));
+    box-shadow: 0 10px 18px color-mix(in srgb, var(--fotografia) 14%, rgba(0, 0, 0, 0.14));
+}
+
+.photoCategoryThumb.isActive {
+    border-color: var(--fotografia);
+    background: color-mix(in srgb, var(--fotografia) 16%, rgba(8, 8, 8, 0.78));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fotografia) 18%, rgba(255, 255, 255, 0.04));
+}
+
+.photoCategoryEmptyState {
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    min-height: 420px;
+    margin-top: 24px;
+    border-radius: 24px;
+    border: 1px dashed rgba(245, 159, 40, 0.28);
+    background: linear-gradient(180deg, rgba(245, 159, 40, 0.08), rgba(255, 255, 255, 0.03));
+    text-align: center;
+    padding: 32px;
+}
+
+.photoCategoryEmptyState span {
+    color: var(--fotografia);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.photoCategoryEmptyState p {
+    max-width: 480px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    margin: 0;
 }
 
 .grigliaProgettiFot {
@@ -202,6 +605,45 @@
 }
 
 @media (max-width: 1024px) {
+    .sectionProgettiFot {
+        padding: 24px 60px 56px;
+    }
+
+    .fotografiaInlineGallery {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .fotografiaGenresColumn {
+        display: block;
+    }
+
+    .fotografiaGenreList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .fotografiaPreviewFrame {
+        min-height: 300px;
+    }
+
+    .photoCategoryShowcase {
+        grid-template-columns: 1fr;
+    }
+
+    .photoCategoryMediaLayout {
+        grid-template-columns: minmax(0, 1fr) 200px;
+    }
+
+    .photoCategoryFrame,
+    .photoCategoryFrame img {
+        aspect-ratio: 4 / 3;
+        max-height: 320px;
+    }
+
+    .photoCategoryThumbs {
+        max-height: 320px;
+    }
+
     .grigliaProgettiFot {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -217,6 +659,80 @@
 }
 
 @media (max-width: 700px) {
+    .sectionProgettiFot {
+        padding: 18px 20px 48px;
+    }
+
+    .fotografiaGenresColumn,
+    .fotografiaPreviewColumn {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .fotografiaGenreButton {
+        min-height: 102px;
+        padding: 10px;
+        border-radius: 22px;
+    }
+
+    .fotografiaPreviewFrame {
+        min-height: 240px;
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .fotografiaGenreList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fotografiaPreviewFooter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fotografiaPreviewArrowGroup {
+        justify-content: center;
+    }
+
+    .fotografiaPreviewThumb {
+        width: 58px;
+        min-width: 58px;
+        height: 42px;
+        padding: 4px;
+    }
+
+    .photoCategorySidebar,
+    .photoCategoryStage {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .photoCategoryMediaLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .photoCategoryFrame,
+    .photoCategoryFrame img {
+        aspect-ratio: 4 / 3;
+        max-height: 260px;
+    }
+
+    .photoCategoryControls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .photoCategoryControlButtons {
+        justify-content: flex-end;
+    }
+
+    .photoCategoryThumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
     .grigliaProgettiFot {
         grid-template-columns: 1fr;
     }

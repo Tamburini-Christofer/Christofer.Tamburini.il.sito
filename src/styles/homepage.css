@@ -221,7 +221,6 @@ body.modalOpen .backToTopArrow {
 }
 
 .sectionProcesso {
-    height: 100vh;
     background-color: var(--sezioneUno);
     padding: 200px 200px;
     border: 0;
@@ -414,10 +413,14 @@ body.modalOpen .backToTopArrow {
 }
 
 .contenitoreContattami {
-    background-color: var(--sezioneDue);
+    background-color: var(--sezioneUno);
     padding: 200px;
     text-align: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenitoreContattami p {
